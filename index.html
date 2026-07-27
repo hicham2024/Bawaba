@@ -368,6 +368,249 @@
         font-size: 0.95rem;
       }
     }
+
+    /* ===== Historio PDF : carte dans la bannière ===== */
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 410px);
+      align-items: center;
+      gap: 48px;
+      text-align: right;
+    }
+
+    .hero-content {
+      text-align: center;
+    }
+
+    .historio-access {
+      width: 100%;
+      padding: 26px;
+      border: 1px solid rgba(244, 212, 139, 0.30);
+      border-radius: 24px;
+      background:
+        linear-gradient(145deg, rgba(10, 18, 24, 0.94), rgba(42, 35, 28, 0.92));
+      box-shadow:
+        0 24px 70px rgba(0, 0, 0, 0.34),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      text-align: right;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .historio-access::before {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      top: -90px;
+      left: -70px;
+      border-radius: 50%;
+      background: rgba(212, 169, 79, 0.12);
+      filter: blur(8px);
+      pointer-events: none;
+    }
+
+    .historio-access > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .historio-access-icon {
+      width: 54px;
+      height: 54px;
+      margin-bottom: 16px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: rgba(212, 169, 79, 0.13);
+      border: 1px solid rgba(244, 212, 139, 0.24);
+      font-size: 25px;
+    }
+
+    .historio-access-label {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: var(--gold-soft);
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .historio-access h2 {
+      margin: 0 0 10px;
+      color: #fff;
+      font-size: clamp(1.25rem, 2vw, 1.7rem);
+      line-height: 1.5;
+    }
+
+    .historio-access p {
+      width: auto;
+      margin: 0 0 18px;
+      color: var(--text-soft);
+      font-size: 0.92rem;
+      line-height: 1.9;
+    }
+
+    .historio-open-button {
+      width: 100%;
+      min-height: 52px;
+      padding: 12px 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 9px;
+      border: 1px solid #e1b548;
+      border-radius: 13px;
+      background: linear-gradient(135deg, #e8b438, #c98919);
+      color: #161616;
+      font: inherit;
+      font-weight: 900;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    }
+
+    .historio-open-button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.06);
+      box-shadow: 0 12px 30px rgba(225, 181, 72, 0.24);
+    }
+
+    /* ===== Fenêtre modale Historio PDF ===== */
+    .historio-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      background: rgba(2, 7, 10, 0.88);
+      backdrop-filter: blur(8px);
+    }
+
+    .historio-modal.is-open {
+      display: flex;
+    }
+
+    .historio-modal-window {
+      width: min(1450px, 100%);
+      height: min(880px, 94vh);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid rgba(225, 193, 110, 0.38);
+      border-radius: 20px;
+      background: #fff;
+      box-shadow: 0 30px 100px rgba(0, 0, 0, 0.60);
+    }
+
+    .historio-modal-header {
+      min-height: 65px;
+      padding: 10px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      background: #14191f;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    }
+
+    .historio-modal-title {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .historio-modal-title strong {
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    .historio-modal-title span {
+      color: #aeb8c0;
+      font-size: 0.78rem;
+    }
+
+    .historio-modal-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .historio-external-link,
+    .historio-close-button {
+      min-height: 40px;
+      padding: 8px 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      font: inherit;
+      font-size: 0.82rem;
+      font-weight: 800;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .historio-external-link {
+      border: 1px solid rgba(225, 193, 110, 0.40);
+      background: rgba(225, 193, 110, 0.10);
+      color: #ead18d;
+    }
+
+    .historio-close-button {
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+    }
+
+    .historio-frame {
+      width: 100%;
+      flex: 1;
+      border: 0;
+      background: #fff;
+    }
+
+    @media (max-width: 950px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .historio-access {
+        width: min(520px, 100%);
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .historio-modal {
+        padding: 0;
+      }
+
+      .historio-modal-window {
+        width: 100%;
+        height: 100%;
+        max-height: none;
+        border: 0;
+        border-radius: 0;
+      }
+
+      .historio-modal-header {
+        min-height: 74px;
+        padding: 9px 11px;
+      }
+
+      .historio-modal-title span {
+        display: none;
+      }
+
+      .historio-external-link,
+      .historio-close-button {
+        padding: 8px 10px;
+        font-size: 0.75rem;
+      }
+    }
+
   </style>
 </head>
 
@@ -387,17 +630,43 @@
 
   <section class="hero">
     <div class="hero-inner">
-      <span class="hero-kicker">تاريخ المغرب • وثائق • أبحاث موثقة</span>
 
-      <h1>بوابة البحوث التاريخية</h1>
+      <div class="hero-content">
+        <span class="hero-kicker">تاريخ المغرب • وثائق • أبحاث موثقة</span>
 
-      <p>
-        موقع يجمع الأبحاث والوثائق التاريخية المتعلقة بالمغرب، مع عناية خاصة
-        بقضايا الدولة، السيادة، الحدود، الشخصيات، والعلاقات الدبلوماسية
-        عبر نصوص موثقة ومواد أرشيفية منتقاة.
-      </p>
+        <h1>بوابة البحوث التاريخية</h1>
 
-      <div class="hero-line"></div>
+        <p>
+          موقع يجمع الأبحاث والوثائق التاريخية المتعلقة بالمغرب، مع عناية خاصة
+          بقضايا الدولة، السيادة، الحدود، الشخصيات، والعلاقات الدبلوماسية
+          عبر نصوص موثقة ومواد أرشيفية منتقاة.
+        </p>
+
+        <div class="hero-line"></div>
+      </div>
+
+      <aside class="historio-access" aria-label="محرك البحث عن الكتب التاريخية">
+        <div class="historio-access-icon" aria-hidden="true">📚</div>
+
+        <span class="historio-access-label">مكتبة رقمية مجانية</span>
+
+        <h2>ابحث عن الكتب والوثائق التاريخية</h2>
+
+        <p>
+          تصفح الكتب التاريخية المجانية والوثائق بصيغة PDF
+          من عدة مكتبات ومصادر رقمية.
+        </p>
+
+        <button
+          type="button"
+          class="historio-open-button"
+          id="openHistorio"
+        >
+          فتح محرك البحث
+          <span aria-hidden="true">⌕</span>
+        </button>
+      </aside>
+
     </div>
   </section>
 
@@ -666,6 +935,102 @@
     <strong>بوابة البحوث التاريخية والوثائق الأرشيفية</strong><br>
     موقع مخصص لتجميع البحوث والوثائق التاريخية المتعلقة بالمغرب.
   </footer>
+
+
+  <!-- Fenêtre Historio PDF -->
+  <div
+    class="historio-modal"
+    id="historioModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="historioModalTitle"
+    aria-hidden="true"
+  >
+    <div class="historio-modal-window">
+
+      <div class="historio-modal-header">
+        <div class="historio-modal-title">
+          <strong id="historioModalTitle">
+            Historio PDF – محرك البحث التاريخي
+          </strong>
+          <span>ابحث في الكتب التاريخية والوثائق المجانية</span>
+        </div>
+
+        <div class="historio-modal-actions">
+          <a
+            href="https://histobook.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="historio-external-link"
+          >
+            فتح في صفحة مستقلة ↗
+          </a>
+
+          <button
+            type="button"
+            class="historio-close-button"
+            id="closeHistorio"
+            aria-label="إغلاق النافذة"
+          >
+            إغلاق ✕
+          </button>
+        </div>
+      </div>
+
+      <iframe
+        id="historioFrame"
+        class="historio-frame"
+        title="Historio PDF"
+        data-src="https://histobook.netlify.app/"
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+      ></iframe>
+
+    </div>
+  </div>
+
+  <script>
+    const openHistorioButton = document.getElementById("openHistorio");
+    const closeHistorioButton = document.getElementById("closeHistorio");
+    const historioModal = document.getElementById("historioModal");
+    const historioFrame = document.getElementById("historioFrame");
+
+    function openHistorioModal() {
+      if (!historioFrame.getAttribute("src")) {
+        historioFrame.setAttribute("src", historioFrame.dataset.src);
+      }
+
+      historioModal.classList.add("is-open");
+      historioModal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      closeHistorioButton.focus();
+    }
+
+    function closeHistorioModal() {
+      historioModal.classList.remove("is-open");
+      historioModal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      openHistorioButton.focus();
+    }
+
+    openHistorioButton.addEventListener("click", openHistorioModal);
+    closeHistorioButton.addEventListener("click", closeHistorioModal);
+
+    historioModal.addEventListener("click", function (event) {
+      if (event.target === historioModal) {
+        closeHistorioModal();
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (
+        event.key === "Escape" &&
+        historioModal.classList.contains("is-open")
+      ) {
+        closeHistorioModal();
+      }
+    });
+  </script>
 
 </body>
 </html>

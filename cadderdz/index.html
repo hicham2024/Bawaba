@@ -29,7 +29,7 @@
     .topnav a:hover,.topnav a.active{ color:#fff; background:rgba(255,255,255,.045) }
     .topnav a.active::after{ background:var(--gold) }
     .hero{ position:relative; min-height:650px; overflow:hidden; isolation:isolate; background:var(--green-950); border-bottom:4px solid var(--gold) }
-    .hero::before{ content:""; position:absolute; inset:0; z-index:-3; background-image:url("images/hero-cadderdz-v2.jpg"); background-size:cover; background-position:center; background-repeat:no-repeat }
+    .hero::before{ content:""; position:absolute; inset:0; z-index:-3; background-image:url("images/hero-cadderdz-v2.png"); background-size:cover; background-position:center; background-repeat:no-repeat }
     .hero::after{ content:""; position:absolute; inset:0; z-index:-2; background:rgba(8,44,40,.12) }
     .hero-inner{ width:min(1320px,calc(100% - 64px)); min-height:580px; margin:auto; display:grid; grid-template-columns:minmax(340px,.72fr) minmax(560px,.98fr); align-items:center }
     header.title{ grid-column:1; max-width:790px; padding:70px 18px 112px 0; color:#fff; text-align:center }
@@ -42,7 +42,7 @@
     .toolbar{ display:flex; justify-content:center; margin-top:25px }
     .toolbar .btn{ border:1px solid rgba(231,197,111,.7); color:#fff; background:rgba(255,255,255,.06); padding:.58rem 1.15rem; border-radius:999px; cursor:pointer; font-family:inherit; font-size:.92rem }
     .toolbar .btn:hover{ color:var(--green-950); background:var(--gold-soft) }
-    .hero-nav{ position:absolute; right:50%; bottom:0; width:min(960px,calc(100% - 64px)); transform:translateX(50%); display:grid; grid-template-columns:repeat(6,1fr); background:rgba(9,44,40,.94); border:1px solid rgba(211,171,82,.76); border-bottom:0 }
+    .hero-nav{ position:absolute; right:50%; bottom:0; width:min(1080px,calc(100% - 64px)); transform:translateX(50%); display:grid; grid-template-columns:repeat(7,1fr); background:rgba(9,44,40,.94); border:1px solid rgba(211,171,82,.76); border-bottom:0 }
     .hero-nav a{ position:relative; min-height:66px; display:grid; place-items:center; padding:10px 8px; color:rgba(255,255,255,.86); text-align:center; text-decoration:none; font-size:14px; font-weight:700; border-inline-start:1px solid rgba(211,171,82,.35) }
     .hero-nav a:last-child{ border-inline-start:0 }
     .hero-nav a::after{ content:""; position:absolute; inset:auto 16px 0; height:4px; background:transparent }
@@ -113,7 +113,7 @@
     <div class="topbar-inner">
       <a class="brand" href="#page-top">بوابة البحوث التاريخية</a>
       <nav class="topnav" aria-label="التنقل الرئيسي">
-        <a href="#intro" class="active">المدخل</a><a href="#sec-1">المعاهدات</a><a href="#sec-2">السلاح</a><a href="#sec-3">الرواتب</a><a href="#sec-6">الاستسلام</a><a href="#sec-8">المغرب</a><a href="#footnotes">المصادر</a>
+        <a href="#intro" class="active">المدخل</a><a href="#sec-1">المعاهدات</a><a href="#sec-2">السلاح</a><a href="#sec-3">الرواتب</a><a href="#sec-6">الاستسلام</a><a href="#sec-8">المغرب</a><a href="#sec-10">بريطانيا وطنجة</a><a href="#footnotes">المصادر</a>
       </nav>
     </div>
   </header>
@@ -129,7 +129,7 @@
       </header>
     </div>
     <nav class="hero-nav print-hide" aria-label="فهرس الدراسة">
-      <a href="#intro" class="active">المدخل</a><a href="#sec-1">المعاهدات</a><a href="#sec-2">السلاح</a><a href="#sec-3">الرواتب</a><a href="#sec-6">الاستسلام</a><a href="#footnotes">المصادر</a>
+      <a href="#intro" class="active">المدخل</a><a href="#sec-1">المعاهدات</a><a href="#sec-2">السلاح</a><a href="#sec-3">الرواتب</a><a href="#sec-6">الاستسلام</a><a href="#sec-10">بريطانيا وطنجة</a><a href="#footnotes">المصادر</a>
     </nav>
   </section>
   <main class="article-shell">
@@ -320,7 +320,7 @@
       <p class="keyline"><strong>خلاصة صارمة:</strong> الوثيقة تُثبت توجّهًا انقلابيًا لدى عبد القادر ضد السلطان الذي أحسن إليه وحمى ظهره سياسيًا وعسكريًا.</p>
     </section>
 
-    <section id="sec-10">
+    <section id="sec-9">
       <h2>9) مراسلة مع حاكم مليلية الإسبانية — نقل معلومات وإخضاع الريف</h2>
       <p>
         يُفيد نص الرسالة المنشور لدى ميكيل دو إيبالزا أن عبد القادر كان يتخابر مع الحاكم العسكري لمليلية الخاضعة للاحتلال الإسباني، ويزوّده بمعلومات عن قبائل الريف، بل ويضغط لإخضاع بعضها خدمةً لمصالح المحتل. وهذا يعني عمليًا التجسس على السلطان عبد الرحمن بن هشام وإعانة خصومه الإقليميين.
@@ -331,6 +331,22 @@
         <figcaption>الوثيقة الحادية عشرة: رسالة عبد القادر إلى حاكم مليلية دو بينيتو (عن: ميكيل دو إيبالزا).</figcaption>
       </figure>
       <p class="keyline"><strong>خلاصة صارمة:</strong> المراسلة تُظهر تعمّد نقل معلومات حسّاسة وإرادة إخضاع قبائل مغربية لصالح قوة أجنبية محتلة.</p>
+    </section>
+
+    <section id="sec-10">
+      <h2>10) مشروع التحالف مع بريطانيا لقلب السلطان والتنازل عن طنجة</h2>
+      <p>
+        يورد أشيل فيلياس في كتابه <em lang="fr">L’Espagne et le Maroc en 1860</em> أن بريطانيا غيّرت خططها بعد هزيمة عبد القادر، ووجّهت طموحه وعرضت عليه خدماتها. ووفق رواية المؤلف، تصوّر عبد القادر مشروع قلب السلطان عبد الرحمن بن هشام، على أن يتنازل لبريطانيا عن ميناء طنجة الذي كانت تطمع فيه، وأن يصبح حليفًا قويًا لها إذا تمكّن من السيطرة على الإمبراطورية المغربية.
+        <a id="ref22"></a><a href="#fn22" class="footnote-ref"><sup>²²</sup></a>
+      </p>
+      <blockquote>
+        «بعد هزيمة عبد القادر، غيّرت إنجلترا خططها فورًا، ووجّهت طموح الأمير وقدّمت له خدماتها الحسنة. وعندها تصوّر عبد القادر مشروع قلب عبد الرحمن. فإذا أصبح سيدًا على الإمبراطورية، فإنه سيتنازل لبريطانيا عن ميناء طنجة إن كانت تطمع فيه، وسيصبح لها حليفًا قويًا».
+      </blockquote>
+      <figure class="doc-figure">
+        <img src="images/fillias-tangier-britain.png" alt="صفحتا 8 و9 من كتاب أشيل فيلياس مع تظليل المقطع المتعلق ببريطانيا وميناء طنجة">
+        <figcaption>أشيل فيلياس، <em lang="fr">L’Espagne et le Maroc en 1860</em>، باريس، 1860، ص 8–9؛ المقطع المظلّل يورد مشروع قلب السلطان والتنازل لبريطانيا عن ميناء طنجة.</figcaption>
+      </figure>
+      <p class="keyline"><strong>الدلالة:</strong> ينسب هذا المصدر المعاصر إلى عبد القادر مشروع صفقة سياسية مع قوة أجنبية تقوم على إسقاط سلطان المغرب ومكافأة بريطانيا بميناء طنجة مقابل دعمها وتحالفها.</p>
     </section>
 
     <div class="hr" role="separator" aria-hidden="true"></div>
@@ -363,9 +379,10 @@
         <li id="fn16">Bruno Étienne, <em>Abd el-Kader</em>, Hachette, 1994, p. 87 (الانتماء الماسوني). <a href="#ref16" class="back-ref">↩︎</a></li>
         <li id="fn17">Archives diplomatiques françaises — Reçus de la consulat (Bourse)، منذ مارس 1853: إيصالات راتب عبد القادر (100,000 فرنك سنويًا). <a href="#ref17" class="back-ref">↩︎</a></li>
         <li id="fn18">Jacques Frémeaux, <em>Abd el-Kader, chef de guerre (1832–1847)</em> — رفع المعاش إلى 150,000 فرنك سنويًا عقب أحداث دمشق 1860. <a href="#ref18" class="back-ref">↩︎</a></li>
-        <li id="fn19">Achille Fillias، 1860 — محاولة الانقلاب على السلطان المغربي عبد الرحمن (تفاصيل ببليوغرافية تُستكمل). <a href="#ref19" class="back-ref">↩︎</a></li>
+        <li id="fn19">Achille Étienne Fillias, <em>L’Espagne et le Maroc en 1860</em>, Paris, Poulet-Malassis et De Broise, 1860, pp. 165–166. <a href="#ref19" class="back-ref">↩︎</a></li>
         <li id="fn20">BnF — Gallica، Fonds Franc-maçonnerie: مراسلة محفل «هنري الرابع» بوصفها دليلًا على الانتماء الماسوني. <a href="#ref20" class="back-ref">↩︎</a></li>
         <li id="fn21">ميكيل دو إيبالزا، «الجديد في علاقات عبد القادر مع إسبانيا وحُكامها العسكريين بمليلية» (تعريب: يحيى بوعزيز)، الوثيقة الحادية عشرة: «رسالة عبد القادر إلى حاكم مليلية دو بينيتو». <a href="#ref21" class="back-ref">↩︎</a></li>
+        <li id="fn22">Achille Étienne Fillias, <em>L’Espagne et le Maroc en 1860</em>, Paris, Poulet-Malassis et De Broise, 1860, pp. 8–9. <a href="#ref22" class="back-ref">↩︎</a></li>
       </ol>
     </section>
 
@@ -378,6 +395,7 @@
         <li>يحيى بوعزيز، <em>كفاح الجزائر من خلال الوثائق</em>.</li>
         <li>Bruno Étienne, <em>Abd el-Kader</em>, Hachette, 1994.</li>
         <li>Jacques Frémeaux, <em>Abd el-Kader, chef de guerre (1832–1847)</em>.</li>
+        <li>Achille Étienne Fillias, <em>L’Espagne et le Maroc en 1860</em>, Paris, Poulet-Malassis et De Broise, 1860.</li>
         <li>BnF — Gallica، Fonds Franc-maçonnerie (محفل «هنري الرابع»).</li>
         <li>وثائق مراسلة حاكم مليلية (الأرشيف الإسباني/مليلية) — تفاصيل تُستكمل.</li>
       </ul>

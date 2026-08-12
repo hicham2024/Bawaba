@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>عبد القادر: من "بطل قومي" إلى حليف فرنسا – قراءة موثَّقة</title>
+  <style>
+    :root{
+      --green-950:#082c28; --green-900:#103d37; --green-800:#165148;
+      --gold:#c79a3b; --gold-soft:#e7c56f; --burgundy:#762f2d;
+      --ivory:#fffdf8; --paper:#f8f1e5; --sand:#eee1cb; --ink:#292b28;
+      --muted:#66655f; --border:#ded0b8; --shadow:0 22px 60px rgba(43,34,19,.12);
+    }
+    *{ box-sizing:border-box }
+    html{ scroll-behavior:smooth; scroll-padding-top:78px }
+    html,body{ min-height:100% }
+    body{
+      margin:0; background:#eee9df; color:var(--ink);
+      font-family:Tahoma,"Noto Naskh Arabic",Arial,sans-serif; line-height:1.95; font-size:1.08rem;
+      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    }
+    a{ color:inherit }
+    .topbar{ position:sticky; top:0; z-index:50; height:66px; background:var(--green-950); border-bottom:1px solid rgba(231,197,111,.35) }
+    .topbar-inner{ width:min(1320px,calc(100% - 64px)); height:100%; margin:auto; display:flex; align-items:center; justify-content:space-between; gap:28px }
+    .brand{ color:#fff; text-decoration:none; font-size:17px; font-weight:800; white-space:nowrap }
+    .topnav{ height:100%; display:flex; align-items:stretch; gap:2px }
+    .topnav a{ position:relative; display:grid; place-items:center; padding:0 13px; color:rgba(255,255,255,.72); text-decoration:none; font-size:13px; transition:.18s ease }
+    .topnav a::after{ content:""; position:absolute; inset:auto 12px 0; height:3px; background:transparent }
+    .topnav a:hover,.topnav a.active{ color:#fff; background:rgba(255,255,255,.045) }
+    .topnav a.active::after{ background:var(--gold) }
+    .hero{ position:relative; min-height:650px; overflow:hidden; isolation:isolate; background:var(--green-950); border-bottom:4px solid var(--gold) }
+    .hero::before{ content:""; position:absolute; inset:0; z-index:-3; background-image:url("images/hero-cadderdz-v2.jpg"); background-size:cover; background-position:center; background-repeat:no-repeat }
+    .hero::after{ content:""; position:absolute; inset:0; z-index:-2; background:rgba(8,44,40,.12) }
+    .hero-inner{ width:min(1320px,calc(100% - 64px)); min-height:580px; margin:auto; display:grid; grid-template-columns:minmax(340px,.72fr) minmax(560px,.98fr); align-items:center }
+    header.title{ grid-column:1; max-width:790px; padding:70px 18px 112px 0; color:#fff; text-align:center }
+    .eyebrow{ margin:0 0 14px; color:var(--gold-soft); font-size:19px; font-weight:800 }
+    .ornament-line{ display:block; width:196px; height:1px; margin:0 auto 28px; background:var(--gold) }
+    h1{ margin:0; font-size:clamp(42px,4.3vw,68px); line-height:1.42; letter-spacing:-.02em; text-shadow:0 3px 22px rgba(0,0,0,.34) }
+    .subtitle{ margin-top:26px; color:rgba(255,255,255,.86); font-size:18px }
+    .subtitle strong{ color:var(--gold-soft) }
+    .hero-summary{ max-width:720px; margin:20px auto 0; color:rgba(255,255,255,.78); font-size:16px; line-height:1.85 }
+    .toolbar{ display:flex; justify-content:center; margin-top:25px }
+    .toolbar .btn{ border:1px solid rgba(231,197,111,.7); color:#fff; background:rgba(255,255,255,.06); padding:.58rem 1.15rem; border-radius:999px; cursor:pointer; font-family:inherit; font-size:.92rem }
+    .toolbar .btn:hover{ color:var(--green-950); background:var(--gold-soft) }
+    .hero-nav{ position:absolute; right:50%; bottom:0; width:min(960px,calc(100% - 64px)); transform:translateX(50%); display:grid; grid-template-columns:repeat(6,1fr); background:rgba(9,44,40,.94); border:1px solid rgba(211,171,82,.76); border-bottom:0 }
+    .hero-nav a{ position:relative; min-height:66px; display:grid; place-items:center; padding:10px 8px; color:rgba(255,255,255,.86); text-align:center; text-decoration:none; font-size:14px; font-weight:700; border-inline-start:1px solid rgba(211,171,82,.35) }
+    .hero-nav a:last-child{ border-inline-start:0 }
+    .hero-nav a::after{ content:""; position:absolute; inset:auto 16px 0; height:4px; background:transparent }
+    .hero-nav a:hover,.hero-nav a.active{ color:#f3cb70; background:rgba(255,255,255,.04) }
+    .hero-nav a.active::after{ background:var(--gold) }
+    .article-shell{ background:var(--ivory); border-top:1px solid #fff }
+    .page{ width:min(1120px,calc(100% - 64px)); margin:auto; padding:42px 0 90px }
+    .page>section{ position:relative; padding:54px 0 32px; scroll-margin-top:76px }
+    .page>section+section{ border-top:1px solid #e4dbc9 }
+    #intro{ padding-top:22px }
+    #intro p{ margin:0; padding:34px 44px; background:var(--paper); border-inline-start:5px solid var(--gold); border-radius:14px; font-size:19px; line-height:2.12 }
+    h2{ display:grid; grid-template-columns:auto 1fr; align-items:end; gap:24px; margin:0 0 30px; color:var(--burgundy); font-size:clamp(29px,3vw,41px); line-height:1.4 }
+    h2::after{ content:""; height:1px; margin-bottom:10px; background:var(--gold) }
+    h3{ display:flex; align-items:center; gap:12px; margin:36px 0 15px; color:var(--green-900); font-size:23px; line-height:1.55 }
+    p{ margin:.85rem 0; text-align:justify; font-size:18px; line-height:2.08 }
+    blockquote{ position:relative; margin:22px 0; padding:25px 34px; color:#3d3428; background:#f1e6d3; border:0; border-inline-start:4px solid var(--burgundy); font-size:19px; font-style:normal }
+    blockquote::before{ content:"“"; position:absolute; left:18px; top:0; color:rgba(118,47,45,.2); font:700 62px/1 Georgia,serif }
+    .doc-figure{ width:min(760px,100%); margin:30px auto; padding:14px; text-align:center; background:#f5eddf; border:1px solid var(--border); box-shadow:0 12px 35px rgba(52,39,20,.08) }
+    .doc-figure img{ display:block; max-width:100%; max-height:720px; width:auto; height:auto; margin:auto; border:1px solid #cdbd9f; background:#fff; object-fit:contain }
+    .doc-figure figcaption{ color:var(--muted); font-size:15px; line-height:1.7; margin-top:11px }
+    .fig-grid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px; align-items:start }
+    .fig-grid .doc-figure{ width:100%; margin:28px 0 }
+    .hr{ height:1px; background:var(--border); margin:2rem 0 }
+    a.footnote-ref{ text-decoration:none; color:var(--burgundy); font-weight:800 }
+    a.back-ref{ text-decoration:none; color:var(--burgundy); margin-inline-start:.5rem }
+    .keyline{ margin:28px 0 8px; padding:24px 28px; color:#f7f3e9; background:var(--green-900); border:0; border-inline-end:5px solid var(--gold); border-radius:0 }
+    .keyline strong{ color:#f0c870 }
+    mark.hl{ background:#ffe89e; padding:.1rem .2rem }
+    #conclusion{ margin-top:38px; padding:48px 52px 40px; color:#f9f4e9; background:var(--green-950); border-top:4px solid var(--gold) }
+    #conclusion h2{ color:var(--gold-soft) }
+    #conclusion h2::after{ background:rgba(231,197,111,.55) }
+    #conclusion p{ margin-bottom:0 }
+    .footnotes,.refs{ margin-top:0 }
+    .footnotes ol,.refs ul{ margin:0; padding-inline-start:28px }
+    .footnotes li,.refs li{ margin:.55rem 0; padding-inline-start:6px; font-size:16px; line-height:1.9 }
+    .footer{ padding:48px max(32px,calc((100vw - 1120px)/2)); color:rgba(255,255,255,.72); background:#072723; border-top:4px solid var(--gold); font-size:15px; line-height:1.9 }
+    .footer strong{ color:var(--gold-soft) }
+    @media print{
+      body{ background:#fff; color:#000 }
+      .print-hide{ display:none !important }
+      .topbar,.hero-nav,.toolbar{ display:none!important }
+      .hero{ min-height:0; background:#fff; border:0 }
+      .hero::before,.hero::after{ display:none }
+      .hero-inner{ min-height:0; display:block }
+      header.title{ max-width:none; padding:0 0 20px; color:#000 }
+      .eyebrow,.hero-summary{ color:#333 }
+      .page{ padding:0; width:100% }
+      a{ color:#000; text-decoration:none }
+      .doc-figure img{ border-color:#ccc }
+      h1{ font-size:1.65rem }
+      h2{ font-size:1.25rem }
+      h3{ font-size:1.05rem }
+      .footnotes{ page-break-before:always }
+      blockquote{ background:#f6f6f6; -webkit-print-color-adjust:exact; print-color-adjust:exact }
+    }
+    @media(max-width:1020px){
+      .topbar{ height:auto }.topbar-inner{ width:100%; flex-direction:column; align-items:stretch; gap:0 }.brand{ padding:14px 22px 10px }.topnav{ height:46px; overflow-x:auto; border-top:1px solid rgba(255,255,255,.08); scrollbar-width:none }.topnav a{ flex:0 0 auto; padding:0 15px }
+      .hero-inner{ width:min(940px,calc(100% - 48px)); grid-template-columns:1fr }.hero::before{ background-size:cover; background-position:center; opacity:.5 }.hero::after{ background:rgba(8,44,40,.74) } header.title{ max-width:800px; margin:auto; padding-inline:0 }
+    }
+    @media(max-width:720px){
+      html{ scroll-padding-top:108px }.hero{ min-height:720px }.hero-inner{ width:calc(100% - 36px); min-height:630px } header.title{ padding:48px 0 130px }.eyebrow{ font-size:16px } h1{ font-size:clamp(36px,10vw,50px) }.subtitle{ font-size:16px }.hero-summary{ font-size:14px }.hero-nav{ width:calc(100% - 24px); display:flex; overflow-x:auto; scrollbar-width:none }.hero-nav a{ min-width:145px }
+      .page{ width:calc(100% - 36px); padding-top:30px }.page>section{ padding:42px 0 24px } #intro p{ padding:28px 24px; font-size:17px } h2{ grid-template-columns:1fr; gap:10px; font-size:29px } h2::after{ margin:0 } h3{ font-size:21px } p,blockquote{ font-size:17px; line-height:2 }.fig-grid{ grid-template-columns:1fr }.doc-figure{ padding:9px }.keyline{ padding:22px 20px } #conclusion{ margin-inline:-18px; padding:40px 18px 28px }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar print-hide">
+    <div class="topbar-inner">
+      <a class="brand" href="#page-top">بوابة البحوث التاريخية</a>
+      <nav class="topnav" aria-label="التنقل الرئيسي">
+        <a href="#intro" class="active">المدخل</a><a href="#sec-1">المعاهدات</a><a href="#sec-2">السلاح</a><a href="#sec-3">الرواتب</a><a href="#sec-6">الاستسلام</a><a href="#sec-8">المغرب</a><a href="#footnotes">المصادر</a>
+      </nav>
+    </div>
+  </header>
+  <section class="hero" id="page-top">
+    <div class="hero-inner">
+      <header class="title">
+        <p class="eyebrow">قراءة تاريخية موثَّقة</p>
+        <span class="ornament-line" aria-hidden="true"></span>
+        <h1>عبد القادر: من «بطل قومي» إلى حليف فرنسا</h1>
+        <div class="subtitle">ورقة بحثية من إعداد <strong>ولد صنهاجة</strong></div>
+        <p class="hero-summary">قراءة نقدية تستند إلى المعاهدات والرسائل والمذكّرات والأرشيف الفرنسي والمصادر الجزائرية.</p>
+        <div class="toolbar print-hide"><button class="btn" onclick="window.print()">طباعة الدراسة</button></div>
+      </header>
+    </div>
+    <nav class="hero-nav print-hide" aria-label="فهرس الدراسة">
+      <a href="#intro" class="active">المدخل</a><a href="#sec-1">المعاهدات</a><a href="#sec-2">السلاح</a><a href="#sec-3">الرواتب</a><a href="#sec-6">الاستسلام</a><a href="#footnotes">المصادر</a>
+    </nav>
+  </section>
+  <main class="article-shell">
+  <div class="page">
+
+    <section id="intro">
+      <p>
+        تَرسَّخ في الذاكرة الرسمية الجزائرية أنّ عبد القادر هو «بطل المقاومة ضد فرنسا» ورمز الكفاح الوطني. غير أنّ مراجعة الوثائق الأصلية – من معاهدات ورسائل ومذكّرات، إضافةً إلى الأرشيف الفرنسي ومصادر جزائرية كـ <em>تحفة الزائر</em> و<em>حياة الأمير</em> – تكشف صورةً مغايرة: معاهدات اعتراف بالسيادة الفرنسية، طلبُ السلاح من باريس لقتال جزائريين رافضين بيعته، استسلامٌ طوعي سنة 1847، ثم معاشات وأوسمة ورعاية من نابوليون الثالث، وصولًا إلى انخراطٍ في المحافل الماسونية.
+      </p>
+    </section>
+
+    <div class="hr" role="separator" aria-hidden="true"></div>
+
+    <section id="sec-1">
+      <h2>1) معاهدات الاعتراف بالسيادة الفرنسية</h2>
+
+      <h3>أ. معاهدة دي ميشيل (1834)</h3>
+      <p>
+        نصّت على وقف القتال، واعتراف عبد القادر بسيطرة فرنسا على وهران وموانئها، والسماح بوجود قناصل فرنسيين<a id="ref1"></a><a href="#fn1" class="footnote-ref"><sup>¹</sup></a>.
+      </p>
+      <figure class="doc-figure">
+        <img src="images/de-michel-treaty.jpg" alt="صورة من معاهدة دي ميشيل (1834)">
+        <figcaption>صورة وثائقية: معاهدة دي ميشيل (1834).</figcaption>
+      </figure>
+
+      <h3>ب. معاهدة التافنة (1837)</h3>
+      <p>
+        أقرّ عبد القادر صراحة بسيادة فرنسا على الجزائر، مقابل اعترافٍ بسلطته على الداخل<a id="ref2"></a><a href="#fn2" class="footnote-ref"><sup>²</sup></a>.
+      </p>
+      <figure class="doc-figure">
+        <img src="images/tafna-treaty.jpg" alt="صورة من معاهدة التافنة (1837)">
+        <figcaption>وثيقة: معاهدة التافنة (1837) بين عبد القادر والجنرال بوجو.</figcaption>
+      </figure>
+
+      <h3>ج. شهادة من <em>تحفة الزائر</em></h3>
+      <blockquote>
+        «ارتضى والدي الصلح مع الفرنسيين على أن يتركوا له ما وراء متيجة والتيطري.»
+      </blockquote>
+      <p>
+        يورد محمد بن عبد القادر هذا النص صريحًا حول نطاق الصلح وتقاسُم النفوذ<a id="ref3"></a><a href="#fn3" class="footnote-ref"><sup>³</sup></a>.
+      </p>
+      <p class="keyline"><strong>الخلاصة:</strong> تُسقط هذه النصوص فكرة «رفض السيادة الفرنسية رفضًا مطلقًا»؛ إذ كان الاعتراف بها جزءًا من براغماتية عبد القادر.</p>
+    </section>
+
+    <section id="sec-2">
+      <h2>2) طلب السلاح من فرنسا لقمع الجزائريين</h2>
+      <blockquote>
+        «نحب عندك نحو 300 مكحلة لاستعداد العسكر لأخذ الثأر من هؤلاء الخوارج، وبارود وسلطان.»
+      </blockquote>
+      <p>
+        ورد ذلك في رسالة إلى الجنرال دي ميشيل، حيث طلب 300 بندقية لا لقتال الفرنسيين بل لقمع قبائل جزائرية<a id="ref4"></a><a href="#fn4" class="footnote-ref"><sup>⁴</sup></a>.
+      </p>
+      <blockquote>
+        «قد وصلتنا البنادق والمدافع التي وعدتمونا بها، وقد استعملناها في قتال العصاة.»
+      </blockquote>
+      <p>
+        يُقرّ عبد القادر في رسالة شكر لاحقة بوصول السلاح الفرنسي واستعماله ضد «العصاة» من الجزائريين<a id="ref5"></a><a href="#fn5" class="footnote-ref"><sup>⁵</sup></a>.
+      </p>
+      <p>
+        وخلال حصار الزاوية التيجانية، أشار صراحةً: «قد حصلنا من الفرنسيين على ثلاثة مدافع، وهي الآن معنا في الحصار.»<a id="ref6"></a><a href="#fn6" class="footnote-ref"><sup>⁶</sup></a>
+      </p>
+      <figure class="doc-figure">
+        <img src="images/emir-letter.jpg" alt="رسالة بخط عبد القادر">
+        <figcaption>صورة: رسالة بخط عبد القادر ضمن مراسلاته العسكرية.</figcaption>
+      </figure>
+      <div class="hr" role="separator" aria-hidden="true"></div>
+    </section>
+
+    <section id="sec-3">
+      <h2>3) الرواتب والأوسمة</h2>
+      <p>
+        يذكر يحيى بوعزيز «تخصيص معاش دائم لعبد القادر وأسرته من الحكومة الفرنسية»<a id="ref7"></a><a href="#fn7" class="footnote-ref"><sup>⁷</sup></a>.
+      </p>
+      <blockquote>
+        «أخذتُ عليّ فرنسا عهدًا أن ترعاني وأهلي، وقد أوفت بما وعدت.»
+      </blockquote>
+      <p>
+        يرد هذا التصريح في <em>حياة الأمير</em> مؤكِّدًا طبيعة الرعاية الفرنسية<a id="ref8"></a><a href="#fn8" class="footnote-ref"><sup>⁸</sup></a>.
+      </p>
+      <figure class="doc-figure">
+        <img src="images/legion-dhonneur.jpg" alt="وسام جوقة الشرف">
+        <figcaption>وسام «جوقة الشرف» الفرنسي الذي ناله عبد القادر.</figcaption>
+      </figure>
+      <p>
+        عند الإفراج عنه (1852) كان راتب عبد القادر من الحكومة الفرنسية <strong>100,000 فرنك سنويًا</strong>، وهو مثبت بوثائق أرشيفية (إيصالات القنصلية في البورصة ابتداءً من مارس 1853)
+        <a id="ref17"></a><a href="#fn17" class="footnote-ref"><sup>¹⁷</sup></a>.
+        لاحقًا، رُفع المعاش إلى <strong>150,000 فرنك سنويًا</strong> بعد أحداث دمشق سنة 1860
+        <a id="ref18"></a><a href="#fn18" class="footnote-ref"><sup>¹⁸</sup></a>.
+      </p>
+      <p class="keyline"><strong>الخلاصة:</strong> انتقالٌ من عدوّ لدود إلى مكرَّمٍ ومُراعى برعاية باريس.</p>
+    </section>
+
+    <section id="sec-4">
+      <h2>4) إقامة أمبواز: قصر لا سجن</h2>
+      <blockquote>
+        «لم يكن أسيرًا في زنزانة، بل نزيل قصر تاريخي، يلتقي الوفود ويستقبل العلماء.»
+      </blockquote>
+      <p>
+        هكذا وصف بول أزان فترة أمبواز<a id="ref10"></a><a href="#fn10" class="footnote-ref"><sup>¹⁰</sup></a>.
+      </p>
+      <blockquote>
+        «أقاموني في دار عظيمة بأمبواز، فوجدنا فيها من أسباب الراحة ما لم نعهده في ديارنا.»
+      </blockquote>
+      <p>
+        ويؤكِّد <em>حياة الأمير</em> وفرة أسباب الراحة خلال الإقامة<a id="ref11"></a><a href="#fn11" class="footnote-ref"><sup>¹¹</sup></a>.
+      </p>
+      <figure class="doc-figure">
+        <img src="images/amboise-castle.jpg" alt="قصر أمبواز">
+        <figcaption>قصر أمبواز حيث أقام عبد القادر مع عائلته.</figcaption>
+      </figure>
+      <p class="keyline"><strong>الخلاصة:</strong> لم تُعامِل فرنسا عبد القادر كأسير حرب، بل كـ«رأس مال رمزي» يُوظَّف سياسيًا.</p>
+    </section>
+
+    <section id="sec-5">
+      <h2>5) رسائل الولاء إلى نابوليون الثالث</h2>
+      <blockquote>
+        «أدعو الله أن يثبّت مُلككم، ويجعل النصر حليفكم.»
+      </blockquote>
+      <p>
+        من مراسلات سنة 1855، وفيها عبارات دعاء وتأييد صريح<a id="ref12"></a><a href="#fn12" class="footnote-ref"><sup>¹²</sup></a>.
+      </p>
+      <blockquote>
+        «ملك قلبي.»
+      </blockquote>
+      <p>
+        وصفٌ يتجاوز حدود المجاملة الدبلوماسية<a id="ref13"></a><a href="#fn13" class="footnote-ref"><sup>¹³</sup></a>.
+      </p>
+      <figure class="doc-figure">
+        <img src="images/abd-napoleon-meeting.jpg" alt="لقاء نابوليون الثالث وعبد القادر">
+        <figcaption>لوحة فنية تُظهر لقاء نابوليون الثالث مع عبد القادر.</figcaption>
+      </figure>
+    </section>
+
+    <section id="sec-6">
+      <h2>6) الاستسلام الطوعي</h2>
+      <blockquote>
+        «لقد سلّمتُ نفسي طوعًا، غير نادمٍ ولن أندم، إذ لم تعد القبائل تطيع أمري.»
+      </blockquote>
+      <p>
+        نصٌّ صريح في <em>حياة الأمير</em> يؤكِّد طبيعة الاستسلام الطوعي سنة 1847<a id="ref14"></a><a href="#fn14" class="footnote-ref"><sup>¹⁴</sup></a>.
+      </p>
+      <p>
+        وفي خطاب الاستسلام إلى لاموريسيير: «أسلّم نفسي وسلاحي، على أن تضمنوا لي مقراً آمناً تحت رعاية فرنسا.»<a id="ref15"></a><a href="#fn15" class="footnote-ref"><sup>¹⁵</sup></a>
+      </p>
+      <div class="fig-grid">
+        <figure class="doc-figure">
+          <img src="images/abd-surrender-scene.jpg" alt="مشهد تسليم عبد القادر إلى لاموريسيير">
+          <figcaption>مشهد تسليم عبد القادر إلى الجنرال لاموريسيير (نقش صحفي معاصر).</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="images/surrender-letter.jpg" alt="خطاب استسلام عبد القادر">
+          <figcaption>وثيقة: خطاب استسلام عبد القادر إلى الجنرال لاموريسيير (1847).</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="sec-7">
+      <h2>7) الانتماء الماسوني</h2>
+      <p>
+        يذكر برونو إتيان أنّ عبد القادر «انتسب لمحفل ماسوني في الإسكندرية في ثلاثينيات القرن التاسع عشر، واحتُفي به أخًا حرًّا مقبولًا»<a id="ref16"></a><a href="#fn16" class="footnote-ref"><sup>¹⁶</sup></a>.
+      </p>
+      <p>
+        كما تتضمن محفوظات <abbr title="Bibliothèque nationale de France">BnF</abbr> — منصة <em>Gallica</em> — إشارات إلى مراسلات مرتبطة بمحفل «هنري الرابع»، بما يُعزّز القرائن حول علاقة عبد القادر بالبيئة الماسونية خلال إقامته في المشرق وأوروبا
+        <a id="ref20"></a><a href="#fn20" class="footnote-ref"><sup>²⁰</sup></a>.
+      </p>
+      <figure class="doc-figure">
+        <img src="images/gallica-henri-iv.jpg" alt="نشرة محفل هنري الرابع – Gallica (BnF)">
+        <figcaption>Gallica (BnF): «La loge Henri IV et l’émir Abd-el-Kader».</figcaption>
+      </figure>
+    </section>
+
+    <section id="sec-8">
+      <h2>8) محاولة الانقلاب على السلطان المغربي عبد الرحمن (1860)</h2>
+      <p>
+        تُظهر شواهد معاصرة، وعلى رأسها نص <span lang="fr">Achille Fillias</span> (1860)، أن عبد القادر خان إحسان السلطان عبد الرحمن بن هشام، إذ سعى إلى قلب الحكم في المغرب واستثمار التذمّر الشعبي لصالحه. وقد خاطر السلطان بمملكته وخاض حربًا ضروسًا مع فرنسا (إيسلي 1844) بعدما آوى عبد القادر؛ ومع ذلك، تشير صفحات فيلياس بوضوح إلى أن عبد القادر حاول توجيه السخط العام لاختراق السلطة وإزاحة السلطان.
+        <a id="ref19"></a><a href="#fn19" class="footnote-ref"><sup>¹⁹</sup></a>
+      </p>
+      <div class="fig-grid">
+        <figure class="doc-figure">
+          <img src="images/fillias-165.jpg" alt="Achille Fillias, 1860 – صفحة 165">
+          <figcaption>Achille Fillias (1860)، ص 165.</figcaption>
+        </figure>
+        <figure class="doc-figure">
+          <img src="images/fillias-166.jpg" alt="Achille Fillias, 1860 – صفحة 166">
+          <figcaption>Achille Fillias (1860)، ص 166.</figcaption>
+        </figure>
+      </div>
+      <p class="keyline"><strong>خلاصة صارمة:</strong> الوثيقة تُثبت توجّهًا انقلابيًا لدى عبد القادر ضد السلطان الذي أحسن إليه وحمى ظهره سياسيًا وعسكريًا.</p>
+    </section>
+
+    <section id="sec-10">
+      <h2>9) مراسلة مع حاكم مليلية الإسبانية — نقل معلومات وإخضاع الريف</h2>
+      <p>
+        يُفيد نص الرسالة المنشور لدى ميكيل دو إيبالزا أن عبد القادر كان يتخابر مع الحاكم العسكري لمليلية الخاضعة للاحتلال الإسباني، ويزوّده بمعلومات عن قبائل الريف، بل ويضغط لإخضاع بعضها خدمةً لمصالح المحتل. وهذا يعني عمليًا التجسس على السلطان عبد الرحمن بن هشام وإعانة خصومه الإقليميين.
+        <a id="ref21"></a><a href="#fn21" class="footnote-ref"><sup>²¹</sup></a>
+      </p>
+      <figure class="doc-figure">
+        <img src="images/epalza-melilla-letter.png" alt="رسالة إلى حاكم مليلية — ميكيل دو إيبالزا (وثيقة 11)">
+        <figcaption>الوثيقة الحادية عشرة: رسالة عبد القادر إلى حاكم مليلية دو بينيتو (عن: ميكيل دو إيبالزا).</figcaption>
+      </figure>
+      <p class="keyline"><strong>خلاصة صارمة:</strong> المراسلة تُظهر تعمّد نقل معلومات حسّاسة وإرادة إخضاع قبائل مغربية لصالح قوة أجنبية محتلة.</p>
+    </section>
+
+    <div class="hr" role="separator" aria-hidden="true"></div>
+
+    <section id="conclusion">
+      <h2>خاتمة: بين الأسطورة والوثيقة</h2>
+      <p>
+        تؤكِّد هذه الوثائق أنّ عبد القادر لم يكن «المقاوم المطلق» كما سوّقته السردية الرسمية، بل زعيمًا قبليًا براغماتيًا: أبرم معاهدات إذعان، طلب سلاحًا فرنسيًا لقمع جزائريين، استسلم طوعًا، ثم عاش برعاية فرنسا مكرّمًا بأوسمتها. إن إعادة قراءة هذه المرحلة ضرورةٌ تاريخيةٌ لفصل الأسطورة المصنوعة بعد الاستقلال عن الوقائع المدوَّنة في الأرشيفين الجزائري والفرنسي.
+      </p>
+    </section>
+
+    <section class="footnotes" id="footnotes">
+      <h2>الهوامش</h2>
+      <ol>
+        <li id="fn1">Paul Azan, <em>L’Émir Abd el-Kader, 1808–1883</em>, Paris, 1925, p. 62. <a href="#ref1" class="back-ref">↩︎</a></li>
+        <li id="fn2">Azan, 1925, p. 129 (سيادة فرنسا مقابل الاعتراف بسلطة عبد القادر في الداخل). <a href="#ref2" class="back-ref">↩︎</a></li>
+        <li id="fn3">محمد بن عبد القادر، <em>تحفة الزائر</em>، ج1، ص233. <a href="#ref3" class="back-ref">↩︎</a></li>
+        <li id="fn4">«مراسلات عبد القادر» إلى الجنرال دي ميشيل: طلب 300 مكحلة لقمع «الخوارج». <a href="#ref4" class="back-ref">↩︎</a></li>
+        <li id="fn5">مراسلة شكر بوصول البنادق والمدافع واستعمالها ضد «العصاة» (الأرشيف الفرنسي). <a href="#ref5" class="back-ref">↩︎</a></li>
+        <li id="fn6">إشارة خلال حصار الزاوية التيجانية بالحصول على ثلاثة مدافع من الفرنسيين (الأرشيف الفرنسي). <a href="#ref6" class="back-ref">↩︎</a></li>
+        <li id="fn7">يحيى بوعزيز، <em>كفاح الجزائر من خلال الوثائق</em>، ص191. <a href="#ref7" class="back-ref">↩︎</a></li>
+        <li id="fn8"><em>حياة الأمير</em>، ص214. <a href="#ref8" class="back-ref">↩︎</a></li>
+        <li id="fn9">حول وسام «جوقة الشرف»: سجلات الأوسمة/الأرشيف الفرنسي. <a href="#ref9" class="back-ref">↩︎</a></li>
+        <li id="fn10">Azan, 1925, p. 178 (وصف إقامة أمبواز). <a href="#ref10" class="back-ref">↩︎</a></li>
+        <li id="fn11"><em>حياة الأمير</em>، ص220. <a href="#ref11" class="back-ref">↩︎</a></li>
+        <li id="fn12">مراسلات عبد القادر مع نابوليون الثالث، 1855. <a href="#ref12" class="back-ref">↩︎</a></li>
+        <li id="fn13">المصدر نفسه: تعبير «ملك قلبي». <a href="#ref13" class="back-ref">↩︎</a></li>
+        <li id="fn14"><em>حياة الأمير</em>، ص198 (إقرار الاستسلام الطوعي). <a href="#ref14" class="back-ref">↩︎</a></li>
+        <li id="fn15">خطاب الاستسلام إلى لاموريسيير: «أسلّم نفسي وسلاحي…» (الأرشيف الفرنسي). <a href="#ref15" class="back-ref">↩︎</a></li>
+        <li id="fn16">Bruno Étienne, <em>Abd el-Kader</em>, Hachette, 1994, p. 87 (الانتماء الماسوني). <a href="#ref16" class="back-ref">↩︎</a></li>
+        <li id="fn17">Archives diplomatiques françaises — Reçus de la consulat (Bourse)، منذ مارس 1853: إيصالات راتب عبد القادر (100,000 فرنك سنويًا). <a href="#ref17" class="back-ref">↩︎</a></li>
+        <li id="fn18">Jacques Frémeaux, <em>Abd el-Kader, chef de guerre (1832–1847)</em> — رفع المعاش إلى 150,000 فرنك سنويًا عقب أحداث دمشق 1860. <a href="#ref18" class="back-ref">↩︎</a></li>
+        <li id="fn19">Achille Fillias، 1860 — محاولة الانقلاب على السلطان المغربي عبد الرحمن (تفاصيل ببليوغرافية تُستكمل). <a href="#ref19" class="back-ref">↩︎</a></li>
+        <li id="fn20">BnF — Gallica، Fonds Franc-maçonnerie: مراسلة محفل «هنري الرابع» بوصفها دليلًا على الانتماء الماسوني. <a href="#ref20" class="back-ref">↩︎</a></li>
+        <li id="fn21">ميكيل دو إيبالزا، «الجديد في علاقات عبد القادر مع إسبانيا وحُكامها العسكريين بمليلية» (تعريب: يحيى بوعزيز)، الوثيقة الحادية عشرة: «رسالة عبد القادر إلى حاكم مليلية دو بينيتو». <a href="#ref21" class="back-ref">↩︎</a></li>
+      </ol>
+    </section>
+
+    <section class="refs" id="refs">
+      <h2>المراجع المختارة</h2>
+      <ul>
+        <li>محمد بن عبد القادر، <em>تحفة الزائر</em>، ج1.</li>
+        <li><em>حياة عبد القادر</em> (إملاءاته).</li>
+        <li>Paul Azan, <em>L’Émir Abd el-Kader, 1808–1883</em>, Paris, 1925.</li>
+        <li>يحيى بوعزيز، <em>كفاح الجزائر من خلال الوثائق</em>.</li>
+        <li>Bruno Étienne, <em>Abd el-Kader</em>, Hachette, 1994.</li>
+        <li>Jacques Frémeaux, <em>Abd el-Kader, chef de guerre (1832–1847)</em>.</li>
+        <li>BnF — Gallica، Fonds Franc-maçonnerie (محفل «هنري الرابع»).</li>
+        <li>وثائق مراسلة حاكم مليلية (الأرشيف الإسباني/مليلية) — تفاصيل تُستكمل.</li>
+      </ul>
+    </section>
+  </div>
+  </main>
+  <footer class="footer">
+    <div><strong>إعداد:</strong> ولد صنهاجة</div>
+    <div><strong>موضوع الدراسة:</strong> عبد القادر بين السردية الرسمية والوثيقة التاريخية.</div>
+  </footer>
+  <script>
+    // Fallback: إذا لم تكن الصور داخل images/ فسيحاول التحميل من المجلد الحالي
+    (function(){
+      document.addEventListener('error', function(e){
+        var t=e.target; if(t.tagName==='IMG' && !t.dataset.fallback){
+          var src=t.getAttribute('src');
+          if(src && src.indexOf('images/')===0){ t.dataset.fallback='1'; t.src=src.replace(/^images\//,''); }
+        }
+      }, true);
+    })();
+    (function(){
+      var links = Array.from(document.querySelectorAll('.topnav a, .hero-nav a'));
+      var targets = links.map(function(link){ return document.querySelector(link.getAttribute('href')); }).filter(Boolean);
+      function updateActive(){
+        var current = targets[0];
+        targets.forEach(function(section){ if(section.getBoundingClientRect().top <= 170) current = section; });
+        links.forEach(function(link){ link.classList.toggle('active', link.getAttribute('href') === '#' + current.id); });
+      }
+      links.forEach(function(link){ link.addEventListener('click', function(){
+        links.forEach(function(item){ item.classList.toggle('active', item.getAttribute('href') === link.getAttribute('href')); });
+      }); });
+      window.addEventListener('scroll', updateActive, {passive:true});
+      updateActive();
+    })();
+  </script>
+</body>
+</html>

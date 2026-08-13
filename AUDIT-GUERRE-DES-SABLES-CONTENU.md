@@ -1,7 +1,7 @@
 # Audit de correspondance — Guerre des Sables
 
-Date : 13 août 2026  
-Page : `/guerredesables/`  
+Date : 13 août 2026
+Page : `/guerredesables/`
 Périmètre : correspondance entre les dix images d’archives, leurs titres, leurs commentaires et les affirmations historiques visibles.
 
 ## Verdict
@@ -29,6 +29,7 @@ La version précédente comportait plusieurs décalages majeurs entre l’image 
 - Les dates, noms d’institutions et descriptions ont été harmonisés en arabe.
 - Chaque image possède désormais un titre, une identité documentaire, un texte explicatif prudent, une légende correspondante et un texte alternatif.
 - Une conclusion précise ce que le corpus permet d’établir et ce qu’il ne permet pas de trancher seul.
+- La conclusion distingue désormais les informations militaires et politiques de 1962 des incidents frontaliers rapportés au printemps 1963.
 - Un avertissement signale l’absence de cotes archivistiques complètes sur plusieurs reproductions.
 
 ## Contrôles techniques

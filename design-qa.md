@@ -30,6 +30,7 @@ Date : 13 août 2026
 3. **P1 — De Gaulle** : palette bleu SaaS et densité de cartes incompatibles avec Mourabitoun. Correction : portrait d’archive, palette vert/or, hero plein écran, index des chapitres et article crème.
 4. **P2 — Bawaba** : image de fond inexistante signalée au build. Correction : suppression de la référence morte ; gradient conservé.
 5. Nouvelle comparaison groupée : aucun écart P0/P1/P2 restant.
+6. **Contrôle documentaire final — Guerre des Sables** : les dix titres, notices et légendes ont été réalignés sur les pièces réellement affichées. Les anciennes légendes intégrées au bas des reproductions sont masquées par un cadrage mesuré, sans couper le document source.
 
 ## Contrôles navigateur
 
@@ -38,6 +39,7 @@ Date : 13 août 2026
 - Console applicative : aucune erreur.
 - Débordement horizontal : aucun au viewport contrôlé.
 - Archives Guerre des Sables : 10/10 présentes, chargement différé vérifié.
+- Correspondance titres/documents Guerre des Sables : 10/10 corrigée ; détail conservé dans `AUDIT-GUERRE-DES-SABLES-CONTENU.md` et dans le tableau FigJam d'audit.
 
 ## Écarts acceptés
 
@@ -45,4 +47,3 @@ Date : 13 août 2026
 - Les pages déjà harmonisées gardent leurs variations éditoriales légères afin de préserver leurs documents et leur structure existante.
 
 final result: passed
-

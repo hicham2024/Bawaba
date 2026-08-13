@@ -1,0 +1,28 @@
+.scan-frame {
+  width: min(100%, calc(var(--scan-width) * 1px));
+  aspect-ratio: var(--scan-width) / var(--scan-height);
+  margin: auto;
+  overflow: hidden;
+  background: #efe9dc;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  box-shadow: 0 10px 30px #382b191f;
+}
+
+.scan-frame img {
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  object-fit: cover;
+  object-position: top center;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+@media (max-width: 600px) {
+  .scan-frame {
+    border-radius: 9px;
+  }
+}

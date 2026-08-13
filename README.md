@@ -20,6 +20,7 @@ Netlify publie `dist/client` selon `netlify.toml`.
 Les études intégrées au dépôt se trouvent dans :
 
 - `cadderdz/`
+- `treaties/`
 - `guerredesables/`
 - `banihamad/`
 - `degaulle/`

@@ -5,7 +5,7 @@ Date : 13 août 2026
 ## Preuves
 
 - Source visuelle : `https://mourabitoun.netlify.app/`
-- Implémentations : `/banihamad/`, `/degaulle/`, `/guerredesables/`
+- Implémentations : `/banihamad/`, `/degaulle/`, `/guerredesables/`, `/treaties/`
 - Captures : navigateur cloud, comparaison groupée dans la même entrée visuelle le 13 août 2026.
 - Viewport source et implémentations : 1363 × 936 CSS px, densité navigateur standard.
 - État comparé : haut de page, navigation fermée, aucun modal.
@@ -31,6 +31,7 @@ Date : 13 août 2026
 4. **P2 — Bawaba** : image de fond inexistante signalée au build. Correction : suppression de la référence morte ; gradient conservé.
 5. Nouvelle comparaison groupée : aucun écart P0/P1/P2 restant.
 6. **Contrôle documentaire final — Guerre des Sables** : les dix titres, notices et légendes ont été réalignés sur les pièces réellement affichées. Les anciennes légendes intégrées au bas des reproductions sont masquées par un cadrage mesuré, sans couper le document source.
+7. **Traités Maroc–Grande-Bretagne** : la page publique existante a été importée sans changement de structure, son image de couverture a été localisée, son PDF de douze pages a été conservé et la carte Bawaba pointe maintenant vers une route interne.
 
 ## Contrôles navigateur
 
@@ -40,6 +41,7 @@ Date : 13 août 2026
 - Débordement horizontal : aucun au viewport contrôlé.
 - Archives Guerre des Sables : 10/10 présentes, chargement différé vérifié.
 - Correspondance titres/documents Guerre des Sables : 10/10 corrigée ; détail conservé dans `AUDIT-GUERRE-DES-SABLES-CONTENU.md` et dans le tableau FigJam d'audit.
+- Traités : sept ancres valides, deux groupes d’onglets bilingues fonctionnels et PDF original présent.
 
 ## Écarts acceptés
 

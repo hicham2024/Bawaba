@@ -8,7 +8,7 @@ Référence visuelle : `https://mourabitoun.netlify.app/`
 | Étape | Publication | État général | Décision |
 |---:|---|---|---|
 | 1 | Mourabitoun | Excellent | Référence visuelle, aucune modification. |
-| 2 | Traités Maroc–Grande-Bretagne | Très bon | Déjà harmonisée : hero monumental, palette vert/or, navigation et papier éditorial. |
+| 2 | Traités Maroc–Grande-Bretagne | Intégré | Page importée dans `/treaties/` avec hero monumental, navigation, onglets bilingues, image locale et PDF original. |
 | 3 | Frontières et traité de Lalla Maghnia | Très bon | Déjà harmonisée et sans débordement. |
 | 4 | Touat, Gourara et Tidikelt | Très bon | Déjà harmonisée, archives et sommaire fonctionnels. |
 | 5 | Algérie, fabrication coloniale | Très bon | Déjà harmonisée, couverture et structure éditoriale cohérentes. |
@@ -20,6 +20,7 @@ Référence visuelle : `https://mourabitoun.netlify.app/`
 ## Problèmes corrigés
 
 - Les trois pages restantes n’avaient pas la même présence visuelle que Mourabitoun.
+- La page des traités dépendait encore d’un site Netlify séparé ; elle est désormais versionnée dans Bawaba et reliée par `/treaties/`.
 - La page Guerre des Sables utilisée par Bawaba pointait encore vers l’ancienne version Netlify.
 - Les pages Zirides/Hammadides et De Gaulle ne possédaient ni couverture immersive, ni navigation persistante, ni retour cohérent vers le portail.
 - Les destinations de ces trois cartes dépendaient de sites Netlify séparés et non de la base GitHub Bawaba.
@@ -39,4 +40,3 @@ Référence visuelle : `https://mourabitoun.netlify.app/`
 ## Limites de l’audit
 
 Les captures et la comparaison visuelle ont été réalisées dans le navigateur cloud. Les risques d’accessibilité visibles ont été contrôlés (contraste, structure des titres, textes alternatifs, taille des liens), mais cela ne constitue pas un audit WCAG exhaustif avec lecteur d’écran.
-

@@ -27,6 +27,7 @@ export default defineConfig({
         banihamad: "banihamad/index.html",
         degaulle: "degaulle/index.html",
         guerredesables: "guerredesables/index.html",
+        ifniSahara: "ifni-sahara/index.html",
         treaties: "treaties/index.html"
       }
     }

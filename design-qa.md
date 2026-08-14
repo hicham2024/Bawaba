@@ -1,51 +1,61 @@
-# Design QA — Bawaba
+# Design QA — Accueil Bawaba
 
-Date : 13 août 2026
+Date : 14 août 2026
 
 ## Preuves
 
-- Source visuelle : `https://mourabitoun.netlify.app/`
-- Implémentations : `/banihamad/`, `/degaulle/`, `/guerredesables/`, `/treaties/`
-- Captures : navigateur cloud, comparaison groupée dans la même entrée visuelle le 13 août 2026.
-- Viewport source et implémentations : 1363 × 936 CSS px, densité navigateur standard.
-- État comparé : haut de page, navigation fermée, aucun modal.
-- Focus complémentaire : sections de conclusion et chargement de la dernière archive Guerre des Sables.
+- Source visuelle : `qa/source-selected.png`
+- Implémentation rendue : `qa/implementation-home-final.jpg`
+- État soutien rendu : `qa/implementation-support-final.jpg`
+- Comparaison groupée : `qa/comparison-home-final-vertical.jpg`
+- Comparaison focalisée galerie/soutien : `qa/comparison-focus-final.jpg`
+- Viewport de référence normalisé : 1348 × 926 px.
+- Viewport de l’implémentation : 1348 × 926 CSS px, densité navigateur standard.
+- État comparé : accueil RTL, haut de page, filtres réinitialisés, aucun modal.
+
+## Findings
+
+- Aucun écart P0, P1 ou P2 restant.
+- La formulation « الأبحاث والوثائق المنشورة » visible dans le concept a été remplacée intentionnellement, à la demande de l’utilisateur, par « مختارات من ملفات البوابة ».
+- L’implémentation utilise les vrais dossiers, images et destinations déjà présents dans Bawaba ; les textes fictifs du concept ne sont pas repris.
+- Le soutien est proposé exclusivement par PayPal avec le QR officiel fourni par le propriétaire ; aucune donnée bancaire n’est collectée par le site.
 
 ## Surfaces de fidélité
 
 | Surface | Résultat |
 |---|---|
-| Typographie | Titres arabes monumentaux, corps plus calme et hiérarchie proche de Mourabitoun. |
-| Espacement | Hero plein écran, barre supérieure fine, lecture centrée et rythme vertical régulier. |
-| Couleurs | Vert profond, doré, blanc cassé et voile brun identiques à la famille visuelle de référence. |
-| Images | Vraies images historiques locales, sans hotlink dans le rendu final GitHub. Les crédits sont indiqués. |
-| Contenu | Textes, citations, sources et archives d’origine conservés. |
-| Interactions | Navigation fixe, sommaires, CTA, conclusion et retour en haut fonctionnels. |
-| Responsive | Breakpoints téléphone/tablette présents ; navigation devient scrollable et le contenu passe sur une colonne. |
+| Typographie | Noto Kufi Arabic, graisse et échelle proches du concept ; hiérarchie RTL claire et lisible. |
+| Espacement et rythme | Navigation fine, héros patrimonial ample, carte Historio, galerie et soutien alignés sur la composition sélectionnée. |
+| Couleurs et tokens | Vert émeraude, ivoire, or et terre cuite cohérents avec le concept et la famille Mourabitoun. |
+| Images | Nouveau fond patrimonial optimisé en WebP et vraies images documentaires locales dans les cartes ; aucun emplacement factice. |
+| Contenu | Neuf dossiers réels conservés ; titre de section refusé supprimé du code et du rendu. |
+| Interactions | Recherche/filtrage, remise à zéro, galerie RTL, modal PayPal et lancement Historio fonctionnels. |
+| Responsive | Mise en page une colonne sous 1060 px, galerie tactile, navigation scrollable et modals adaptés sous 720 px. |
 
 ## Historique de comparaison
 
-1. **P1 — Guerre des Sables** : l’URL publique utilisait encore l’ancienne page beige sans couverture. Correction : intégration de la refonte validée dans le dépôt Bawaba et remplacement du lien par `/guerredesables/`.
-2. **P1 — Zirides/Hammadides** : aucune couverture ni identité portail. Correction : photo réelle de la Qal’a, voile vert/brun, titre plein écran, navigation fixe et surfaces éditoriales.
-3. **P1 — De Gaulle** : palette bleu SaaS et densité de cartes incompatibles avec Mourabitoun. Correction : portrait d’archive, palette vert/or, hero plein écran, index des chapitres et article crème.
-4. **P2 — Bawaba** : image de fond inexistante signalée au build. Correction : suppression de la référence morte ; gradient conservé.
-5. Nouvelle comparaison groupée : aucun écart P0/P1/P2 restant.
-6. **Contrôle documentaire final — Guerre des Sables** : les dix titres, notices et légendes ont été réalignés sur les pièces réellement affichées. Les anciennes légendes intégrées au bas des reproductions sont masquées par un cadrage mesuré, sans couper le document source.
-7. **Traités Maroc–Grande-Bretagne** : la page publique existante a été importée sans changement de structure, son image de couverture a été localisée, son PDF de douze pages a été conservé et la carte Bawaba pointe maintenant vers une route interne.
+1. Première comparaison : la structure et la palette correspondaient au concept, avec un héros et un panneau de soutien plus lisibles grâce aux vrais contenus.
+2. **P2 — navigation de la galerie RTL** : les flèches utilisaient un déplacement horizontal dépendant du navigateur et pouvaient ne pas bouger. Correction : navigation indexée par carte avec `scrollIntoView`, flèches inversées selon le sens RTL.
+3. Comparaison post-correction : la galerie se déplace jusqu’à `scrollLeft: -998` après navigation ; aucun écart P0/P1/P2 restant.
 
 ## Contrôles navigateur
 
-- Page rendue dans le navigateur cloud : oui.
-- Interactions principales testées : oui.
-- Console applicative : aucune erreur.
-- Débordement horizontal : aucun au viewport contrôlé.
-- Archives Guerre des Sables : 10/10 présentes, chargement différé vérifié.
-- Correspondance titres/documents Guerre des Sables : 10/10 corrigée ; détail conservé dans `AUDIT-GUERRE-DES-SABLES-CONTENU.md` et dans le tableau FigJam d'audit.
-- Traités : sept ancres valides, deux groupes d’onglets bilingues fonctionnels et PDF original présent.
+- Rendu ouvert dans le navigateur cloud : oui.
+- Filtre « شارل » : 1 résultat visible ; remise à zéro : 9 résultats.
+- Galerie RTL : navigation suivante et précédente testée.
+- Soutien : ouverture/fermeture du modal PayPal et affichage du nouveau QR testés.
+- Historio : modal ouvert et URL de recherche encodée vérifiée.
+- Console applicative : aucune erreur de page ; seuls des messages provenant de l’extension de contrôle du navigateur ont été observés.
+- Build Vite : réussi, 15 modules transformés.
 
 ## Écarts acceptés
 
-- Chaque couverture utilise une image propre au sujet au lieu de reproduire l’architecture de Marrakech.
-- Les pages déjà harmonisées gardent leurs variations éditoriales légères afin de préserver leurs documents et leur structure existante.
+- Les images des cartes sont les documents et couvertures réels de Bawaba, plutôt que les contenus fictifs de l’image générée.
+- Le héros est légèrement plus haut afin de préserver la lisibilité du vrai texte arabe et du formulaire Historio.
+- Le profil public PayPal peut afficher le nom configuré par son propriétaire au moment de la confirmation du paiement.
+
+## Follow-up Polish
+
+- Aucun écart visuel ou fonctionnel bloquant restant.
 
 final result: passed

@@ -28,7 +28,9 @@ export default defineConfig({
         degaulle: "degaulle/index.html",
         guerredesables: "guerredesables/index.html",
         ifniSahara: "ifni-sahara/index.html",
-        treaties: "treaties/index.html"
+        treaties: "treaties/index.html",
+        touat: "touat/index.html",
+        algerieColoniale: "algerie-coloniale/index.html"
       }
     }
   },

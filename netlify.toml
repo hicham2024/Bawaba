@@ -4,3 +4,32 @@
 
 [build.environment]
   NODE_VERSION = "20"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/api/paypal-config"
+  to = "/.netlify/functions/paypal-config"
+  status = 200
+
+[[redirects]]
+  from = "/api/paypal-create"
+  to = "/.netlify/functions/paypal-create"
+  status = 200
+
+[[redirects]]
+  from = "/api/paypal-capture"
+  to = "/.netlify/functions/paypal-capture"
+  status = 200
+
+[[redirects]]
+  from = "/api/download"
+  to = "/.netlify/functions/download"
+  status = 200
+
+[[redirects]]
+  from = "/api/upload-book"
+  to = "/.netlify/functions/upload-book"
+  status = 200

@@ -33,3 +33,13 @@
   from = "/api/upload-book"
   to = "/.netlify/functions/upload-book"
   status = 200
+
+[[redirects]]
+  from = "/api/wero-request"
+  to = "/.netlify/functions/wero-request"
+  status = 200
+
+[[redirects]]
+  from = "/api/wero-admin"
+  to = "/.netlify/functions/wero-admin"
+  status = 200

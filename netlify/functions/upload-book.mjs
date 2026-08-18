@@ -1,12 +1,14 @@
 import { getStore } from '@netlify/blobs';
 
-const UPLOAD_SECRET='-BZWg7V1Vd8yJZzey3SaOYXr_cp10OssAxqNMm_PdnI';
-const allowed=new Set(['almoravides/ar.pdf','almoravides/fr.pdf','almoravides/en.pdf','almoravides/es.pdf','almoravides/nl.pdf','almoravides/it.pdf']);
+const UPLOAD_SECRET=process.env.EBOOK_UPLOAD_SECRET||'-BZWg7V1Vd8yJZzey3SaOYXr_cp10OssAxqNMm_PdnI';
+const books=['idrissides','almoravides','almohades'];
+const langs=['ar','fr','en','es','nl','it'];
+const allowed=new Set(books.flatMap(book=>langs.map(lang=>`${book}/${lang}.pdf`)));
 
 export default async (req)=>{
   if(req.method!=='POST') return new Response('Method not allowed',{status:405});
   const url=new URL(req.url);
-  if(url.searchParams.get('secret')!==UPLOAD_SECRET) return new Response('Forbidden',{status:403});
+  if(!UPLOAD_SECRET||url.searchParams.get('secret')!==UPLOAD_SECRET) return new Response('Forbidden',{status:403});
   const key=url.searchParams.get('key')||'';
   if(!allowed.has(key)) return new Response('Invalid key',{status:400});
   const type=req.headers.get('content-type')||'';

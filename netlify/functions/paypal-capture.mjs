@@ -1,5 +1,7 @@
 import { getStore } from '@netlify/blobs';
 const PAYPAL_API = process.env.PAYPAL_ENV === 'live' ? 'https://api-m.paypal.com' : 'https://api-m.sandbox.paypal.com';
+const ALLOWED_BOOKS=['idrissides','almoravides','almohades'];
+const ALLOWED_LANGS=['ar','fr','en','es','nl','it'];
 
 async function accessToken(){
   const id=process.env.PAYPAL_CLIENT_ID, secret=process.env.PAYPAL_CLIENT_SECRET;
@@ -23,7 +25,7 @@ export default async (req)=>{
     const capture=pu?.payments?.captures?.[0];
     const custom=pu?.custom_id||'';
     const [book,lang]=custom.split(':');
-    if(data.status!=='COMPLETED'||capture?.status!=='COMPLETED'||capture?.amount?.currency_code!=='EUR'||capture?.amount?.value!=='5.00'||book!=='almoravides'||!['ar','fr','en','es','nl','it'].includes(lang)){
+    if(data.status!=='COMPLETED'||capture?.status!=='COMPLETED'||capture?.amount?.currency_code!=='EUR'||capture?.amount?.value!=='5.00'||!ALLOWED_BOOKS.includes(book)||!ALLOWED_LANGS.includes(lang)){
       return Response.json({error:'Payment could not be verified'},{status:409});
     }
     const entitlements=getStore('ebook-entitlements');

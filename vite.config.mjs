@@ -9,11 +9,26 @@ const copyStaticDocuments = {
       recursive: true,
       filter: (source) => /archive-\d+\.jpg$|manifest\.json$|\/assets$/.test(source)
     });
+
     await mkdir("dist/client/treaties", { recursive: true });
     await cp(
       "treaties/treaties-england-morocco-1755.pdf",
       "dist/client/treaties/treaties-england-morocco-1755.pdf"
     );
+
+    // These pages are intentionally plain standalone HTML pages. Copy them
+    // explicitly after Vite builds so they are always present in Netlify's
+    // publish directory, even if Rollup does not emit a given HTML entry.
+    const standalonePages = [
+      "livres.html",
+      "acheter.html",
+      "contact.html",
+      "merci.html",
+      "admin-wero.html"
+    ];
+    for (const page of standalonePages) {
+      await cp(page, `dist/client/${page}`);
+    }
   }
 };
 

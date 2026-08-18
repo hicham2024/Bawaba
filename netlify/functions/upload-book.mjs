@@ -1,6 +1,6 @@
 import { getStore } from '@netlify/blobs';
 
-const UPLOAD_SECRET=process.env.EBOOK_UPLOAD_SECRET||'-BZWg7V1Vd8yJZzey3SaOYXr_cp10OssAxqNMm_PdnI';
+const UPLOAD_SECRET=process.env.EBOOK_UPLOAD_SECRET||process.env.WERO_ADMIN_KEY||'';
 const books=['idrissides','almoravides','almohades'];
 const langs=['ar','fr','en','es','nl','it'];
 const allowed=new Set(books.flatMap(book=>langs.map(lang=>`${book}/${lang}.pdf`)));

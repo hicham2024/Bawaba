@@ -23,6 +23,11 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: "index.html",
+        books: "livres.html",
+        checkout: "acheter.html",
+        contact: "contact.html",
+        thanks: "merci.html",
+        adminWero: "admin-wero.html",
         cadderdz: "cadderdz/index.html",
         banihamad: "banihamad/index.html",
         degaulle: "degaulle/index.html",

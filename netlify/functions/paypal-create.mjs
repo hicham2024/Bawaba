@@ -1,4 +1,6 @@
 const PAYPAL_API = process.env.PAYPAL_ENV === 'live' ? 'https://api-m.paypal.com' : 'https://api-m.sandbox.paypal.com';
+const ALLOWED_BOOKS=['idrissides','almoravides','almohades'];
+const ALLOWED_LANGS=['ar','fr','en','es','nl','it'];
 
 async function accessToken(){
   const id=process.env.PAYPAL_CLIENT_ID, secret=process.env.PAYPAL_CLIENT_SECRET;
@@ -13,8 +15,7 @@ export default async (req)=>{
   if(req.method!=='POST') return new Response('Method not allowed',{status:405});
   try{
     const {book='almoravides',lang}=await req.json();
-    const allowed=['ar','fr','en','es','nl','it'];
-    if(book!=='almoravides'||!allowed.includes(lang)) return Response.json({error:'Invalid book selection'},{status:400});
+    if(!ALLOWED_BOOKS.includes(book)||!ALLOWED_LANGS.includes(lang)) return Response.json({error:'Invalid book selection'},{status:400});
     const token=await accessToken();
     const r=await fetch(`${PAYPAL_API}/v2/checkout/orders`,{method:'POST',headers:{Authorization:`Bearer ${token}`,'Content-Type':'application/json','PayPal-Request-Id':crypto.randomUUID()},body:JSON.stringify({intent:'CAPTURE',purchase_units:[{custom_id:`${book}:${lang}`,description:`Bawaba PDF - ${book} (${lang})`,amount:{currency_code:'EUR',value:'5.00'}}],application_context:{shipping_preference:'NO_SHIPPING'}})});
     const data=await r.json();

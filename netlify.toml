@@ -10,6 +10,17 @@
   node_bundler = "esbuild"
 
 [[redirects]]
+  from = "/assets/cards/idrissids.webp"
+  to = "/assets/cards/idrissids-book.svg"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/contact"
+  to = "/contact.html"
+  status = 200
+
+[[redirects]]
   from = "/api/paypal-config"
   to = "/.netlify/functions/paypal-config"
   status = 200

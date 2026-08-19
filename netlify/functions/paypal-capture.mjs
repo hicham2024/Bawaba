@@ -1,14 +1,15 @@
 import { getStore } from '@netlify/blobs';
-const PAYPAL_API = process.env.PAYPAL_ENV === 'live' ? 'https://api-m.paypal.com' : 'https://api-m.sandbox.paypal.com';
+const PAYPAL_API='https://api-m.paypal.com';
 const ALLOWED_BOOKS=['idrissides','almoravides','almohades'];
 const ALLOWED_LANGS=['ar','fr','en','es','nl','it'];
 
 async function accessToken(){
+  if(process.env.PAYPAL_ENV!=='live') throw new Error('Live PayPal is not enabled');
   const id=process.env.PAYPAL_CLIENT_ID, secret=process.env.PAYPAL_CLIENT_SECRET;
-  if(!id||!secret) throw new Error('PayPal is not configured');
+  if(!id||!secret) throw new Error('Live PayPal credentials are missing');
   const auth=Buffer.from(`${id}:${secret}`).toString('base64');
   const r=await fetch(`${PAYPAL_API}/v1/oauth2/token`,{method:'POST',headers:{Authorization:`Basic ${auth}`,'Content-Type':'application/x-www-form-urlencoded'},body:'grant_type=client_credentials'});
-  if(!r.ok) throw new Error('Unable to authenticate with PayPal');
+  if(!r.ok) throw new Error('Unable to authenticate with live PayPal');
   return (await r.json()).access_token;
 }
 

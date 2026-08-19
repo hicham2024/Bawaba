@@ -10,15 +10,15 @@
   node_bundler = "esbuild"
 
 [[redirects]]
-  from = "/assets/cards/idrissids.webp"
-  to = "/assets/cards/idrissids-book.svg"
-  status = 200
+  from = "/contact.html"
+  to = "/contact/"
+  status = 301
   force = true
 
 [[redirects]]
   from = "/contact"
-  to = "/contact.html"
-  status = 200
+  to = "/contact/"
+  status = 301
 
 [[redirects]]
   from = "/api/paypal-config"

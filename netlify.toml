@@ -9,6 +9,26 @@
   directory = "netlify/functions"
   node_bundler = "esbuild"
 
+# Book cover fallbacks: proxy the three stable cover URLs directly from the
+# repository so /livres.html never depends on Vite copying binary assets.
+[[redirects]]
+  from = "/assets/cards/idrissids.webp"
+  to = "https://raw.githubusercontent.com/hicham2024/Bawaba/main/assets/cards/idrissids.webp"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/assets/cards/almoravids.webp"
+  to = "https://raw.githubusercontent.com/hicham2024/Bawaba/main/assets/cards/almoravids.webp"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/assets/cards/almohads.webp"
+  to = "https://raw.githubusercontent.com/hicham2024/Bawaba/main/assets/cards/almohads.webp"
+  status = 200
+  force = true
+
 [[redirects]]
   from = "/contact.html"
   to = "/contact/"

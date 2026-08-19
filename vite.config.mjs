@@ -16,10 +16,6 @@ const copyStaticDocuments = {
       "dist/client/treaties/treaties-england-morocco-1755.pdf"
     );
 
-    // Book pages are copied as standalone HTML after Vite's build. Because
-    // their image URLs stay as /assets/cards/*.webp, copy the source card
-    // directory verbatim into Netlify's publish directory as well. This makes
-    // the covers deterministic and independent from Vite asset hashing.
     await mkdir("dist/client/assets/cards", { recursive: true });
     await cp("assets/cards", "dist/client/assets/cards", { recursive: true });
 
@@ -28,7 +24,8 @@ const copyStaticDocuments = {
       "acheter.html",
       "contact.html",
       "merci.html",
-      "admin-wero.html"
+      "admin-wero.html",
+      "admin-books.html"
     ];
     for (const page of standalonePages) {
       await cp(page, `dist/client/${page}`);
@@ -50,6 +47,7 @@ export default defineConfig({
         contact: "contact/index.html",
         thanks: "merci.html",
         adminWero: "admin-wero.html",
+        adminBooks: "admin-books.html",
         cadderdz: "cadderdz/index.html",
         banihamad: "banihamad/index.html",
         degaulle: "degaulle/index.html",

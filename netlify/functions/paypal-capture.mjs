@@ -26,7 +26,7 @@ export default async (req)=>{
     const capture=pu?.payments?.captures?.[0];
     const custom=pu?.custom_id||'';
     const [book,lang]=custom.split(':');
-    if(data.status!=='COMPLETED'||capture?.status!=='COMPLETED'||capture?.amount?.currency_code!=='EUR'||capture?.amount?.value!=='5.00'||!ALLOWED_BOOKS.includes(book)||!ALLOWED_LANGS.includes(lang)){
+    if(data.status!=='COMPLETED'||capture?.status!=='COMPLETED'||capture?.amount?.currency_code!=='EUR'||capture?.amount?.value!=='4.99'||!ALLOWED_BOOKS.includes(book)||!ALLOWED_LANGS.includes(lang)){
       return Response.json({error:'Payment could not be verified'},{status:409});
     }
     const entitlements=getStore('ebook-entitlements');

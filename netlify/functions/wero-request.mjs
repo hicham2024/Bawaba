@@ -10,7 +10,7 @@ export default async (req)=>{
     if(book!=='almoravides'||!allowedLangs.has(lang)) return Response.json({error:'Livre ou langue invalide'},{status:400});
     if(!emailRx.test(String(email||'').trim())) return Response.json({error:'Adresse e-mail invalide'},{status:400});
     const id=crypto.randomUUID();
-    const request={id,book,lang,email:String(email).trim().toLowerCase(),name:String(name||'').trim().slice(0,120),reference:String(reference||'').trim().slice(0,160),status:'pending',createdAt:Date.now(),amount:'5.00',currency:'EUR'};
+    const request={id,book,lang,email:String(email).trim().toLowerCase(),name:String(name||'').trim().slice(0,120),reference:String(reference||'').trim().slice(0,160),status:'pending',createdAt:Date.now(),amount:'4.99',currency:'EUR'};
     const store=getStore('wero-requests');
     await store.setJSON(`request:${id}`,request);
     const index=(await store.get('index',{type:'json'}))||[];

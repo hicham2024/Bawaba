@@ -3,7 +3,8 @@ import { getStore } from '@netlify/blobs';
 const expected = [
   'idrissides/ar.pdf','idrissides/fr.pdf','idrissides/en.pdf','idrissides/es.pdf','idrissides/nl.pdf','idrissides/it.pdf',
   'almoravides/ar.pdf','almoravides/fr.pdf','almoravides/en.pdf','almoravides/es.pdf','almoravides/nl.pdf','almoravides/it.pdf',
-  'almohades/ar.pdf','almohades/fr.pdf','almohades/en.pdf','almohades/es.pdf','almohades/nl.pdf','almohades/it.pdf'
+  'almohades/ar.pdf','almohades/fr.pdf','almohades/en.pdf','almohades/es.pdf','almohades/nl.pdf','almohades/it.pdf',
+  'marinides/ar.pdf','marinides/fr.pdf','marinides/en.pdf','marinides/es.pdf','marinides/nl.pdf','marinides/it.pdf'
 ];
 
 export default async () => {

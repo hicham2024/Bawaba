@@ -30,17 +30,6 @@
   force = true
 
 [[redirects]]
-  from = "/contact.html"
-  to = "/contact/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/contact"
-  to = "/contact/"
-  status = 301
-
-[[redirects]]
   from = "/api/paypal-config"
   to = "/.netlify/functions/paypal-config"
   status = 200

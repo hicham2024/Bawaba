@@ -509,7 +509,7 @@ id="toc-الخلاصة-العامة-للدراسة">الخلاصة العامة 
   </main>
   <footer><div class="container footer-row"><div><strong>بوابة البحوث التاريخية والوثائق الأرشيفية</strong><p>مشروع مستقل لتجميع المعرفة التاريخية وتيسير الوصول إليها.</p></div><a href="../">استكشف بقية الملفات</a></div></footer>
   <script>
-    const bar=document.getElementById('readingProgress'),links=[...document.querySelectorAll('.toc a[href^="#"]')],sections=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+    const bar=document.getElementById('readingProgress'),links=[...document.querySelectorAll('.toc a[href^="#"]')],sections=links.map(a=>document.getElementById(decodeURIComponent(a.hash.slice(1)))).filter(Boolean);
     function update(){const max=document.documentElement.scrollHeight-innerHeight,ratio=max>0?scrollY/max:0;bar.style.width=(ratio*100)+'%';let current=sections[0];sections.forEach(section=>{if(section.getBoundingClientRect().top<150)current=section});links.forEach(link=>link.classList.toggle('active',current&&link.getAttribute('href')==='#'+current.id))}
     addEventListener('scroll',update,{passive:true});addEventListener('resize',update);update();
   </script>

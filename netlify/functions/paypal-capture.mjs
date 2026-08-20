@@ -1,6 +1,6 @@
 import { getStore } from '@netlify/blobs';
 const PAYPAL_API='https://api-m.paypal.com';
-const ALLOWED_BOOKS=['idrissides','almoravides','almohades'];
+const ALLOWED_BOOKS=['idrissides','almoravides','almohades','marinides'];
 const ALLOWED_LANGS=['ar','fr','en','es','nl','it'];
 
 async function accessToken(){

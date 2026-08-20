@@ -14,7 +14,8 @@ export default async (req)=>{
   const type=req.headers.get('content-type')||'';
   if(!type.includes('application/pdf')) return new Response('PDF required',{status:415});
   const pdf=await req.arrayBuffer();
-  if(pdf.byteLength<10000||pdf.byteLength>25*1024*1024) return new Response('Invalid PDF size',{status:400});
+  if(pdf.byteLength<10000) return new Response('Le PDF est vide ou invalide.',{status:400});
+  if(pdf.byteLength>50*1024*1024) return new Response('Le PDF dépasse la limite de 50 Mo.',{status:413});
   const store=getStore('ebooks-private');
   await store.set(key,pdf,{metadata:{uploadedAt:Date.now(),contentType:'application/pdf'}});
   return Response.json({ok:true,key,size:pdf.byteLength});

@@ -1,3 +1,5 @@
+import { getStore } from '@netlify/blobs';
+
 const PAYPAL_API='https://api-m.paypal.com';
 const ALLOWED_BOOKS=['idrissides','almoravides','almohades','marinides'];
 const ALLOWED_LANGS=['ar','fr','en','es','nl','it'];
@@ -17,6 +19,9 @@ export default async (req)=>{
   try{
     const {book='almoravides',lang}=await req.json();
     if(!ALLOWED_BOOKS.includes(book)||!ALLOWED_LANGS.includes(lang)) return Response.json({error:'Invalid book selection'},{status:400});
+    const key=`${book}/${lang}.pdf`;
+    const {blobs}=await getStore('ebooks-private').list({prefix:key});
+    if(!blobs.some(blob=>blob.key===key)) return Response.json({error:'This edition is not available yet'},{status:409});
     const token=await accessToken();
     const r=await fetch(`${PAYPAL_API}/v2/checkout/orders`,{method:'POST',headers:{Authorization:`Bearer ${token}`,'Content-Type':'application/json','PayPal-Request-Id':crypto.randomUUID()},body:JSON.stringify({intent:'CAPTURE',purchase_units:[{custom_id:`${book}:${lang}`,description:`Bawaba PDF - ${book} (${lang})`,amount:{currency_code:'EUR',value:'5.00'}}],application_context:{shipping_preference:'NO_SHIPPING'}})});
     const data=await r.json();

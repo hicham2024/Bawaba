@@ -23,7 +23,7 @@ export default async (req)=>{
     const {blobs}=await getStore('ebooks-private').list({prefix:key});
     if(!blobs.some(blob=>blob.key===key)) return Response.json({error:'This edition is not available yet'},{status:409});
     const token=await accessToken();
-    const r=await fetch(`${PAYPAL_API}/v2/checkout/orders`,{method:'POST',headers:{Authorization:`Bearer ${token}`,'Content-Type':'application/json','PayPal-Request-Id':crypto.randomUUID()},body:JSON.stringify({intent:'CAPTURE',purchase_units:[{custom_id:`${book}:${lang}`,description:`Bawaba PDF - ${book} (${lang})`,amount:{currency_code:'EUR',value:'5.00'}}],application_context:{shipping_preference:'NO_SHIPPING'}})});
+    const r=await fetch(`${PAYPAL_API}/v2/checkout/orders`,{method:'POST',headers:{Authorization:`Bearer ${token}`,'Content-Type':'application/json','PayPal-Request-Id':crypto.randomUUID()},body:JSON.stringify({intent:'CAPTURE',purchase_units:[{custom_id:`${book}:${lang}`,description:`Bawaba PDF - ${book} (${lang})`,amount:{currency_code:'EUR',value:'4.99'}}],application_context:{shipping_preference:'NO_SHIPPING'}})});
     const data=await r.json();
     if(!r.ok) return Response.json({error:'PayPal order creation failed',details:data},{status:502});
     return Response.json({id:data.id});

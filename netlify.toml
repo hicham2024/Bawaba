@@ -16,6 +16,12 @@
   status = 301
   force = true
 
+# Stable success route for Netlify Forms submissions.
+[[redirects]]
+  from = "/merci"
+  to = "/merci.html"
+  status = 200
+
 [[headers]]
   for = "/admin-books.html"
   [headers.values]

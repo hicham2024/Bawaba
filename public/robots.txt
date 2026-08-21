@@ -3,4 +3,4 @@ Allow: /
 Disallow: /.netlify/functions/
 Disallow: /api/
 
-Sitemap: https://bawaba.netlify.app/sitemap.xml
+Sitemap: https://bawaba.eu/sitemap.xml

@@ -22,6 +22,13 @@
   to = "/merci.html"
   status = 200
 
+# This publication has been withdrawn from the public catalogue.
+[[redirects]]
+  from = "/banihamad/*"
+  to = "/"
+  status = 301
+  force = true
+
 [[headers]]
   for = "/admin-books.html"
   [headers.values]

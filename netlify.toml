@@ -9,6 +9,26 @@
   directory = "netlify/functions"
   node_bundler = "esbuild"
 
+[[headers]]
+  for = "/admin-books.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive"
+
+[[headers]]
+  for = "/admin-wero.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive"
+
+[[headers]]
+  for = "/acheter.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive"
+
+[[headers]]
+  for = "/merci.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, follow"
+
 # Book cover fallbacks: proxy the three stable cover URLs directly from the
 # repository so /livres.html never depends on Vite copying binary assets.
 [[redirects]]

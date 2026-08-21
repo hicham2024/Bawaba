@@ -9,6 +9,13 @@
   directory = "netlify/functions"
   node_bundler = "esbuild"
 
+# Preserve every historical URL while consolidating Google indexing on bawaba.eu.
+[[redirects]]
+  from = "https://bawaba.netlify.app/*"
+  to = "https://bawaba.eu/:splat"
+  status = 301
+  force = true
+
 [[headers]]
   for = "/admin-books.html"
   [headers.values]

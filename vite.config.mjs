@@ -49,7 +49,6 @@ export default defineConfig({
         adminWero: "admin-wero.html",
         adminBooks: "admin-books.html",
         cadderdz: "cadderdz/index.html",
-        banihamad: "banihamad/index.html",
         degaulle: "degaulle/index.html",
         guerredesables: "guerredesables/index.html",
         ifniSahara: "ifni-sahara/index.html",

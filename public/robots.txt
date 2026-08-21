@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /.netlify/functions/
+Disallow: /api/
+
+Sitemap: https://bawaba.netlify.app/sitemap.xml

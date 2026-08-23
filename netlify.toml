@@ -1,4 +1,3 @@
-# Netlify Forms detection enabled — redeploy required to register bawaba-contact.
 [build]
   command = "npm run build"
   publish = "dist/client"
@@ -15,6 +14,19 @@
   from = "https://bawaba.netlify.app/*"
   to = "https://bawaba.eu/:splat"
   status = 301
+  force = true
+
+# Keep the two historical publications under the public bawaba.eu address.
+[[redirects]]
+  from = "/mourabitoun/*"
+  to = "https://mourabitoun.netlify.app/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/lalamaghnia/*"
+  to = "https://lalamaghnia.netlify.app/:splat"
+  status = 200
   force = true
 
 # Stable success route for Netlify Forms submissions.

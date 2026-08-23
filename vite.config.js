@@ -49,6 +49,7 @@ export default defineConfig({
         guerredesables: "guerredesables/index.html",
         ifniSahara: "ifni-sahara/index.html",
         treaties: "treaties/index.html",
+        moroccoIberianDiplomacy: "morocco-iberian-diplomacy/index.html",
         touat: "touat/index.html",
         algerieColoniale: "algerie-coloniale/index.html"
       }

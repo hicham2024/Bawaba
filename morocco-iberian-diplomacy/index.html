@@ -14,6 +14,9 @@
   <style>
     .doc-visual img{cursor:zoom-in;transition:filter .2s ease,transform .2s ease}.doc-visual img:hover{filter:brightness(.96)}.doc-visual img:focus-visible{outline:3px solid var(--gold);outline-offset:4px}.image-lightbox[hidden]{display:none}.image-lightbox{position:fixed;inset:0;z-index:1000;display:grid;grid-template-rows:auto 1fr;background:rgba(8,13,11,.94);direction:rtl}.zoom-toolbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:10px 14px;background:rgba(16,31,26,.96);border-bottom:1px solid rgba(255,255,255,.18);color:#fff}.zoom-toolbar button,.zoom-toolbar a{border:1px solid rgba(255,255,255,.28);border-radius:999px;background:#fff;color:#123e33;padding:7px 13px;font:700 .9rem Tahoma,Arial,sans-serif;text-decoration:none;cursor:pointer}.zoom-toolbar button:hover,.zoom-toolbar a:hover{background:#f0dfb6}.zoom-caption{min-width:180px;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#f5ead2}.zoom-percent{direction:ltr;min-width:48px;text-align:center;color:#f0d18e;font-weight:800}.zoom-stage{overflow:auto;display:grid;place-items:center;padding:18px;direction:ltr}.zoom-stage img{display:block;max-width:none;max-height:none;background:#ede4d4;box-shadow:0 18px 55px rgba(0,0,0,.6);transition:width .16s ease,height .16s ease}body.lightbox-open{overflow:hidden}@media(max-width:640px){.zoom-toolbar{justify-content:center}.zoom-caption{order:2;flex-basis:100%;text-align:center}.zoom-toolbar button,.zoom-toolbar a{padding:6px 10px;font-size:.8rem}}
   </style>
+  <style>
+    .image-lightbox{display:block}.zoom-toolbar{position:fixed!important;top:0;right:0;left:0;z-index:1002;display:flex!important;min-height:64px;visibility:visible!important;opacity:1!important}.zoom-toolbar button,.zoom-toolbar a{display:inline-flex!important;align-items:center;justify-content:center;visibility:visible!important;opacity:1!important}.zoom-stage{position:fixed;inset:64px 0 0;z-index:1001;display:grid;overflow:auto}@media(max-width:640px){.zoom-stage{inset:108px 0 0}.zoom-toolbar{min-height:108px}}
+  </style>
 </head>
 <body>
 <header class="hero"><div class="hero-inner"><div class="eyebrow">ملف أرشيفي مشروح • وثيقة بوثيقة</div><h1>المغرب في الدبلوماسية الإيبيرية خلال القرنين الثالث عشر والرابع عشر</h1><p class="subtitle">المعاهدات والمراسلات والسفارات والتعاون العسكري بين المغرب والممالك الإيبيرية كما تحفظها الوثائق الوسيطة</p><div class="publine"><span>إعداد: ولد صنهاجة</span><span>نشر: <time datetime="2026-08-23">23 أغسطس 2026</time></span><span>تحديث وثائقي: <time datetime="2026-08-24">24 أغسطس 2026</time></span></div></div></header>
@@ -99,7 +102,8 @@
 
   const fitImage = () => {
     if (!image.naturalWidth || !image.naturalHeight) return;
-    const ratio = Math.min((window.innerWidth - 44) / image.naturalWidth, (window.innerHeight - 116) / image.naturalHeight, 1);
+    const toolbarHeight = window.innerWidth <= 640 ? 108 : 64;
+    const ratio = Math.min((window.innerWidth - 44) / image.naturalWidth, (window.innerHeight - toolbarHeight - 36) / image.naturalHeight);
     baseWidth = Math.max(1, image.naturalWidth * ratio);
     baseHeight = Math.max(1, image.naturalHeight * ratio);
     scale = 1;

@@ -24,6 +24,7 @@ const copyStaticDocuments = {
       "contact.html",
       "merci.html",
       "admin-wero.html",
+      "admin-bank-transfer.html",
       "admin-books.html"
     ];
     for (const page of standalonePages) {
@@ -69,6 +70,7 @@ export default defineConfig({
         contact: "contact.html",
         thanks: "merci.html",
         adminWero: "admin-wero.html",
+        adminBankTransfer: "admin-bank-transfer.html",
         adminBooks: "admin-books.html",
         cadderdz: "cadderdz/index.html",
         degaulle: "degaulle/index.html",

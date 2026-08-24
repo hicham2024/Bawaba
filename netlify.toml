@@ -53,6 +53,11 @@
     X-Robots-Tag = "noindex, nofollow, noarchive"
 
 [[headers]]
+  for = "/admin-bank-transfer.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive"
+
+[[headers]]
   for = "/acheter.html"
   [headers.values]
     X-Robots-Tag = "noindex, nofollow, noarchive"
@@ -125,4 +130,14 @@
 [[redirects]]
   from = "/api/wero-admin"
   to = "/.netlify/functions/wero-admin"
+  status = 200
+
+[[redirects]]
+  from = "/api/bank-transfer-request"
+  to = "/.netlify/functions/bank-transfer-request"
+  status = 200
+
+[[redirects]]
+  from = "/api/bank-transfer-admin"
+  to = "/.netlify/functions/bank-transfer-admin"
   status = 200

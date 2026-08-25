@@ -1,0 +1,62 @@
+name: Update inventory from displayed documents
+
+on:
+  push:
+    paths:
+      - '.github/workflows/update-inventory-displayed-docs.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replace inventory table with displayed documents only
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          p=Path('morocco-iberian-diplomacy/index.html')
+          s=p.read_text(encoding='utf-8')
+
+          new='''<section id="inventory"><h2>جرد موجز: هوية كل قطعة ومادة الحفظ</h2><div class="tablewrap"><table><thead><tr><th>التاريخ</th><th>الحجة</th><th>المنشئ/النوع الحقيقي</th><th>الموضوع المحدد</th></tr></thead><tbody>
+<tr><td>1201/1202</td><td>ESTADO,2724,Exp.17</td><td>نسخة تحالف أوروبي</td><td>استثناء ملك المغرب من التزام الحرب</td></tr>
+<tr><td>18 نوفمبر 1274</td><td>Registro 19,f.6r</td><td>اتفاق مريني-أراغوني</td><td>سلام ومساعدة بشأن سبتة</td></tr>
+<tr><td>23 يونيو 1304</td><td>Cartas árabes,84 bis</td><td>مسودة ديوانية مرينية</td><td>عرض ألف أو ألفي فارس مريني</td></tr>
+<tr><td>5 يوليو 1304</td><td>Cartas árabes,78</td><td>رسالة مرينية عربية</td><td>طلب قوة بحرية لحصار سبتة</td></tr>
+<tr><td>3 أبريل 1316</td><td>Cartas árabes,135</td><td>رسالة عربية من طرابلس</td><td>شكوى بشأن اعتداءات مرتبطة بالملاحة وطلب رفع القضية إلى ملك المغرب</td></tr>
+<tr><td>1323</td><td>Cartas árabes,83 / 83 bis</td><td>رسالتان مرينيتان</td><td>فرسان الحملة إلى سردينيا وعرض بديل</td></tr>
+<tr><td>1324</td><td>Cartas árabes,Suplemento 15</td><td>ترجمة كتالانية لرسالة مرينية</td><td>مراسلة مرينية إلى خايمي الثاني</td></tr>
+<tr><td>1338–1341</td><td>Bulas 7/10; Reales 0924/1127/1168/1386</td><td>مراسلات بابوية وأوامر أراغونية</td><td>تمويل وتعبئة وحملة بحرية مرتبطة بالحرب مع المغرب</td></tr>
+<tr><td>18 أكتوبر 1344</td><td>Cartas árabes,93 / 94</td><td>رسالة مرينية ونسخة</td><td>مفاوضات السلام مع القوى المتوسطية</td></tr>
+<tr><td>23 ديسمبر 1344</td><td>Cartas árabes,56</td><td>اعتماد غرناطي</td><td>تفويض للتفاوض في السلام</td></tr>
+<tr><td>25 فبراير 1345</td><td>Cartas árabes,Suplemento 22 / 23</td><td>ترجمة كتالانية ونسخة</td><td>معاهدة أراغون–غرناطة–المغرب</td></tr>
+<tr><td>5 يوليو 1345</td><td>Cartas árabes,66</td><td>رسالة غرناطية</td><td>إتمام توقيع المعاهدة وإرسال النص ووقف القرصنة</td></tr>
+<tr><td>11 أبريل 1347</td><td>Cartas árabes,Suplemento 24</td><td>ترجمة قشتالية/كتالانية</td><td>سلام مع ممثل بيدرو الرابع</td></tr>
+<tr><td>25 سبتمبر 1350</td><td>Cartas árabes,99</td><td>رسالة مغربية</td><td>الأسرى وصحة مراسلة سابقة وأخبار عسكرية</td></tr>
+<tr><td>20 سبتمبر 1351</td><td>Cartas árabes,103</td><td>رسالة مرينية من فاس</td><td>شكاوى متبادلة بشأن القرصنة</td></tr>
+<tr><td>9 سبتمبر 1354</td><td>Cartas árabes,69</td><td>رسالة غرناطية</td><td>حماية مسلمي المغرب والأمان للرهبان</td></tr>
+<tr><td>نحو 6 يناير 1355</td><td>Cartas árabes,100</td><td>رسالة مغربية</td><td>إطلاق أسرى مسيحيين وضمان الأمان للتجار في المغرب</td></tr>
+<tr><td>27 يونيو 1360</td><td>Cartas árabes,112</td><td>رسالة مرينية</td><td>أبو سالم إبراهيم يخطر برنات دي كابريرا بسفر سفيره إلى ملك أراغون ويطلب تسهيل مهمته</td></tr>
+<tr><td>4 سبتمبر 1361</td><td>Cartas árabes,74</td><td>رسالة غرناطية</td><td>طلب سفن ضد ائتلاف المغرب وقشتالة</td></tr>
+<tr><td>10 مارس 1367</td><td>Cartas árabes,75</td><td>معاهدة متعددة الأطراف</td><td>سلام وأمن بحري وحرية حركة وتجارة</td></tr>
+<tr><td>31 مايو 1367</td><td>Cartas árabes,76</td><td>تفويض دبلوماسي مريني</td><td>تفويض محمد الخامس للتفاوض وعقد السلام مع أراغون وقشتالة</td></tr>
+</tbody></table></div></section>'''
+
+          pat=r'<section id="inventory">.*?</section>'
+          if not re.search(pat,s,flags=re.S):
+              raise SystemExit('inventory section not found')
+          s=re.sub(pat,new,s,count=1,flags=re.S)
+          p.write_text(s,encoding='utf-8')
+
+      - name: Commit
+        run: |
+          rm -f .github/workflows/update-inventory-displayed-docs.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Update inventory to displayed documents only"
+          git push

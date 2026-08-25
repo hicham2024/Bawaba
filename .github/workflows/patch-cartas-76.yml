@@ -1,0 +1,50 @@
+name: Patch Cartas Arabes 76
+
+on:
+  push:
+    paths:
+      - '.github/workflows/patch-cartas-76.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Separate Cartas arabes 75 and 76
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          path = Path('morocco-iberian-diplomacy/index.html')
+          text = path.read_text(encoding='utf-8')
+
+          replacement = '''<!-- Cartas árabes 75: multilateral peace treaty -->
+<article class="doc-card"><header class="doc-head"><span class="date">10 مارس 1367</span><h3>معاهدة السلام التي يدخل فيها أبو فارس عبد العزيز، «صاحب المغرب»</h3></header><div class="doc-body"><div class="doc-text"><div class="ref">ACA,COLECCIONES,Cartas árabes,núm.75</div><p>الوثيقة 75 معاهدة سلام بين محمد الخامس سلطان غرناطة وبيدرو الرابع ملك أراغون، يدخل فيها أيضاً السلطان المريني الذي يرد في متن المعاهدة بلقب <strong>«صاحب المغرب»</strong>. ومدتها ثلاث سنوات، وتنظم حماية السفن والمسافرين والمنكوبين في البحر والتزود بالماء، وحرية الحركة والتجارة للرعايا.</p><p><strong>أبو فارس المقصود هو السلطان المريني أبو فارس المستنصر بالله عبد العزيز بن أبي الحسن علي، المعروف بعبد العزيز الأول</strong>، وقد حكم المغرب من سنة 1366 إلى سنة 1372.</p><div class="actions"><a class="button" href="https://pares.mcu.es/ParesBusquedas20/catalogo/description/4799623" target="_blank" rel="noopener">سجل الوثيقة 75 في PARES</a><a class="button alt" href="https://www.ub.edu/catalonia-sulh/fr/granada/" target="_blank" rel="noopener">شرح بنود المعاهدة</a></div></div><figure class="doc-visual"><img src="/morocco-iberian-diplomacy/images/cartas-arabes-75-1367.webp" loading="lazy" decoding="async" alt="الأصل العربي لمعاهدة السلام رقم 75 المؤرخة في 10 مارس 1367"><figcaption>الأصل العربي لمعاهدة السلام المحفوظة في أرشيف تاج أراغون، <span dir="ltr">ACA,COLECCIONES,Cartas árabes,núm.75</span>. انقر على الصورة للتكبير.</figcaption></figure></div></article>
+
+<!-- Cartas árabes 76: Moroccan diplomatic power of attorney -->
+<article class="doc-card"><header class="doc-head"><span class="date">31 مايو 1367</span><h3>تفويض مريني لمحمد الخامس لعقد السلام مع أراغون وقشتالة</h3></header><div class="doc-body"><div class="doc-text"><div class="ref">ACA,COLECCIONES,Cartas árabes,núm.76</div><p><strong>كتاب تفويض صادر عن أبي فارس، حاكم المغرب المريني، لفائدة أبي عبد الله بن أبي الحجاج، محمد الخامس سلطان غرناطة</strong>، يمنحه بموجبه صلاحية التفاوض وعقد السلام مع <strong>تاج أراغون ومملكة قشتالة</strong>. وهذا يثبت وجود <strong>تنسيق سياسي ودبلوماسي بين المغرب المريني ومملكة غرناطة</strong> في ملف يمس العلاقات مع قوتين مسيحيتين كبيرتين في إيبيريا.</p><div class="actions"><a class="button" href="https://pares.mcu.es/ParesBusquedas20/catalogo/description/4799646" target="_blank" rel="noopener">سجل الوثيقة 76 في PARES</a></div></div><figure class="doc-visual"><img src="/morocco-iberian-diplomacy/images/cartas-arabes-76-1367.webp" loading="lazy" decoding="async" alt="كتاب التفويض المريني رقم 76 الصادر في 31 مايو 1367 إلى محمد الخامس للتفاوض مع أراغون وقشتالة"><figcaption>الأصل العربي للوثيقة. المصدر: <span dir="ltr">ACA,COLECCIONES,Cartas árabes,núm.76</span>. انقر على الصورة للتكبير.</figcaption></figure></div></article>'''
+
+          pattern = r'<!-- Cartas árabes 75: treaty scan and identification of Abu Faris -->\s*<article class="doc-card">.*?</article>(?=</section>)'
+          new_text, count = re.subn(pattern, replacement, text, count=1, flags=re.S)
+          if count != 1:
+              raise SystemExit(f'Expected one combined 75/76 article, found {count}')
+
+          old_row = '<tr><td>1367</td><td>Cartas árabes,75 / 76</td><td>معاهدة متعددة الأطراف + تفويض مريني</td><td>أمن بحري وتجارة ووكالة تفاوض</td></tr>'
+          new_rows = '<tr><td>1367-03-10</td><td>Cartas árabes,75</td><td>معاهدة متعددة الأطراف</td><td>سلام وأمن بحري وتجارة</td></tr><tr><td>1367-05-31</td><td>Cartas árabes,76</td><td>تفويض دبلوماسي مريني</td><td>تفويض محمد الخامس للتفاوض مع أراغون وقشتالة</td></tr>'
+          if old_row not in new_text:
+              raise SystemExit('Inventory row for 75/76 not found')
+          new_text = new_text.replace(old_row, new_rows, 1)
+
+          path.write_text(new_text, encoding='utf-8')
+      - name: Commit page update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add morocco-iberian-diplomacy/index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Separate ACA Cartas arabes 76 diplomatic authorization"
+          git push

@@ -1,0 +1,23 @@
+name: Verify document 76 viewer
+
+on:
+  push:
+    paths:
+      - '.github/workflows/verify-doc76-size.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify viewer upscale
+        shell: python
+        run: |
+          from pathlib import Path
+          p=Path('morocco-iberian-diplomacy/index.html')
+          t=p.read_text(encoding='utf-8')
+          assert '2.5);' in t
+          print('viewer upscale is present')

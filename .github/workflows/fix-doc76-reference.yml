@@ -1,0 +1,35 @@
+name: Fix document 76 image reference
+
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-doc76-reference.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Point document 76 to uploaded high-resolution image
+        shell: python
+        run: |
+          from pathlib import Path
+          p = Path('morocco-iberian-diplomacy/index.html')
+          t = p.read_text(encoding='utf-8')
+          old = '/morocco-iberian-diplomacy/images/cartas-arabes-76-1367.webp'
+          new = '/morocco-iberian-diplomacy/images/cartas-arabes-76-1367-high.webp'
+          if old not in t:
+              raise SystemExit('Old document 76 image reference not found')
+          t = t.replace(old, new, 1)
+          p.write_text(t, encoding='utf-8')
+      - name: Commit fix
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add morocco-iberian-diplomacy/index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Use high-resolution image for Cartas arabes 76"
+          git push

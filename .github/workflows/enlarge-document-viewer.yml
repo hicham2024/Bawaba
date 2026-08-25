@@ -1,0 +1,35 @@
+name: Enlarge archival document viewer
+
+on:
+  push:
+    paths:
+      - '.github/workflows/enlarge-document-viewer.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Allow archival images to upscale to viewport
+        shell: python
+        run: |
+          from pathlib import Path
+          path = Path('morocco-iberian-diplomacy/index.html')
+          text = path.read_text(encoding='utf-8')
+          old = "const ratio = Math.min((window.innerWidth - 48) / naturalWidth, (window.innerHeight - toolbarHeight - 44) / naturalHeight, 1);"
+          new = "const ratio = Math.min((window.innerWidth - 48) / naturalWidth, (window.innerHeight - toolbarHeight - 44) / naturalHeight, 2.5);"
+          if old not in text:
+              raise SystemExit('Viewer fit ratio line not found')
+          text = text.replace(old, new, 1)
+          path.write_text(text, encoding='utf-8')
+      - name: Commit viewer enlargement
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add morocco-iberian-diplomacy/index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Enlarge archival images in lightbox viewer"
+          git push

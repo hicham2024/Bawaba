@@ -122,7 +122,7 @@
     const quarterTurn = Math.abs(rotation % 180) === 90;
     const naturalWidth = quarterTurn ? image.naturalHeight : image.naturalWidth;
     const naturalHeight = quarterTurn ? image.naturalWidth : image.naturalHeight;
-    const ratio = Math.min((window.innerWidth - 48) / naturalWidth, (window.innerHeight - toolbarHeight - 44) / naturalHeight, 1);
+    const ratio = Math.min((window.innerWidth - 48) / naturalWidth, (window.innerHeight - toolbarHeight - 44) / naturalHeight, 2.5);
     baseWidth = Math.max(1, image.naturalWidth * ratio);
     baseHeight = Math.max(1, image.naturalHeight * ratio);
     scale = 1;

@@ -18,6 +18,17 @@ const copyStaticDocuments = {
     await mkdir("dist/client/assets/cards", { recursive: true });
     await cp("assets/cards", "dist/client/assets/cards", { recursive: true });
 
+    // The archival scans are referenced by absolute URLs in the article HTML.
+    // Copy the directory explicitly so Vite includes every original image.
+    await mkdir("dist/client/morocco-iberian-diplomacy/images", {
+      recursive: true
+    });
+    await cp(
+      "morocco-iberian-diplomacy/images",
+      "dist/client/morocco-iberian-diplomacy/images",
+      { recursive: true }
+    );
+
     const standalonePages = [
       "livres.html",
       "acheter.html",

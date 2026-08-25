@@ -1,0 +1,35 @@
+name: Fix 1316 document orientation
+
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-1316-orientation.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rotate 1316 document upright
+        shell: python
+        run: |
+          from pathlib import Path
+          path = Path('morocco-iberian-diplomacy/index.html')
+          text = path.read_text(encoding='utf-8')
+          old = '.doc-visual.doc-vertical img{width:auto;height:300px;max-width:100%;max-height:none;object-fit:contain;transform:rotate(90deg);transform-origin:center}'
+          new = '.doc-visual.doc-vertical img{width:auto;height:300px;max-width:100%;max-height:none;object-fit:contain;transform:rotate(-90deg);transform-origin:center}'
+          if old not in text:
+              raise SystemExit('1316 rotation rule not found')
+          text = text.replace(old, new, 1)
+          path.write_text(text, encoding='utf-8')
+      - name: Commit orientation fix
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add morocco-iberian-diplomacy/index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Fix 1316 Arabic document orientation"
+          git push

@@ -1,0 +1,100 @@
+name: Fetch document 76 from PARES
+
+on:
+  push:
+    paths:
+      - '.github/workflows/fetch-doc76-from-pares.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install tools
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4 pillow
+      - name: Download original PARES image
+        shell: python
+        run: |
+          import os, re, requests
+          from bs4 import BeautifulSoup
+          from pathlib import Path
+          from PIL import Image
+          from io import BytesIO
+
+          show_url='https://pares.mcu.es/ParesBusquedas20/catalogo/show/4799646'
+          s=requests.Session()
+          r=s.get(show_url, timeout=60)
+          r.raise_for_status()
+          html=r.text
+
+          # Try to discover viewer/image identifiers from the PARES page.
+          soup=BeautifulSoup(html,'html.parser')
+          candidates=[]
+          for tag in soup.find_all(['a','img','script']):
+              for attr in ('href','src'):
+                  v=tag.get(attr)
+                  if v and ('showimg/' in v or 'ViewImage.do' in v):
+                      candidates.append(v)
+          candidates += re.findall(r'https?://[^\"\'<> ]+(?:showimg/\d+|ViewImage\.do[^\"\'<> ]+)', html)
+          candidates += re.findall(r'(?:/ParesBusquedas20/)?catalogo/showimg/\d+', html)
+
+          # If PARES exposes a showimg link, it is usually the cleanest route.
+          seen=[]
+          for c in candidates:
+              if c.startswith('/'):
+                  c='https://pares.mcu.es'+c
+              elif c.startswith('ParesBusquedas20'):
+                  c='https://pares.mcu.es/'+c
+              if c not in seen:
+                  seen.append(c)
+
+          blobs=[]
+          for u in seen:
+              try:
+                  rr=s.get(u,timeout=60)
+                  ct=rr.headers.get('content-type','')
+                  if rr.ok and len(rr.content)>50000 and ('image' in ct or rr.content[:2]==b'\xff\xd8'):
+                      blobs.append((len(rr.content),rr.content,u))
+              except Exception:
+                  pass
+
+          # Fallback: inspect dbCode / txt_id_imagen values and request a high-zoom image.
+          if not blobs:
+              dbs=re.findall(r'dbCode[=:][\"\']?(\d+)', html)
+              ids=re.findall(r'txt_id_imagen[=:][\"\']?(\d+)', html)
+              if dbs:
+                  db=dbs[0]
+                  image_id=ids[0] if ids else '1'
+                  u=(f'https://pares.mcu.es/ParesBusquedas20/ViewImage.do?accion=42&txt_id_imagen={image_id}'
+                     f'&txt_rotar=0&txt_zoom=10&txt_contraste=0&txt_totalImagenes=1&dbCode={db}&txt_contrast=1')
+                  rr=s.get(u,timeout=60)
+                  if rr.ok and len(rr.content)>50000:
+                      blobs.append((len(rr.content),rr.content,u))
+
+          if not blobs:
+              raise SystemExit('Could not locate the PARES scan from the catalog page')
+
+          _, data, source=max(blobs,key=lambda x:x[0])
+          im=Image.open(BytesIO(data)).convert('RGB')
+          target=Path('morocco-iberian-diplomacy/images/cartas-arabes-76-1367.webp')
+          target.parent.mkdir(parents=True,exist_ok=True)
+          im.save(target,'WEBP',quality=95,method=6)
+          print('Downloaded', source, 'size', im.size, 'saved bytes', target.stat().st_size)
+          if target.stat().st_size < 100000:
+              raise SystemExit('Downloaded image is unexpectedly small')
+      - name: Commit original scan and cleanup
+        run: |
+          rm -rf .tmp-doc76
+          rm -f .github/workflows/verify-doc76-size.yml
+          rm -f .github/workflows/fetch-doc76-from-pares.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet && exit 0
+          git commit -m "Restore high-resolution PARES scan for Cartas arabes 76"
+          git push

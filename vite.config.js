@@ -43,29 +43,29 @@ const copyStaticDocuments = {
     }
 
     // Put the newest research article first in the homepage selections carousel.
-    // This is done after Vite builds index.html so the historical homepage source
-    // stays intact while the published catalogue always exposes the newest item.
     const homePath = "dist/client/index.html";
     let home = await readFile(homePath, "utf8");
     const newArticleCard = `
-      <article class="item" data-era="القرن 13-14" data-topic="دبلوماسية" data-type="وثائق" data-country="إسبانيا" data-new="true">
-        <a class="item-media" href="/morocco-iberian-diplomacy/" aria-label="المغرب في الدبلوماسية الإيبيرية خلال القرنين الثالث عشر والرابع عشر">
-          <img src="/assets/cards/marinids.webp" alt="المغرب في الدبلوماسية الإيبيرية خلال القرنين الثالث عشر والرابع عشر" loading="eager">
+      <article class="item" data-era="modern contemporary" data-theme="borders diplomacy state colonial" data-type="document research reference" data-country="morocco spain">
+        <a class="item-media" href="/ceuta-melilla/" aria-label="سبتة ومليلية: تاريخ الثغرين والنزاع السيادي">
+          <img src="/assets/cards/ceuta-melilla.svg" alt="سبتة ومليلية: تاريخ الثغرين والنزاع السيادي" loading="eager">
         </a>
         <div class="meta">
-          <span class="badge" style="background:#d8a737;color:#15231d">جديد</span>
-          <span class="badge">وثائق دبلوماسية</span>
-          <span class="badge era">القرنان 13–14</span>
+          <span class="badge badge-new"><span class="material-symbols-rounded" aria-hidden="true">new_releases</span>الجديد</span>
+          <span class="badge">بحث وثائقي</span>
+          <span class="badge era">1415–اليوم</span>
         </div>
-        <h3>المغرب في الدبلوماسية الإيبيرية خلال القرنين الثالث عشر والرابع عشر</h3>
-        <p class="desc">بحث أرشيفي موثق في المعاهدات والمراسلات والسفارات والحروب، مع جرد للوثائق المرتبطة بالمغرب في الأرشيفات الإسبانية.</p>
-        <a class="read" href="/morocco-iberian-diplomacy/">قراءة البحث ←</a>
+        <h3>سبتة ومليلية: تاريخ الثغرين والنزاع السيادي</h3>
+        <p class="desc">دراسة موثقة في الاحتلال الإيبيري والحصارات المغربية والوضع الإداري الاستثنائي والمعاهدات والمطالبة المغربية المعاصرة.</p>
+        <time class="pub-date" datetime="2026-09-04">نُشر في 4 شتنبر 2026</time>
+        <a class="read" href="/ceuta-melilla/">قراءة البحث ←</a>
       </article>`;
 
-    if (!home.includes('/morocco-iberian-diplomacy/')) {
+    if (!home.includes('/ceuta-melilla/')) {
+      home = home.replace(/(<section class="gallery"[^>]*>)/, `$1${newArticleCard}`);
       home = home.replace(/(<div class="gallery"[^>]*>)/, `$1${newArticleCard}`);
     }
-    home = home.replace(/>9 ملفات</g, ">10 ملفات<");
+    home = home.replace(/>10 ملفات</g, ">11 ملفات<");
     await writeFile(homePath, home, "utf8");
   }
 };
@@ -89,6 +89,7 @@ export default defineConfig({
         ifniSahara: "ifni-sahara/index.html",
         treaties: "treaties/index.html",
         moroccoIberianDiplomacy: "morocco-iberian-diplomacy/index.html",
+        ceutaMelilla: "ceuta-melilla/index.html",
         touat: "touat/index.html",
         algerieColoniale: "algerie-coloniale/index.html"
       }

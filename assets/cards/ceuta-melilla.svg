@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
   <defs>
     <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#061b20" stop-opacity=".18"/>
-      <stop offset=".55" stop-color="#061b20" stop-opacity=".28"/>
-      <stop offset="1" stop-color="#061b20" stop-opacity=".72"/>
+      <stop offset="0" stop-color="#061b20" stop-opacity=".10"/>
+      <stop offset=".58" stop-color="#061b20" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#061b20" stop-opacity=".68"/>
     </linearGradient>
   </defs>
   <rect width="1200" height="700" fill="#173b42"/>
-  <image href="https://commons.wikimedia.org/wiki/Special:Redirect/file/Murallas_Reales_de_Ceuta.jpg" x="0" y="0" width="1200" height="700" preserveAspectRatio="xMidYMid slice"/>
+  <image href="https://upload.wikimedia.org/wikipedia/commons/3/3c/Murallas_Reales_de_Ceuta.jpg" x="0" y="0" width="1200" height="700" preserveAspectRatio="xMidYMid slice"/>
   <rect width="1200" height="700" fill="url(#shade)"/>
   <g font-family="Tahoma,Arial,sans-serif" text-anchor="middle">
     <text x="600" y="505" font-size="64" font-weight="700" fill="#ffffff">سبتة ومليلية</text>

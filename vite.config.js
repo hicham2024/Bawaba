@@ -18,8 +18,6 @@ const copyStaticDocuments = {
     await mkdir("dist/client/assets/cards", { recursive: true });
     await cp("assets/cards", "dist/client/assets/cards", { recursive: true });
 
-    // The archival scans are referenced by absolute URLs in the article HTML.
-    // Copy the directory explicitly so Vite includes every original image.
     await mkdir("dist/client/morocco-iberian-diplomacy/images", {
       recursive: true
     });
@@ -67,6 +65,16 @@ const copyStaticDocuments = {
     }
     home = home.replace(/>10 ملفات</g, ">11 ملفات<");
     await writeFile(homePath, home, "utf8");
+
+    // Use the official Ciudad Autónoma de Ceuta image of the Murallas Reales
+    // as the large title background, with a dark overlay for text readability.
+    const ceutaPath = "dist/client/ceuta-melilla/index.html";
+    let ceuta = await readFile(ceutaPath, "utf8");
+    ceuta = ceuta.replace(
+      /\.cover\{min-height:92vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:70px 24px;color:#fff;background:linear-gradient\(145deg,#123b42,#24565e 62%,#b4863f\)\}/,
+      `.cover{min-height:92vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:70px 24px;color:#fff;background:linear-gradient(rgba(7,28,31,.70),rgba(11,39,43,.78)),url("https://www.ceuta.es/ceuta/images/servicios/museos/imagenes/paginas/murallas.jpg") center/cover no-repeat;position:relative}`
+    );
+    await writeFile(ceutaPath, ceuta, "utf8");
   }
 };
 

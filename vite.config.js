@@ -40,7 +40,6 @@ const copyStaticDocuments = {
       await cp(page, `dist/client/${page}`);
     }
 
-    // Put the newest research article first in the homepage selections carousel.
     const homePath = "dist/client/index.html";
     let home = await readFile(homePath, "utf8");
     const newArticleCard = `
@@ -66,17 +65,22 @@ const copyStaticDocuments = {
     home = home.replace(/>10 ملفات</g, ">11 ملفات<");
     await writeFile(homePath, home, "utf8");
 
-    // Ceuta/Melilla presentation layer.
     const ceutaPath = "dist/client/ceuta-melilla/index.html";
     let ceuta = await readFile(ceutaPath, "utf8");
 
-    // Official Ciudad Autónoma de Ceuta image for the main hero.
-    // Keep the photograph clearly visible, like the Mourabitoun page,
-    // with only a light dark veil to preserve title readability.
+    // Split hero: Ceuta border fence + Melilla border fence, both sharp and clearly visible.
     ceuta = ceuta.replace(
       /\.cover\{min-height:92vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:70px 24px;color:#fff;background:linear-gradient\(145deg,#123b42,#24565e 62%,#b4863f\)\}/,
-      `.cover{min-height:92vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:70px 24px;color:#fff;background:linear-gradient(rgba(6,23,25,.30),rgba(8,31,34,.42)),url("https://www.ceuta.es/ceuta/images/servicios/museos/imagenes/paginas/murallas.jpg") center 44%/cover no-repeat;position:relative;text-shadow:0 3px 18px rgba(0,0,0,.62)}`
+      `.cover{min-height:92vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:70px 24px;color:#fff;background:#123b42;position:relative;overflow:hidden;text-shadow:0 3px 18px rgba(0,0,0,.72)}.cover::before,.cover::after{content:"";position:absolute;top:0;bottom:0;width:50%;background-size:cover;background-repeat:no-repeat;z-index:0}.cover::before{left:0;background-image:linear-gradient(rgba(5,20,22,.22),rgba(5,20,22,.34)),url("https://upload.wikimedia.org/wikipedia/commons/a/a2/CeutaBorderFence.jpg");background-position:center 48%}.cover::after{right:0;background-image:linear-gradient(rgba(5,20,22,.22),rgba(5,20,22,.34)),url("https://upload.wikimedia.org/wikipedia/commons/0/05/Valla_melilla_0001.jpg");background-position:center}.cover>*{position:relative;z-index:2}`
     );
+
+    // Small image credit for the Creative Commons source photographs.
+    if (!ceuta.includes('class="hero-credit"')) {
+      ceuta = ceuta.replace(
+        '<div class="author">إعداد: ولد صنهاجة</div></section>',
+        '<div class="author">إعداد: ولد صنهاجة</div><div class="hero-credit">صور الغلاف: CeutaBorderFence.jpg (CC BY-SA 4.0) و Valla melilla 0001.jpg (CC BY-SA 2.0) — Wikimedia Commons</div></section>'
+      );
+    }
 
     // Turn the full-screen chapter separators into compact inline chapter headings.
     ceuta = ceuta.replace(
@@ -84,14 +88,13 @@ const copyStaticDocuments = {
       `<section class="chapter" id="$4"><header class="chapter-inline"><span class="chapter-number">$1</span><h2>$2</h2><p class="chapter-sub">$3</p></header>`
     );
 
-    // Stable anchors for the existing table of contents.
     ceuta = ceuta.replace('<section class="front"><h1>مقدمة</h1>', '<section class="front" id="intro"><h1>مقدمة</h1>');
     ceuta = ceuta.replace('<section class="front"><h1>المحتويات</h1>', '<section class="front" id="contents"><h1>المحتويات</h1>');
     ceuta = ceuta.replace('<section class="front"><h1>الخط الزمني</h1>', '<section class="front" id="timeline"><h1>الخط الزمني</h1>');
     ceuta = ceuta.replace('<section class="refs"><h1>المصادر والمراجع</h1>', '<section class="refs" id="sources"><h1>المصادر والمراجع</h1>');
 
     const inlineChapterCss = `
-.chapter-inline{padding:0 0 18px;margin:0 0 26px;border-bottom:1px solid var(--line)}.chapter-number{display:inline-block;color:#9b6b22;font-weight:800;font-size:.88rem;margin-bottom:5px}.chapter-inline h2{margin:0!important;color:var(--g)!important;font-size:clamp(1.8rem,4vw,2.65rem)!important;line-height:1.45}.chapter-sub{margin:7px 0 0;color:#697679;font-size:1rem}.chapter{scroll-margin-top:84px}.front,.refs{scroll-margin-top:84px}@media(max-width:720px){.chapter-inline h2{font-size:1.8rem!important}.chapter{padding-top:34px}}`;
+.chapter-inline{padding:0 0 18px;margin:0 0 26px;border-bottom:1px solid var(--line)}.chapter-number{display:inline-block;color:#9b6b22;font-weight:800;font-size:.88rem;margin-bottom:5px}.chapter-inline h2{margin:0!important;color:var(--g)!important;font-size:clamp(1.8rem,4vw,2.65rem)!important;line-height:1.45}.chapter-sub{margin:7px 0 0;color:#697679;font-size:1rem}.chapter{scroll-margin-top:84px}.front,.refs{scroll-margin-top:84px}.hero-credit{position:absolute!important;bottom:14px;left:18px;right:18px;font-size:.63rem;color:rgba(255,255,255,.72);text-align:center;text-shadow:0 1px 4px rgba(0,0,0,.8)}@media(max-width:720px){.chapter-inline h2{font-size:1.8rem!important}.chapter{padding-top:34px}.cover::before{width:100%;height:50%;bottom:auto}.cover::after{width:100%;height:50%;top:50%;right:0}.cover h1{font-size:3rem}.hero-credit{font-size:.55rem}}`;
     ceuta = ceuta.replace('</style>', `${inlineChapterCss}</style>`);
 
     await writeFile(ceutaPath, ceuta, "utf8");

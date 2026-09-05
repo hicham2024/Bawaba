@@ -1,16 +1,50 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
   <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#efe5cf"/>
+      <stop offset="1" stop-color="#d8c7a4"/>
+    </linearGradient>
     <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#061b20" stop-opacity=".10"/>
-      <stop offset=".58" stop-color="#061b20" stop-opacity=".22"/>
-      <stop offset="1" stop-color="#061b20" stop-opacity=".68"/>
+      <stop offset="0" stop-color="#0c2f32" stop-opacity=".05"/>
+      <stop offset=".58" stop-color="#0c2f32" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#0c2f32" stop-opacity=".78"/>
     </linearGradient>
   </defs>
-  <rect width="1200" height="700" fill="#173b42"/>
-  <image href="https://upload.wikimedia.org/wikipedia/commons/3/3c/Murallas_Reales_de_Ceuta.jpg" x="0" y="0" width="1200" height="700" preserveAspectRatio="xMidYMid slice"/>
+  <rect width="1200" height="700" fill="url(#paper)"/>
+  <g opacity=".92" transform="translate(95 55)">
+    <rect x="0" y="0" width="430" height="570" rx="12" fill="#f8f2e3" stroke="#9e8e72" stroke-width="3"/>
+    <text x="215" y="52" text-anchor="middle" font-family="Georgia,serif" font-size="24" fill="#30291f">ACTAS SECRETAS DE LAS CORTES</text>
+    <line x1="38" y1="72" x2="392" y2="72" stroke="#463d31" stroke-width="2"/>
+    <text x="215" y="125" text-anchor="middle" font-family="Georgia,serif" font-size="34" fill="#2a241c">SESION</text>
+    <text x="215" y="168" text-anchor="middle" font-family="Georgia,serif" font-size="20" fill="#2a241c">DEL DIA 14 DE FEBRERO DE 1811</text>
+    <g stroke="#7b6d58" stroke-width="2" opacity=".72">
+      <line x1="40" y1="220" x2="390" y2="220"/><line x1="40" y1="244" x2="365" y2="244"/>
+      <line x1="40" y1="268" x2="390" y2="268"/><line x1="40" y1="292" x2="372" y2="292"/>
+      <line x1="40" y1="316" x2="390" y2="316"/><line x1="40" y1="340" x2="350" y2="340"/>
+      <line x1="40" y1="364" x2="390" y2="364"/><line x1="40" y1="388" x2="375" y2="388"/>
+      <line x1="40" y1="412" x2="390" y2="412"/><line x1="40" y1="436" x2="345" y2="436"/>
+      <line x1="40" y1="460" x2="390" y2="460"/><line x1="40" y1="484" x2="370" y2="484"/>
+    </g>
+  </g>
+  <g opacity=".72" transform="translate(540 85) rotate(-2 250 250)">
+    <rect x="0" y="0" width="520" height="505" rx="10" fill="#d7c7a2" stroke="#9c8d6e" stroke-width="3"/>
+    <g stroke="#6f5f47" stroke-width="3" opacity=".58">
+      <path d="M45 70 C120 45,160 100,235 68 S360 100,470 64"/>
+      <path d="M45 105 C120 78,170 132,245 103 S370 132,470 96"/>
+      <path d="M45 140 C115 110,180 168,250 138 S370 165,470 133"/>
+      <path d="M45 175 C110 145,180 200,260 171 S370 198,470 166"/>
+      <path d="M45 210 C120 180,190 235,265 205 S375 232,470 201"/>
+      <path d="M45 245 C115 215,185 270,255 242 S372 268,470 238"/>
+      <path d="M45 280 C120 250,190 305,265 277 S375 302,470 272"/>
+      <path d="M45 315 C110 285,180 340,255 312 S365 338,470 307"/>
+      <path d="M45 350 C120 320,190 375,265 347 S375 372,470 342"/>
+      <path d="M45 385 C115 355,185 410,255 382 S370 408,470 377"/>
+    </g>
+    <text x="260" y="458" text-anchor="middle" font-family="Georgia,serif" font-size="18" fill="#4a3f31">Archivo del Congreso de los Diputados · 1811</text>
+  </g>
   <rect width="1200" height="700" fill="url(#shade)"/>
   <g font-family="Tahoma,Arial,sans-serif" text-anchor="middle">
-    <text x="600" y="505" font-size="64" font-weight="700" fill="#ffffff">سبتة ومليلية</text>
-    <text x="600" y="570" font-size="30" font-weight="700" fill="#f2d08a">تاريخ الثغرين والنزاع السيادي</text>
+    <text x="600" y="545" font-size="66" font-weight="700" fill="#ffffff">سبتة ومليلية</text>
+    <text x="600" y="605" font-size="30" font-weight="700" fill="#f3d58d">تاريخ الثغرين والنزاع السيادي</text>
   </g>
 </svg>

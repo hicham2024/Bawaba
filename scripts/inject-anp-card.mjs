@@ -40,6 +40,10 @@ const featuredMarkup = `
   </div>
 </section>`;
 
+if (!home.includes('href="/about/"')) {
+  home = home.replace('<nav class="nav">', '<nav class="nav"><a href="/about/">عن بوابة</a>');
+}
+
 if (!home.includes('id="anpFeaturedStyle"')) {
   home = home.replace('</head>', `${featuredCss}</head>`);
 }
@@ -60,6 +64,9 @@ await writeFile(homePath, home, "utf8");
 await mkdir("dist/client/anp-armee-francaise", { recursive: true });
 await cp("public/anp-armee-francaise", "dist/client/anp-armee-francaise", { recursive: true, force: true });
 
+await mkdir("dist/client/about", { recursive: true });
+await cp("public/about", "dist/client/about", { recursive: true, force: true });
+
 const articlePath = "dist/client/anp-armee-francaise/index.html";
 let article = await readFile(articlePath, "utf8");
 
@@ -75,4 +82,4 @@ const newIntro = `<section class="sec" id="intro"><div class="sh"><span class="n
 article = article.replace(oldIntro, newIntro);
 await writeFile(articlePath, article, "utf8");
 
-console.log(`ANP featured block ensured and article text updated. Homepage contains ${visibleCards} cards.`);
+console.log(`ANP featured block, About link and article text ensured. Homepage contains ${visibleCards} cards.`);

@@ -1,61 +1,28 @@
-# Design QA — Accueil Bawaba
+# Design QA — Bawaba redesign
 
-Date : 14 août 2026
+Reference: selected Product Design concept 3 (`exec-357a48f0-8913-4ff8-b4c7-7925fd7e9ef6.png`)
 
-## Preuves
+Implementation reviewed at: `http://terminal.local:4173/`
 
-- Source visuelle : `qa/source-selected.png`
-- Implémentation rendue : `qa/implementation-home-final.jpg`
-- État soutien rendu : `qa/implementation-support-final.jpg`
-- Comparaison groupée : `qa/comparison-home-final-vertical.jpg`
-- Comparaison focalisée galerie/soutien : `qa/comparison-focus-final.jpg`
-- Viewport de référence normalisé : 1348 × 926 px.
-- Viewport de l’implémentation : 1348 × 926 CSS px, densité navigateur standard.
-- État comparé : accueil RTL, haut de page, filtres réinitialisés, aucun modal.
+## Visual comparison
 
-## Findings
+- The same editorial hierarchy is present: restrained navigation, dark heritage hero, dominant internal search, era/topic exploration, featured research, recent research rail, and the four-book band.
+- The implementation preserves the reference palette of deep green, warm ivory, ochre accents, archive photography, generous spacing, and Arabic-first RTL typography.
+- The hero content, search action, featured-story split, and recent-story rail follow the reference's right-to-left composition.
+- Existing project imagery is reused where it supports the chosen direction; no decorative placeholder graphics were introduced.
 
-- Aucun écart P0, P1 ou P2 restant.
-- La formulation « الأبحاث والوثائق المنشورة » visible dans le concept a été remplacée intentionnellement, à la demande de l’utilisateur, par « مختارات من ملفات البوابة ».
-- L’implémentation utilise les vrais dossiers, images et destinations déjà présents dans Bawaba ; les textes fictifs du concept ne sont pas repris.
-- Le soutien est proposé exclusivement par PayPal avec le QR officiel fourni par le propriétaire ; aucune donnée bancaire n’est collectée par le site.
+## Functional and accessibility checks
 
-## Surfaces de fidélité
+- Internal Arabic search returns matching research and clears conflicting filters.
+- Era and topic filters expose their state through `aria-pressed`.
+- Arabic is preserved from the homepage to the books page and checkout query parameters.
+- Four dynasty books replace the former 24-edition grid; each book has its own six-language selector.
+- Checkout displays the same selected book and language. The PayPal device link is ordered before the QR, waiting text has stronger contrast, and focus rings are visible.
+- Long-form articles receive a reading progress indicator and an expandable heading-based table of contents.
+- Homepage controls have accessible names; all images have `alt`; no horizontal overflow was detected at the tested desktop viewport.
+- Responsive rules cover navigation collapse, single-column hero/search, stacked editorial content, two-to-one-column catalog transitions, and mobile table-of-contents placement.
+- Production build completed successfully with Vite. No application-origin console errors were observed during the tested flows.
 
-| Surface | Résultat |
-|---|---|
-| Typographie | Noto Kufi Arabic, graisse et échelle proches du concept ; hiérarchie RTL claire et lisible. |
-| Espacement et rythme | Navigation fine, héros patrimonial ample, carte Historio, galerie et soutien alignés sur la composition sélectionnée. |
-| Couleurs et tokens | Vert émeraude, ivoire, or et terre cuite cohérents avec le concept et la famille Mourabitoun. |
-| Images | Nouveau fond patrimonial optimisé en WebP et vraies images documentaires locales dans les cartes ; aucun emplacement factice. |
-| Contenu | Neuf dossiers réels conservés ; titre de section refusé supprimé du code et du rendu. |
-| Interactions | Recherche/filtrage, remise à zéro, galerie RTL, modal PayPal et lancement Historio fonctionnels. |
-| Responsive | Mise en page une colonne sous 1060 px, galerie tactile, navigation scrollable et modals adaptés sous 720 px. |
-
-## Historique de comparaison
-
-1. Première comparaison : la structure et la palette correspondaient au concept, avec un héros et un panneau de soutien plus lisibles grâce aux vrais contenus.
-2. **P2 — navigation de la galerie RTL** : les flèches utilisaient un déplacement horizontal dépendant du navigateur et pouvaient ne pas bouger. Correction : navigation indexée par carte avec `scrollIntoView`, flèches inversées selon le sens RTL.
-3. Comparaison post-correction : la galerie se déplace jusqu’à `scrollLeft: -998` après navigation ; aucun écart P0/P1/P2 restant.
-
-## Contrôles navigateur
-
-- Rendu ouvert dans le navigateur cloud : oui.
-- Filtre « شارل » : 1 résultat visible ; remise à zéro : 9 résultats.
-- Galerie RTL : navigation suivante et précédente testée.
-- Soutien : ouverture/fermeture du modal PayPal et affichage du nouveau QR testés.
-- Historio : modal ouvert et URL de recherche encodée vérifiée.
-- Console applicative : aucune erreur de page ; seuls des messages provenant de l’extension de contrôle du navigateur ont été observés.
-- Build Vite : réussi, 15 modules transformés.
-
-## Écarts acceptés
-
-- Les images des cartes sont les documents et couvertures réels de Bawaba, plutôt que les contenus fictifs de l’image générée.
-- Le héros est légèrement plus haut afin de préserver la lisibilité du vrai texte arabe et du formulaire Historio.
-- Le profil public PayPal peut afficher le nom configuré par son propriétaire au moment de la confirmation du paiement.
-
-## Follow-up Polish
-
-- Aucun écart visuel ou fonctionnel bloquant restant.
+## Result
 
 final result: passed

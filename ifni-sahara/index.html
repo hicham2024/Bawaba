@@ -515,5 +515,5 @@ id="toc-الخلاصة-العامة-للدراسة">الخلاصة العامة 
     function update(){const max=document.documentElement.scrollHeight-innerHeight,ratio=max>0?scrollY/max:0;bar.style.width=(ratio*100)+'%';let current=sections[0];sections.forEach(section=>{if(section.getBoundingClientRect().top<150)current=section});links.forEach(link=>link.classList.toggle('active',current&&link.getAttribute('href')==='#'+current.id))}
     addEventListener('scroll',update,{passive:true});addEventListener('resize',update);update();
   </script>
-</body>
+<script src="/assets/bawaba-reader.js" defer></script></body>
 </html>

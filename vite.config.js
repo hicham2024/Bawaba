@@ -27,6 +27,20 @@ const copyStaticDocuments = {
       { recursive: true }
     );
 
+    // Homepage cards reference these stable nested URLs from runtime data.
+    // Copy them explicitly because Vite cannot discover URLs inside JS strings.
+    await mkdir("dist/client/cadderdz/images", { recursive: true });
+    await cp(
+      "cadderdz/images/hero-cadderdz-v2.jpg",
+      "dist/client/cadderdz/images/hero-cadderdz-v2.jpg"
+    );
+
+    await mkdir("dist/client/degaulle/images", { recursive: true });
+    await cp(
+      "degaulle/images/charles-de-gaulle-1963.jpg",
+      "dist/client/degaulle/images/charles-de-gaulle-1963.jpg"
+    );
+
     const standalonePages = [
       "livres.html",
       "acheter.html",

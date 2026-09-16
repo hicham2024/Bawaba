@@ -12,8 +12,8 @@
     *{box-sizing:border-box} body{margin:0;font-family:"Tahoma","Arial",sans-serif;background:var(--bg);color:var(--ink);line-height:1.95}
     .topbar{position:sticky;top:0;z-index:50;background:#173b42;color:#fff;padding:10px 18px;display:flex;justify-content:space-between;align-items:center}.topbar a{color:#fff;font-weight:700;text-decoration:none}.topbar .back{border:1px solid rgba(255,255,255,.35);padding:6px 12px;border-radius:9px}
     .page{max-width:980px;margin:0 auto;background:var(--paper);min-height:100vh;box-shadow:0 10px 30px rgba(0,0,0,.06)}
-    .hero{position:relative;min-height:380px;display:flex;align-items:end;justify-content:center;color:#fff;overflow:hidden;border-bottom:4px solid var(--gold);background:linear-gradient(to top,rgba(0,0,0,.68),rgba(0,0,0,.22) 55%,rgba(0,0,0,.18)),url('/assets/cards/ceuta-melilla.svg') center/cover no-repeat}
-    .hero-inner{width:100%;padding:42px 36px 34px;text-align:center}.kicker{display:inline-block;padding:6px 14px;background:rgba(182,138,58,.90);color:#fff;font-size:14px;border-radius:999px;margin-bottom:14px}
+    .hero{position:relative;min-height:380px;display:flex;align-items:end;justify-content:center;color:#fff;overflow:hidden;border-bottom:4px solid var(--gold);background:linear-gradient(to top,rgba(0,0,0,.68),rgba(0,0,0,.22) 55%,rgba(0,0,0,.18)),url('https://upload.wikimedia.org/wikipedia/commons/b/b5/Septa_%28Ceuta%29_ca_1572.jpg') center 42%/cover no-repeat}
+    .hero-inner{width:100%;padding:42px 36px 34px;text-align:center}.hero-credit{margin:14px auto 0;font-size:12px;color:rgba(255,255,255,.82);max-width:760px}.hero-credit a{color:#fff;text-decoration:underline}.kicker{display:inline-block;padding:6px 14px;background:rgba(182,138,58,.90);color:#fff;font-size:14px;border-radius:999px;margin-bottom:14px}
     h1{font-size:38px;line-height:1.35;margin:0 auto 14px;max-width:780px}.subtitle{max-width:760px;margin:0 auto;font-size:18px;color:rgba(255,255,255,.92)}
     .content{padding:36px 34px 52px}.meta{color:var(--muted);font-size:14px;border-bottom:1px solid var(--border);padding-bottom:18px;margin-bottom:28px}
     h2{font-size:28px;color:#2b2217;margin:34px 0 12px;padding-right:12px;border-right:4px solid var(--gold)}p{margin:0 0 18px;font-size:18px}.lead{font-size:20px;font-weight:600;color:#2c2419}
@@ -25,7 +25,7 @@
 <body>
   <div class="topbar"><a href="/">بوابة البحوث التاريخية</a><a class="back" href="/">العودة إلى البوابة</a></div>
   <article class="page">
-    <header class="hero"><div class="hero-inner"><div class="kicker">ملف تاريخي موثق</div><h1>سبتة ومليلية: بين الجغرافيا الإفريقية والسردية الاستعمارية</h1><p class="subtitle">قراءة في الوثائق الرسمية الإسبانية والبرتغالية والنصوص القانونية التي تُظهر خصوصية سبتة ومليلية، ومسار الاحتلال والحصار والتفاوض حول مستقبلهما عبر القرون.</p></div></header>
+    <header class="hero"><div class="hero-inner"><div class="kicker">ملف تاريخي موثق</div><h1>سبتة ومليلية: بين الجغرافيا الإفريقية والسردية الاستعمارية</h1><p class="subtitle">قراءة في الوثائق الرسمية الإسبانية والبرتغالية والنصوص القانونية التي تُظهر خصوصية سبتة ومليلية، ومسار الاحتلال والحصار والتفاوض حول مستقبلهما عبر القرون.</p><p class="hero-credit">منظر تاريخي لسبتة سنة 1572 — Georg Braun وFrans Hogenberg، <a href="https://commons.wikimedia.org/wiki/File:Septa_(Ceuta)_ca_1572.jpg" target="_blank" rel="noopener">Wikimedia Commons</a> — ملكية عامة</p></div></header>
     <section class="content">
       <div class="meta">دراسة وثائقية — المراجع الأصلية في آخر الصفحة</div>
       <p class="lead">عندما يُثار ملف سبتة ومليلية، يجري غالبًا تقديم المدينتين وكأنهما جزء “طبيعي” من إسبانيا. غير أن الوثائق التاريخية الرسمية نفسها ترسم صورة أكثر تعقيدًا: سبتة مدينة إفريقية احتلتها البرتغال سنة 1415 ثم آلت إلى التاج الإسباني بمقتضى ترتيبات لاحقة، ومليلية احتلتها قشتالة في أواخر القرن الخامس عشر، بينما تعاملت نصوص دستورية وتشريعية إسبانية مع المدينتين بوضع خاص ومتميز عن شبه الجزيرة.</p>
@@ -50,14 +50,20 @@
       <h2>5) جواز السفر والنظام العسكري الخاص</h2>
       <p>مرسوم إسباني منشور في <strong>Gaceta de Madrid سنة 1935</strong> نظم جوازات السفر وفرض إجراءات خاصة مرتبطة بالدخول إلى سبتة ومليلية. وبعد ذلك بعقود، لم يُلغَ جهاز <strong>“Mando del Ejército del Norte de África y Gobierno General de las Plazas de Soberanía de Ceuta y Melilla”</strong> إلا بمرسوم 3070/1967، الذي دخل حيز التنفيذ سنة 1968.</p>
 
-      <h2>6) النظام الجبائي الخاص: IPSI بدل IVA</h2>
+      <h2>6) من الـPresidios إلى «السيادة الكاملة»: مسار قانوني استثنائي</h2>
+      <p>عندما نتحدث عن سبتة ومليلية، يعتقد بعض الناس أن المدينتين كانتا دائمًا مدينتين إسبانيتين عاديتين، مثل مدريد أو برشلونة. لكن التاريخ يكشف أن وضعهما كان مختلفًا وأكثر تعقيدًا؛ فخلال فترات طويلة، لم تكن سبتة ومليلية تُداران مثل بقية المدن الإسبانية، بل خضعتا لأنظمة عسكرية وإدارية خاصة.</p>
+      <p>حتى إن سكان سبتة في القرن السابع عشر لم يكونوا يُعاملون تلقائيًا بالطريقة القانونية نفسها التي كان يُعامل بها سكان إسبانيا الأوروبية، وكان الحصول على بعض الحقوق مرتبطًا أحيانًا بالانتقال إلى شبه الجزيرة الإيبيرية. كما كانت المدينتان تُعرفان حتى بداية القرن العشرين باسم <strong>Presidios</strong>، أي المواقع العسكرية والسجون والمناطق العقابية، ثم تغيرت تسميتهما إلى <strong>Plazas Fuertes</strong>، أي الحصون العسكرية.</p>
+      <p>وفي ديسمبر 1955، أصدر نظام الجنرال فرانكو نصًا قانونيًا أكد أن سبتة ومليلية تخضعان لـ«سيادة إسبانية كاملة وغير قابلة للتصرف». وهنا يطرح الموقف المغربي سؤالًا مهمًا: إذا كانت المدينتان دائمًا جزءًا طبيعيًا من إسبانيا، فلماذا احتاجت مدريد سنة 1955 إلى التأكيد قانونيًا أن سيادتها عليهما كاملة وغير قابلة للتصرف؟</p>
+      <div class="quote"><strong>المصدر القانوني الإسباني:</strong> قانون 22 ديسمبر 1955 المتعلق بأسس النظام الاقتصادي والمالي لسبتة ومليلية، المنشور في الجريدة الرسمية الإسبانية يوم 25 ديسمبر 1955. <a href="https://www.boe.es/buscar/doc.php?id=BOE-A-1955-17828" target="_blank" rel="noopener">الاطلاع على الوثيقة الرسمية</a>.</div>
+
+      <h2>7) النظام الجبائي الخاص: IPSI بدل IVA</h2>
       <p>حتى في النظام المالي المعاصر، تتمتع سبتة ومليلية بمعاملة ضريبية خاصة. فالقانون الإسباني رقم 8 لسنة 1991 أقرّ <strong>IPSI</strong> كضريبة محلية خاصة بالمدينتين. وتقول ديباجة القانون إن «الظروف الجغرافية والتاريخية» أدت إلى معاملة ضريبية مختلفة عن شبه الجزيرة وجزر البليار.</p>
       <p>هذه الخصوصية لا تحسم السيادة وحدها، لكنها تضيف دليلًا مؤسساتيًا جديدًا على أن المدينتين لم تُعاملا تاريخيًا ولا ماليًا بصورة مطابقة تمامًا للمدن الإسبانية الواقعة داخل شبه الجزيرة.</p>
 
-      <h2>7) الناتو: الحماية ليست صياغة مطلقة</h2>
+      <h2>8) الناتو: الحماية ليست صياغة مطلقة</h2>
       <p>النص الرسمي لحلف شمال الأطلسي يربط المادة 5 بهجوم على عضو في <strong>أوروبا أو أمريكا الشمالية</strong>، ويؤكد شرح الناتو نفسه أن المادة 6 تفرض قيودًا جغرافية على نطاق الالتزام بالمساعدة المتبادلة. لذلك لا يمكن اختزال المسألة في عبارة سياسية مبسطة من نوع «سبتة ومليلية مشمولتان تلقائيًا وبلا نقاش».</p>
 
-      <h2>8) 1979: خوان كارلوس ناقش إمكان التنازل عن مليلية وتدويل سبتة</h2>
+      <h2>9) 1979: خوان كارلوس ناقش إمكان التنازل عن مليلية وتدويل سبتة</h2>
       <p>يكشف ملف دبلوماسي أمريكي منزوع السرية بعنوان <strong>Meeting of Senator Muskie with King Juan Carlos</strong> عن لقاء في قصر لا زارزويلا يوم 30 أبريل 1979 بين الملك خوان كارلوس والسيناتور الأمريكي إدموند موسكي، المبعوث الخاص للرئيس جيمي كارتر، بحضور السفير الأمريكي تيرينس تودمان. لخّصت السفارة الأمريكية الاجتماع في برقية مؤرخة في 8 مايو 1979، ويُحال إليها في NARA/AAD تحت Record ID <strong>215679</strong>.</p>
       <div class="quote"><strong>مضمون البرقية كما نقله الباحث Charles Powell:</strong> اعتبر خوان كارلوس أن القضية الكبرى بين إسبانيا والمغرب هي الجيبان، وأن مليلية يمكن التنازل عنها للمغرب في أجل قصير نسبيًا، بينما رأى أن أفضل حل لسبتة قد يكون التدويل أو وضعًا شبيهًا بطنجة. كما خشي من احتمال تكرار «مسيرة خضراء» أخرى.</div>
       <p>هذه الوثيقة لا تعني صدور قرار رسمي بالتنازل، لكنها تثبت أن مستقبل المدينتين كان، حتى على مستوى رأس الدولة الإسبانية في أواخر السبعينيات، موضوعًا سياسيًا قابلًا للنقاش.</p>

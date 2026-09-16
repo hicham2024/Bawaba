@@ -3,7 +3,7 @@ import { getStore } from '@netlify/blobs';
 const PAYPAL_API='https://api-m.paypal.com';
 const ALLOWED_BOOKS=['idrissides','almoravides','almohades','marinides','almoravides-research'];
 const ALLOWED_LANGS=['ar','fr','en','es','nl','it'];
-const PRICE={ 'almoravides-research':'10.00' };
+const PRICE={ 'almoravides-research':'9.99' };
 const priceFor=book=>PRICE[book]||'4.99';
 const validEdition=(book,lang)=>ALLOWED_BOOKS.includes(book)&&ALLOWED_LANGS.includes(lang)&&(book!=='almoravides-research'||lang==='ar');
 

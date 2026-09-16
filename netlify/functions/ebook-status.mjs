@@ -4,7 +4,8 @@ const expected = [
   'idrissides/ar.pdf','idrissides/fr.pdf','idrissides/en.pdf','idrissides/es.pdf','idrissides/nl.pdf','idrissides/it.pdf',
   'almoravides/ar.pdf','almoravides/fr.pdf','almoravides/en.pdf','almoravides/es.pdf','almoravides/nl.pdf','almoravides/it.pdf',
   'almohades/ar.pdf','almohades/fr.pdf','almohades/en.pdf','almohades/es.pdf','almohades/nl.pdf','almohades/it.pdf',
-  'marinides/ar.pdf','marinides/fr.pdf','marinides/en.pdf','marinides/es.pdf','marinides/nl.pdf','marinides/it.pdf'
+  'marinides/ar.pdf','marinides/fr.pdf','marinides/en.pdf','marinides/es.pdf','marinides/nl.pdf','marinides/it.pdf',
+  'almoravides-research/ar.pdf'
 ];
 
 export default async () => {
@@ -13,13 +14,6 @@ export default async () => {
     const { blobs } = await store.list();
     const present = new Set(blobs.map(b => b.key));
     const status = expected.map(key => ({ key, present: present.has(key) }));
-    return Response.json({
-      expected: expected.length,
-      present: status.filter(x => x.present).length,
-      missing: status.filter(x => !x.present).map(x => x.key),
-      status
-    }, { headers: { 'Cache-Control': 'no-store' } });
-  } catch (e) {
-    return Response.json({ error: e.message }, { status: 500, headers: { 'Cache-Control': 'no-store' } });
-  }
+    return Response.json({expected:expected.length,present:status.filter(x=>x.present).length,missing:status.filter(x=>!x.present).map(x=>x.key),status},{headers:{'Cache-Control':'no-store'}});
+  } catch (e) {return Response.json({ error: e.message }, { status: 500, headers: { 'Cache-Control': 'no-store' } });}
 };

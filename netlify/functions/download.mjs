@@ -4,7 +4,8 @@ const filenames={
   idrissides:{ar:'idrissides-marocains-ar.pdf',fr:'idrissides-marocains-fr.pdf',en:'moroccan-idrisids-en.pdf',es:'idrisies-marroquies-es.pdf',nl:'marokkaanse-idrisiden-nl.pdf',it:'idrisidi-marocchini-it.pdf'},
   almoravides:{ar:'almoravides-marocains-ar.pdf',fr:'almoravides-marocains-fr.pdf',en:'moroccan-almoravids-en.pdf',es:'almoravides-marroquies-es.pdf',nl:'marokkaanse-almoraviden-nl.pdf',it:'almoravidi-marocchini-it.pdf'},
   almohades:{ar:'almohades-marocains-ar.pdf',fr:'almohades-marocains-fr.pdf',en:'moroccan-almohads-en.pdf',es:'almohades-marroquies-es.pdf',nl:'marokkaanse-almohaden-nl.pdf',it:'almohadi-marocchini-it.pdf'},
-  marinides:{ar:'marinides-marocains-ar.pdf',fr:'marinides-marocains-fr.pdf',en:'moroccan-marinids-en.pdf',es:'merinies-marroquies-es.pdf',nl:'marokkaanse-meriniden-nl.pdf',it:'merinidi-marocchini-it.pdf'}
+  marinides:{ar:'marinides-marocains-ar.pdf',fr:'marinides-marocains-fr.pdf',en:'moroccan-marinids-en.pdf',es:'merinies-marroquies-es.pdf',nl:'marokkaanse-meriniden-nl.pdf',it:'merinidi-marocchini-it.pdf'},
+  'almoravides-research':{ar:'almoravides-recherche-ould-sanhaja-ar.pdf'}
 };
 
 export default async (req)=>{
@@ -22,6 +23,7 @@ export default async (req)=>{
     if(!pdf) return new Response('Le livre n’est pas encore disponible',{status:503});
     await entitlements.setJSON(token,{...e,downloads:e.downloads+1});
     const filename=filenames[e.book]?.[e.lang]||'bawaba-book.pdf';
-    return new Response(pdf,{status:200,headers:{'Content-Type':'application/pdf','Content-Disposition':`attachment; filename="${filename}"`,'Cache-Control':'private, no-store'}});
+    const inline=url.searchParams.get('mode')==='inline';
+    return new Response(pdf,{status:200,headers:{'Content-Type':'application/pdf','Content-Disposition':`${inline?'inline':'attachment'}; filename="${filename}"`,'Cache-Control':'private, no-store'}});
   }catch(e){return new Response('Erreur de téléchargement',{status:500});}
 };

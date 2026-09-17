@@ -166,7 +166,8 @@ export default defineConfig({
         moroccoIberianDiplomacy: "morocco-iberian-diplomacy/index.html",
         ceutaMelilla: "ceuta-melilla/index.html",
         touat: "touat/index.html",
-        algerieColoniale: "algerie-coloniale/index.html"
+        algerieColoniale: "algerie-coloniale/index.html",
+        algerieOttomane: "algerie-ottomane/index.html"
       }
     }
   },

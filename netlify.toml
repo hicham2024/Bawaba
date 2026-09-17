@@ -100,12 +100,6 @@
   force = true
 
 [[redirects]]
-  from = "/assets/cards/almoravides-research.svg"
-  to = "https://raw.githubusercontent.com/hicham2024/Bawaba/main/assets/cards/almoravides-research.svg"
-  status = 200
-  force = true
-
-[[redirects]]
   from = "/api/paypal-config"
   to = "/.netlify/functions/paypal-config"
   status = 200

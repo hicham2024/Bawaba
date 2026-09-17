@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build && node scripts/inject-anp-card.mjs"
+  command = "npm run build && node scripts/inject-anp-card.mjs && node scripts/polish-store-links.mjs"
   publish = "dist/client"
 
 [build.environment]
@@ -9,8 +9,7 @@
   directory = "netlify/functions"
   node_bundler = "esbuild"
 
-# Always revalidate the homepage so design and catalogue fixes reach visitors
-# without an old HTML response masking newly deployed assets.
+# Always revalidate the homepage and store so catalogue/payment fixes reach visitors.
 [[headers]]
   for = "/"
   [headers.values]
@@ -20,6 +19,17 @@
   for = "/index.html"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/livres.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/acheter-recherche.html"
+  [headers.values]
+    Cache-Control = "no-store"
+    X-Robots-Tag = "noindex, nofollow, noarchive"
 
 # Preserve every historical URL while consolidating Google indexing on bawaba.eu.
 [[redirects]]

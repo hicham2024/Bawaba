@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build && node scripts/inject-anp-card.mjs"
+  command = "npm run build && node scripts/inject-anp-card.mjs && node scripts/polish-store-links.mjs"
   publish = "dist/client"
 
 [build.environment]

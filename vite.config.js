@@ -165,7 +165,6 @@ export default defineConfig({
         treaties: "treaties/index.html",
         moroccoIberianDiplomacy: "morocco-iberian-diplomacy/index.html",
         ceutaMelilla: "ceuta-melilla/index.html",
-        voteCeutaParlementEuropeen: "vote-ceuta-parlement-europeen/index.html",
         touat: "touat/index.html",
         algerieColoniale: "algerie-coloniale/index.html",
         algerieOttomane: "algerie-ottomane/index.html"

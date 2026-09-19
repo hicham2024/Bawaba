@@ -1,5 +1,14 @@
 import { defineConfig } from "vite";
-import { cp, mkdir, readFile, writeFile } from "node:fs/promises";
+import { cp, mkdir, readFile, readdir, writeFile } from "node:fs/promises";
+
+async function findHtmlFiles(directory) {
+  const entries = await readdir(directory, { withFileTypes: true });
+  const files = await Promise.all(entries.map(async entry => {
+    const path = `${directory}/${entry.name}`;
+    return entry.isDirectory() ? findHtmlFiles(path) : (entry.name.endsWith(".html") ? [path] : []);
+  }));
+  return files.flat();
+}
 
 const copyStaticDocuments = {
   name: "copy-static-documents",
@@ -142,6 +151,18 @@ const copyStaticDocuments = {
     ceuta = ceuta.replace('</style>', `${inlineChapterCss}</style>`);
 
     await writeFile(ceutaPath, ceuta, "utf8");
+
+    // Make one accessible share component available on every article output.
+    // The runtime script excludes the home, store, contact, checkout and admin pages.
+    const shareStyle = '<link rel="stylesheet" href="/assets/article-share.css">';
+    const shareScript = '<script src="/assets/article-share.js" defer></script>';
+    for (const htmlPath of await findHtmlFiles("dist/client")) {
+      let html = await readFile(htmlPath, "utf8");
+      if (html.includes('/assets/article-share.js')) continue;
+      html = html.replace('</head>', `${shareStyle}</head>`);
+      html = html.replace('</body>', `${shareScript}</body>`);
+      await writeFile(htmlPath, html, "utf8");
+    }
   }
 };
 

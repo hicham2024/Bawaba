@@ -162,6 +162,13 @@ const copyStaticDocuments = {
 
     await writeFile(ceutaPath, ceuta, "utf8");
 
+    // Give the new long-form study an immersive edge-to-edge opening image.
+    const effortsPath = "dist/client/ceuta-melilla/efforts-marocains.html";
+    let efforts = await readFile(effortsPath, "utf8");
+    const effortsHeroCss = `<style>.hero{width:100vw!important;max-width:none!important;min-height:clamp(620px,88vh,960px)!important;margin-inline:calc(50% - 50vw)!important;border-radius:0!important}.hero>img{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important}@media(max-width:720px){.hero{min-height:78vh!important}}</style>`;
+    efforts = efforts.replace("</head>", `${effortsHeroCss}</head>`);
+    await writeFile(effortsPath, efforts, "utf8");
+
     // Make one accessible share component available on every article output.
     // The runtime script excludes the home, store, contact, checkout and admin pages.
     const shareStyle = '<link rel="stylesheet" href="/assets/article-share.css">';

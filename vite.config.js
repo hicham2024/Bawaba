@@ -36,6 +36,15 @@ const copyStaticDocuments = {
       { recursive: true }
     );
 
+    await mkdir("dist/client/ceuta-melilla/images", {
+      recursive: true
+    });
+    await cp(
+      "ceuta-melilla/images",
+      "dist/client/ceuta-melilla/images",
+      { recursive: true }
+    );
+
     // Homepage cards reference these stable nested URLs from runtime data.
     // Copy them explicitly because Vite cannot discover URLs inside JS strings.
     await mkdir("dist/client/cadderdz/images", { recursive: true });

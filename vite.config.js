@@ -165,6 +165,17 @@ const copyStaticDocuments = {
     // Give the new long-form study an immersive edge-to-edge opening image.
     const effortsPath = "dist/client/ceuta-melilla/efforts-marocains.html";
     let efforts = await readFile(effortsPath, "utf8");
+    // Complete metadata for the standalone archival study in the published HTML.
+    efforts = efforts.replace("</head>", `
+<link rel="canonical" href="https://bawaba.eu/ceuta-melilla/efforts-marocains.html">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:title" content="حصارات سبتة ومليلية: وثائق من الأرشيف الإسباني | بوابة">
+<meta property="og:description" content="دراسة موثقة حول محاولات المغرب استرجاع سبتة ومليلية، مع وثائق الحصارات والمراسلات الدبلوماسية.">
+<meta property="og:url" content="https://bawaba.eu/ceuta-melilla/efforts-marocains.html">
+<meta property="og:image" content="https://bawaba.eu/ceuta-melilla/images/ceuta-efforts-hero.webp">
+<meta name="twitter:card" content="summary_large_image">
+</head>`);
     const effortsHeroCss = `<style>.hero{width:100vw!important;max-width:none!important;min-height:clamp(620px,88vh,960px)!important;margin-inline:calc(50% - 50vw)!important;border-radius:0!important}.hero>img{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important}.article-nav{position:sticky;top:0;z-index:90;background:#0b3b2e;color:#fff;border-bottom:3px solid #dba936;box-shadow:0 5px 18px rgba(0,0,0,.18)}.article-nav-inner{width:min(1120px,calc(100% - 32px));min-height:58px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:16px}.article-nav-brand{font-weight:800;color:#fff!important;border:0!important}.article-nav-home{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem .9rem;border:1px solid rgba(255,255,255,.48)!important;border-radius:9px;color:#fff!important;background:rgba(255,255,255,.08);font-weight:700}.article-nav a:hover{border-color:#dba936!important}@media(max-width:720px){.hero{min-height:78vh!important}.article-nav-inner{min-height:54px}.article-nav-brand{font-size:.86rem}.article-nav-home{font-size:.82rem;padding:.35rem .65rem}}@media print{.article-nav{display:none}}</style>`;
     const articleNav = `<nav class="article-nav" aria-label="التنقل في بوابة البحوث التاريخية"><div class="article-nav-inner"><a class="article-nav-brand" href="/">بوابة البحوث التاريخية</a><a class="article-nav-home" href="/" aria-label="العودة إلى الصفحة الرئيسية لبوابة البحوث التاريخية">← العودة إلى الصفحة الرئيسية</a></div></nav>`;
     efforts = efforts.replace("</head>", `${effortsHeroCss}</head>`);

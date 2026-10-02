@@ -1,17 +1,6 @@
 import { getStore } from '@netlify/blobs';
 
-const ALLOWED_BOOKS=['idrissides','almoravides','almohades','marinides','almoravides-research'];
-const ALLOWED_LANGS=['ar','fr','en','es','nl','it'];
-const PRODUCTS={
-  'almoravides-research':{price:'9.99',currency:'EUR',manualDelivery:true,title:'Almoravides research book'},
-  idrissides:{price:'4.99',currency:'EUR',manualDelivery:false,title:'Idrissides youth book'},
-  almoravides:{price:'4.99',currency:'EUR',manualDelivery:false,title:'Almoravides youth book'},
-  almohades:{price:'4.99',currency:'EUR',manualDelivery:false,title:'Almohades youth book'},
-  marinides:{price:'4.99',currency:'EUR',manualDelivery:false,title:'Marinides youth book'}
-};
-const validEdition=(book,lang)=>ALLOWED_BOOKS.includes(book)&&ALLOWED_LANGS.includes(lang)&&(book!=='almoravides-research'||lang==='ar');
-function paypalConfig(){const sandbox=process.env.PAYPAL_ENV==='sandbox';if(!sandbox&&process.env.PAYPAL_ENV!=='live')throw new Error('PayPal is not enabled');const api=sandbox?'https://api-m.sandbox.paypal.com':'https://api-m.paypal.com';const id=sandbox?(process.env.PAYPAL_SANDBOX_CLIENT_ID||process.env.PAYPAL_CLIENT_ID):process.env.PAYPAL_CLIENT_ID;const secret=sandbox?(process.env.PAYPAL_SANDBOX_CLIENT_SECRET||process.env.PAYPAL_CLIENT_SECRET):process.env.PAYPAL_CLIENT_SECRET;if(!id||!secret)throw new Error('PayPal credentials are missing');return {api,id,secret}}
-async function accessToken(){const {api,id,secret}=paypalConfig();const auth=Buffer.from(`${id}:${secret}`).toString('base64');const r=await fetch(`${api}/v1/oauth2/token`,{method:'POST',headers:{Authorization:`Basic ${auth}`,'Content-Type':'application/x-www-form-urlencoded'},body:'grant_type=client_credentials'});if(!r.ok)throw new Error('Unable to authenticate with PayPal');return {api,token:(await r.json()).access_token}}
+import {PRODUCTS,validEdition,accessToken} from '../lib/payments.mjs';
 
 export default async(req)=>{
   if(req.method!=='POST')return new Response('Method not allowed',{status:405});

@@ -242,7 +242,7 @@ function applyTranslation(lang){
  nodes.forEach(n=>{const raw=n.nodeValue,trim=raw.trim();if(pack.texts[trim])n.nodeValue=raw.replace(trim,pack.texts[trim])});
  document.querySelector('.article-shell').style.direction='ltr';
 }
-if(articleLang!=='ar')applyTranslation(articleLang);
+
 
 Object.assign(translations,{
 en:{title:"Algeria before 1830: Independent State or under Ottoman suzerainty? | Bawaba",description:"Documented historical study of the Regency of Algiers before 1830 and its political, legal and military relationship with the Ottoman Empire.",texts:{
@@ -292,5 +292,6 @@ es:{title:"Argelia antes de 1830: ¿Estado independiente o bajo soberanía otoma
 "ملاحظة منهجية: جرى الاعتماد على الوثائق ذات التاريخ والسياق القابلين للتحقق، مع استبعاد النصوص التي وصفها ناشروها بأنها افتراضية أو غير مؤكدة.":"Nota metodológica: el estudio se basa en documentos cuya fecha y contexto pueden verificarse y excluye textos que sus editores describen como hipotéticos o inciertos.","بوابة البحوث التاريخية — بحث وثائقي في تاريخ المغرب الكبير والعلاقات العثمانية":"Portal de investigaciones históricas — estudio documental sobre la historia del Magreb y las relaciones otomanas"
 }}
 });
+if(articleLang!=='ar')applyTranslation(articleLang);
 </script>
 </body></html>

@@ -62,6 +62,7 @@ const copyStaticDocuments = {
     const standalonePages = [
       "livres.html",
       "acheter.html",
+      "acheter-recherche.html",
       "contact.html",
       "merci.html",
       "admin-wero.html",
@@ -72,6 +73,12 @@ const copyStaticDocuments = {
       await cp(page, `dist/client/${page}`);
     }
 
+    for (const lang of ['fr','en','es']) {
+      await mkdir(`dist/client/ceuta-melilla/${lang}`, {recursive:true});
+      await cp(`ceuta-melilla/${lang}/index.html`, `dist/client/ceuta-melilla/${lang}/index.html`);
+    }
+    await mkdir('dist/client/images', {recursive:true});
+    await cp('images/paypal-qr.png','dist/client/images/paypal-qr.png');
     const homePath = "dist/client/index.html";
     let home = await readFile(homePath, "utf8");
     const newArticleCard = `

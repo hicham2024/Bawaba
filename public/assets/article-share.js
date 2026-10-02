@@ -1,8 +1,8 @@
 (() => {
-  const normalizedPath = location.pathname.replace(/\/+$/, '') || '/';
+  const normalizedPath = location.pathname.replace(/\.html$/, '').replace(/\/+$/, '') || '/';
   const excluded = [
-    '/', '/about', '/contact', '/livres.html', '/acheter.html',
-    '/acheter-recherche.html', '/merci.html', '/admin-wero.html',
+    '/', '/about', '/contact', '/livres', '/acheter',
+    '/acheter-recherche', '/merci', '/admin-wero.html',
     '/admin-bank-transfer.html', '/admin-books.html'
   ];
   if (excluded.includes(normalizedPath) || normalizedPath.startsWith('/admin-')) return;

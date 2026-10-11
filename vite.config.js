@@ -80,6 +80,7 @@ const copyStaticDocuments = {
     await mkdir('dist/client/images', {recursive:true});
     await cp('images/paypal-qr.png','dist/client/images/paypal-qr.png');
     await cp('images/bawaba-hero-heritage.webp','dist/client/images/bawaba-hero-heritage.webp');
+    await cp('images/maghreb-political-titles-hero.webp','dist/client/images/maghreb-political-titles-hero.webp');
     const homePath = "dist/client/index.html";
     let home = await readFile(homePath, "utf8");
     const newArticleCard = `

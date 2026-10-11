@@ -51,6 +51,19 @@
   status = 200
   force = true
 
+# Stable public route for the political-titles study.
+[[redirects]]
+  from = "/maghreb-political-titles/"
+  to = "/maghreb-political-titles.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/maghreb-political-titles"
+  to = "/maghreb-political-titles.html"
+  status = 301
+  force = true
+
 # Stable success route for Netlify Forms submissions.
 [[redirects]]
   from = "/merci"

@@ -237,7 +237,8 @@ export default defineConfig({
         algerieColoniale: "algerie-coloniale/index.html",
         algerieOttomane: "algerie-ottomane/index.html",
         maghrebPoliticalTitles: "maghreb-political-titles/index.html",
-        maghrebPoliticalTitlesStandalone: "maghreb-political-titles.html"
+        maghrebPoliticalTitlesStandalone: "maghreb-political-titles.html",
+        reponsePiratesHistoireIdentite: "reponse-pirates-histoire-identite/index.html"
       }
     }
   },

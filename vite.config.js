@@ -236,7 +236,8 @@ export default defineConfig({
         touat: "touat/index.html",
         algerieColoniale: "algerie-coloniale/index.html",
         algerieOttomane: "algerie-ottomane/index.html",
-        maghrebPoliticalTitles: "maghreb-political-titles/index.html"
+        maghrebPoliticalTitles: "maghreb-political-titles/index.html",
+        maghrebPoliticalTitlesStandalone: "maghreb-political-titles.html"
       }
     }
   },

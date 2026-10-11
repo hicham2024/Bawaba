@@ -1,6 +1,6 @@
 import {readFile,writeFile,readdir} from 'node:fs/promises';
 const root='dist/client';
-const articles=['cadderdz','degaulle','guerredesables','ifni-sahara','treaties','touat','algerie-coloniale','algerie-ottomane','morocco-iberian-diplomacy','ceuta-melilla','anp-armee-francaise'];
+const articles=['cadderdz','degaulle','guerredesables','ifni-sahara','treaties','touat','algerie-coloniale','algerie-ottomane','morocco-iberian-diplomacy','ceuta-melilla','anp-armee-francaise','maghreb-political-titles'];
 async function walk(dir){const out=[];for(const e of await readdir(dir,{withFileTypes:true})){const p=`${dir}/${e.name}`;if(e.isDirectory())out.push(...await walk(p));else if(e.name.endsWith('.html'))out.push(p)}return out}
 for(const folder of articles) for(const path of await walk(`${root}/${folder}`)){
  let html=await readFile(path,'utf8');

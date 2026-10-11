@@ -79,6 +79,7 @@ const copyStaticDocuments = {
     }
     await mkdir('dist/client/images', {recursive:true});
     await cp('images/paypal-qr.png','dist/client/images/paypal-qr.png');
+    await cp('images/bawaba-hero-heritage.webp','dist/client/images/bawaba-hero-heritage.webp');
     const homePath = "dist/client/index.html";
     let home = await readFile(homePath, "utf8");
     const newArticleCard = `
@@ -234,7 +235,8 @@ export default defineConfig({
         ceutaMelillaEfforts: "ceuta-melilla/efforts-marocains.html",
         touat: "touat/index.html",
         algerieColoniale: "algerie-coloniale/index.html",
-        algerieOttomane: "algerie-ottomane/index.html"
+        algerieOttomane: "algerie-ottomane/index.html",
+        maghrebPoliticalTitles: "maghreb-political-titles/index.html"
       }
     }
   },

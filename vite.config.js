@@ -81,6 +81,7 @@ const copyStaticDocuments = {
     await cp('images/paypal-qr.png','dist/client/images/paypal-qr.png');
     await cp('images/bawaba-hero-heritage.webp','dist/client/images/bawaba-hero-heritage.webp');
     await cp('images/maghreb-political-titles-hero.webp','dist/client/images/maghreb-political-titles-hero.webp');
+    await cp('images/reponse-pirates-hero.jpg','dist/client/images/reponse-pirates-hero.jpg');
     const homePath = "dist/client/index.html";
     let home = await readFile(homePath, "utf8");
     const newArticleCard = `

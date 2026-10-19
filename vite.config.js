@@ -242,7 +242,8 @@ export default defineConfig({
         maghrebPoliticalTitlesStandalone: "maghreb-political-titles.html",
         reponsePiratesHistoireIdentite: "reponse-pirates-histoire-identite/index.html",
         amarBelani: "resolution-quatrieme-commission-amar-belani/index.html",
-        amarBelaniComplete: "resolution-quatrieme-commission-reponse-complete-amar-belani/index.html"
+        amarBelaniComplete: "resolution-quatrieme-commission-reponse-complete-amar-belani/index.html",
+        opinions: "opinions/index.html"
       }
     }
   },

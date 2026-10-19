@@ -240,7 +240,8 @@ export default defineConfig({
         algerieOttomane: "algerie-ottomane/index.html",
         maghrebPoliticalTitles: "maghreb-political-titles/index.html",
         maghrebPoliticalTitlesStandalone: "maghreb-political-titles.html",
-        reponsePiratesHistoireIdentite: "reponse-pirates-histoire-identite/index.html"
+        reponsePiratesHistoireIdentite: "reponse-pirates-histoire-identite/index.html",
+        amarBelani: "resolution-quatrieme-commission-amar-belani/index.html"
       }
     }
   },

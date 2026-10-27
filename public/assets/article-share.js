@@ -75,7 +75,7 @@
     button.className = 'article-share__button';
     button.type = 'button';
     button.dataset.nativeShare = '';
-    button.innerHTML = '<span class="article-share__mark" aria-hidden="true">↗</span>${t.native}';
+    button.innerHTML = '<span class="article-share__mark" aria-hidden="true">↗</span>' + t.native;
     button.addEventListener('click', async () => {
       try { await navigator.share({ title, url }); } catch (error) {
         if (error?.name !== 'AbortError') status.textContent = t.failed;

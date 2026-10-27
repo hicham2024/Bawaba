@@ -17,8 +17,9 @@
 
   const lang = (document.documentElement.lang || 'ar').toLowerCase().split('-')[0];
   const translations = {
-    ar: {heading:'شارك هذا المقال',hint:'ساعد القراء على الوصول إلى هذا البحث.',whatsapp:t.whatsapp,facebook:t.facebook,x:t.x,linkedin:t.linkedin,telegram:t.telegram,copy:'نسخ الرابط',copied:'تم نسخ رابط المقال.',native:'مشاركة عبر الهاتف',failed:'تعذّرت المشاركة. يمكنك نسخ الرابط.',shareVia:'مشاركة المقال عبر '},
+    ar: {heading:'شارك هذا المقال',hint:'ساعد القراء على الوصول إلى هذا البحث.',whatsapp:'واتساب',facebook:'فيسبوك',x:'منصة X',linkedin:'لينكدإن',telegram:'تيليغرام',copy:'نسخ الرابط',copied:'تم نسخ رابط المقال.',native:'مشاركة عبر الهاتف',failed:'تعذّرت المشاركة. يمكنك نسخ الرابط.',shareVia:'مشاركة المقال عبر '},
     fr: {heading:'Partager cet article',hint:'Aidez les lecteurs à découvrir cette analyse.',whatsapp:'WhatsApp',facebook:'Facebook',x:'X',linkedin:'LinkedIn',telegram:'Telegram',copy:'Copier le lien',copied:'Lien de l’article copié.',native:'Partager depuis cet appareil',failed:'Le partage a échoué. Vous pouvez copier le lien.',shareVia:'Partager l’article sur '},
+    es: {heading:'Compartir este artículo',hint:'Ayuda a otros lectores a descubrir este análisis.',whatsapp:'WhatsApp',facebook:'Facebook',x:'X',linkedin:'LinkedIn',telegram:'Telegram',copy:'Copiar enlace',copied:'Enlace del artículo copiado.',native:'Compartir desde este dispositivo',failed:'No se pudo compartir. Puedes copiar el enlace.',shareVia:'Compartir el artículo en '},
     en: {heading:'Share this article',hint:'Help readers discover this analysis.',whatsapp:'WhatsApp',facebook:'Facebook',x:'X',linkedin:'LinkedIn',telegram:'Telegram',copy:'Copy link',copied:'Article link copied.',native:'Share from this device',failed:'Sharing failed. You can copy the link.',shareVia:'Share article on '}
   };
   const t = translations[lang] || translations.ar;

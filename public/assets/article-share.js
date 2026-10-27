@@ -15,12 +15,20 @@
   const encodedTitle = encodeURIComponent(title);
   const encodedMessage = encodeURIComponent(`${title} — ${url}`);
 
+  const lang = (document.documentElement.lang || 'ar').toLowerCase().split('-')[0];
+  const translations = {
+    ar: {heading:'شارك هذا المقال',hint:'ساعد القراء على الوصول إلى هذا البحث.',whatsapp:t.whatsapp,facebook:t.facebook,x:t.x,linkedin:t.linkedin,telegram:t.telegram,copy:'نسخ الرابط',copied:'تم نسخ رابط المقال.',native:'مشاركة عبر الهاتف',failed:'تعذّرت المشاركة. يمكنك نسخ الرابط.',shareVia:'مشاركة المقال عبر '},
+    fr: {heading:'Partager cet article',hint:'Aidez les lecteurs à découvrir cette analyse.',whatsapp:'WhatsApp',facebook:'Facebook',x:'X',linkedin:'LinkedIn',telegram:'Telegram',copy:'Copier le lien',copied:'Lien de l’article copié.',native:'Partager depuis cet appareil',failed:'Le partage a échoué. Vous pouvez copier le lien.',shareVia:'Partager l’article sur '},
+    en: {heading:'Share this article',hint:'Help readers discover this analysis.',whatsapp:'WhatsApp',facebook:'Facebook',x:'X',linkedin:'LinkedIn',telegram:'Telegram',copy:'Copy link',copied:'Article link copied.',native:'Share from this device',failed:'Sharing failed. You can copy the link.',shareVia:'Share article on '}
+  };
+  const t = translations[lang] || translations.ar;
+
   const networks = [
-    ['whatsapp', 'WA', 'واتساب', `https://wa.me/?text=${encodedMessage}`],
-    ['facebook', 'f', 'فيسبوك', `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`],
-    ['x', 'X', 'منصة X', `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`],
-    ['linkedin', 'in', 'لينكدإن', `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`],
-    ['telegram', 'TG', 'تيليغرام', `https://t.me/share/url?url=${encodedUrl}&text=${encodedTitle}`]
+    ['whatsapp', 'WA', t.whatsapp, `https://wa.me/?text=${encodedMessage}`],
+    ['facebook', 'f', t.facebook, `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`],
+    ['x', 'X', t.x, `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`],
+    ['linkedin', 'in', t.linkedin, `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`],
+    ['telegram', 'TG', t.telegram, `https://t.me/share/url?url=${encodedUrl}&text=${encodedTitle}`]
   ];
 
   const panel = document.createElement('aside');
@@ -29,13 +37,13 @@
   panel.innerHTML = `
     <div class="article-share__head">
       <div>
-        <h2 class="article-share__title" id="articleShareTitle">شارك هذا المقال</h2>
-        <p class="article-share__hint">ساعد القراء على الوصول إلى هذا البحث.</p>
+        <h2 class="article-share__title" id="articleShareTitle">${t.heading}</h2>
+        <p class="article-share__hint">${t.hint}</p>
       </div>
     </div>
     <div class="article-share__links">
-      ${networks.map(([network, mark, label, href]) => `<a class="article-share__link" data-network="${network}" href="${href}" target="_blank" rel="noopener noreferrer" aria-label="مشاركة المقال عبر ${label}"><span class="article-share__mark" aria-hidden="true">${mark}</span>${label}</a>`).join('')}
-      <button class="article-share__button" type="button" data-copy-link><span class="article-share__mark" aria-hidden="true">↗</span>نسخ الرابط</button>
+      ${networks.map(([network, mark, label, href]) => `<a class="article-share__link" data-network="${network}" href="${href}" target="_blank" rel="noopener noreferrer" aria-label="${t.shareVia}${label}"><span class="article-share__mark" aria-hidden="true">${mark}</span>${label}</a>`).join('')}
+      <button class="article-share__button" type="button" data-copy-link><span class="article-share__mark" aria-hidden="true">↗</span>${t.copy}</button>
     </div>
     <p class="article-share__status" role="status" aria-live="polite"></p>`;
 
@@ -47,7 +55,7 @@
   panel.querySelector('[data-copy-link]').addEventListener('click', async () => {
     try {
       await navigator.clipboard.writeText(url);
-      status.textContent = 'تم نسخ رابط المقال.';
+      status.textContent = t.copied;
     } catch {
       const input = document.createElement('input');
       input.value = url;
@@ -58,7 +66,7 @@
       input.select();
       document.execCommand('copy');
       input.remove();
-      status.textContent = 'تم نسخ رابط المقال.';
+      status.textContent = t.copied;
     }
   });
 
@@ -67,10 +75,10 @@
     button.className = 'article-share__button';
     button.type = 'button';
     button.dataset.nativeShare = '';
-    button.innerHTML = '<span class="article-share__mark" aria-hidden="true">↗</span>مشاركة عبر الهاتف';
+    button.innerHTML = '<span class="article-share__mark" aria-hidden="true">↗</span>${t.native}';
     button.addEventListener('click', async () => {
       try { await navigator.share({ title, url }); } catch (error) {
-        if (error?.name !== 'AbortError') status.textContent = 'تعذّرت المشاركة. يمكنك نسخ الرابط.';
+        if (error?.name !== 'AbortError') status.textContent = t.failed;
       }
     });
     panel.querySelector('.article-share__links').prepend(button);

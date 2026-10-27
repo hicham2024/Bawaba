@@ -250,7 +250,8 @@ export default defineConfig({
         saharaOpinion2026: "opinions/sahara-2797-draft-2026/index.html",
         saharaOpinionFrench2026: "opinions/sahara-2025-2026-analyse-fr/index.html",
         saharaOpinionEnglish2026: "opinions/sahara-2025-2026-analyse-en/index.html",
-        saharaOpinionArabic2026: "opinions/sahara-2025-2026-analyse-ar/index.html"
+        saharaOpinionArabic2026: "opinions/sahara-2025-2026-analyse-ar/index.html",
+        saharaOpinionSpanish2026: "opinions/sahara-2025-2026-analyse-es/index.html"
       }
     }
   },

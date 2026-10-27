@@ -248,7 +248,9 @@ export default defineConfig({
         amarBelaniComplete: "resolution-quatrieme-commission-reponse-complete-amar-belani/index.html",
         opinions: "opinions/index.html",
         saharaOpinion2026: "opinions/sahara-2797-draft-2026/index.html",
-        saharaOpinionFrench2026: "opinions/sahara-2025-2026-analyse-fr/index.html"
+        saharaOpinionFrench2026: "opinions/sahara-2025-2026-analyse-fr/index.html",
+        saharaOpinionEnglish2026: "opinions/sahara-2025-2026-analyse-en/index.html",
+        saharaOpinionArabic2026: "opinions/sahara-2025-2026-analyse-ar/index.html"
       }
     }
   },

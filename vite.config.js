@@ -24,6 +24,9 @@ const copyStaticDocuments = {
       "dist/client/treaties/treaties-england-morocco-1755.pdf"
     );
 
+    await mkdir("dist/client/opinions/images", { recursive: true });
+    await cp("opinions/images", "dist/client/opinions/images", { recursive: true });
+
     await mkdir("dist/client/assets/cards", { recursive: true });
     await cp("assets/cards", "dist/client/assets/cards", { recursive: true });
 
@@ -243,7 +246,8 @@ export default defineConfig({
         reponsePiratesHistoireIdentite: "reponse-pirates-histoire-identite/index.html",
         amarBelani: "resolution-quatrieme-commission-amar-belani/index.html",
         amarBelaniComplete: "resolution-quatrieme-commission-reponse-complete-amar-belani/index.html",
-        opinions: "opinions/index.html"
+        opinions: "opinions/index.html",
+        saharaOpinion2026: "opinions/sahara-2797-draft-2026/index.html"
       }
     }
   },

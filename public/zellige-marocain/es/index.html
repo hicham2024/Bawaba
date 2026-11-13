@@ -1,0 +1,289 @@
+<!doctype html><html lang="es" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>El zellige marroquí: pruebas históricas, textuales y materiales | Bawaba</title><meta name="description" content="Del pavimento antiguo de Fez al Marrakech almohade, los textos del siglo XIV y los archivos modernos: un dossier documental sobre el zellige marroquí."><style>
+:root{
+  --forest:#0b2f28;--forest-2:#12483b;--forest-3:#1c6552;
+  --gold:#c9a04a;--gold-soft:#ead8a6;--ivory:#f7f5ef;--paper:#fffdf8;
+  --ink:#173029;--muted:#66736e;--red:#8c3440;--line:#e6e0d3;
+  --shadow:0 18px 50px rgba(18,48,40,.10);--radius:22px
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ivory);color:var(--ink);font-family:Tahoma,Arial,sans-serif;line-height:1.85}
+body.rtl{direction:rtl}
+a{color:inherit}
+header{
+  position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;gap:18px;
+  padding:12px clamp(18px,5vw,72px);background:rgba(8,38,31,.94);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,.10)
+}
+header>a{color:#fff;text-decoration:none;font-weight:900;letter-spacing:.02em}
+.langs{display:flex;gap:7px;flex-wrap:wrap}
+.langs a{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.2);padding:6px 11px;border-radius:999px;font-size:12px;font-weight:800}
+.langs a:hover{background:rgba(255,255,255,.09)}
+.langs .active{background:var(--gold);color:#122d26;border-color:var(--gold)}
+
+.hero{
+  position:relative;min-height:680px;display:flex;align-items:center;justify-content:center;overflow:hidden;color:#fff;
+  padding:clamp(88px,10vw,140px) clamp(22px,6vw,90px);
+  background:
+    linear-gradient(rgba(7,31,26,.56),rgba(7,31,26,.56)),
+    url("https://commons.wikimedia.org/wiki/Special:Redirect/file/Moroccan_zellige_in_Fes.jpg") center 48%/cover no-repeat;
+}
+.hero:after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(circle at center,rgba(0,0,0,.04) 0%,rgba(0,0,0,.22) 100%);
+}
+.hero>div{position:relative;z-index:2;width:min(100%,980px);margin:auto;text-align:center}
+.eyebrow{display:inline-flex;align-items:center;justify-content:center;gap:8px;color:#f4d77a;font-size:13px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+.eyebrow:before,.eyebrow:after{content:"";width:34px;height:2px;background:var(--gold)}
+.hero h1{font-size:clamp(44px,6.2vw,84px);line-height:1.08;margin:18px auto 22px;font-weight:900;max-width:980px;color:#fff;text-shadow:0 4px 22px rgba(0,0,0,.58)}
+.hero p{max-width:820px;margin:0 auto 18px;font-size:clamp(18px,1.8vw,24px);line-height:1.7;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.55)}
+.hero-reference{font-size:clamp(14px,1.25vw,17px)!important;max-width:900px!important;color:#f7e9bd!important;font-weight:700}
+.hero-author{display:inline-block;border-top:2px solid var(--gold);padding-top:13px;margin-top:7px;font-size:clamp(18px,1.8vw,25px);font-weight:900;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.45)}
+
+main{max-width:1240px;margin:auto;padding:0 24px 90px}
+main>section:first-child{margin-top:-38px;position:relative;z-index:5}
+
+.unesco-snapshot{
+  display:grid;grid-template-columns:1.15fr repeat(3,1fr);gap:1px;background:#dfe6e2;
+  border:1px solid #dfe6e2;border-radius:22px;overflow:hidden;box-shadow:var(--shadow);margin:0 0 42px
+}
+.snapshot-lead,.snapshot-item{background:#fff;padding:23px 24px}
+.snapshot-lead{background:linear-gradient(135deg,#123f34,#0b2f28);color:#fff}
+.snapshot-lead small,.snapshot-item small{display:block;font-size:11px;font-weight:900;letter-spacing:.08em;color:#a98c4a;margin-bottom:7px}
+.snapshot-lead strong{font-size:21px;line-height:1.45}
+.snapshot-item strong{display:block;font-size:17px;line-height:1.45;color:var(--forest)}
+.snapshot-item span{font-size:13px;color:var(--muted)}
+
+.opening-intro,.research-overview,.committee-brief,.toc,.note,.ev,.refs{scroll-margin-top:86px}
+.opening-intro{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(24px,4vw,46px);margin:34px 0;box-shadow:0 10px 32px rgba(18,48,40,.06)}
+.opening-intro h2{margin-top:0}
+.opening-intro p{font-size:17px}
+
+h2{font-size:clamp(30px,3.4vw,46px);line-height:1.25;color:var(--forest);margin:68px 0 22px;font-weight:900;letter-spacing:-.02em}
+h2[id]{padding-bottom:13px;border-bottom:1px solid var(--line)}
+h3{font-size:22px;color:var(--red);margin:28px 0 10px}
+.lead{font-size:21px;font-weight:800;color:#244b40}
+
+.research-overview{margin:30px 0 44px}
+.section-kicker{display:inline-block;background:#f0e5c7;color:#6e5722;border:1px solid #dfc98d;font-weight:900;padding:7px 13px;border-radius:999px;margin-bottom:15px;font-size:12px}
+.summary-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.summary-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 8px 24px rgba(18,48,40,.06)}
+.summary-card span{display:block;font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#9a7d3b;margin-bottom:8px}
+.summary-card strong{display:block;font-size:18px;line-height:1.55}
+.key-rule{margin-top:16px;background:linear-gradient(135deg,var(--forest),var(--forest-3));color:#fff;padding:20px 23px;border-radius:18px;font-size:18px;box-shadow:var(--shadow)}
+
+.committee-brief{background:linear-gradient(135deg,#0c3129,#155041);color:#fff;border-radius:26px;padding:clamp(26px,4vw,44px);margin:38px 0;box-shadow:0 22px 60px rgba(9,45,37,.18);border:1px solid rgba(255,255,255,.12)}
+.committee-brief h2{color:#fff;margin:0 0 16px;border:0;padding:0}
+.committee-brief p{font-size:18px;color:#eef6f2}
+.status-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:22px 0}
+.status-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:16px;min-height:116px}
+.status-card span{display:block;color:#f2d88a;font-size:11px;font-weight:900;letter-spacing:.06em;margin-bottom:7px}
+.status-card strong{display:block;font-size:17px;line-height:1.5}
+.decision-call{background:#fff;color:#17382e;border:0;border-top:4px solid var(--gold);border-radius:17px;padding:19px 21px;margin-top:18px;font-size:18px;font-weight:700}
+
+.toc{background:#fff;border:1px solid var(--line);border-radius:22px;padding:25px;margin:38px 0 48px;box-shadow:0 12px 36px rgba(18,48,40,.06)}
+.toc h2{margin:0 0 16px;font-size:26px;border:0;padding:0}
+.toc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.toc a{display:flex;align-items:center;justify-content:space-between;text-decoration:none;color:var(--forest);background:#f7f5ef;border:1px solid #eee8dc;border-radius:13px;padding:12px 14px;font-weight:800;transition:.18s ease}
+.toc a:hover{background:#f0e7d4;transform:translateY(-1px)}
+
+.timeline{display:grid;gap:12px;position:relative}
+.t{display:grid;grid-template-columns:150px 1fr;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 6px 20px rgba(18,48,40,.04)}
+.t b{background:linear-gradient(135deg,var(--forest),var(--forest-2));color:#fff;padding:17px;font-size:14px}
+.t span{padding:17px 20px}
+
+.note{background:#fff;border:1px solid var(--line);border-inline-start:5px solid var(--gold);border-radius:18px;padding:22px 24px;margin:26px 0;box-shadow:0 8px 26px rgba(18,48,40,.05)}
+.warn{border-inline-start-color:var(--red);background:#fffafb}
+.quote{background:#f7f3e9;border:1px solid #ece2cc;padding:18px 20px;border-radius:14px;font-family:Georgia,serif}
+.arq{direction:rtl;text-align:right;font-family:Tahoma,Arial,sans-serif;font-size:20px;line-height:1.9}
+.proof,.limit{padding:15px 17px;border-radius:13px;margin-top:12px}
+.proof{background:#eaf4ef;border:1px solid #d3e8de}
+.limit{background:#fff1ef;border:1px solid #f0d7d2}
+
+.ev{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:24px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:20px;margin:28px 0;box-shadow:0 12px 36px rgba(18,48,40,.06);align-items:start}
+.ev img{width:100%;max-height:560px;object-fit:cover;border-radius:16px;background:#eee}
+.meta{font-size:12px;color:#7b857f;font-weight:900;letter-spacing:.03em}
+
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 8px 24px rgba(18,48,40,.05);transition:.18s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(18,48,40,.09)}
+.card a,.src,.refs a{color:#8a3139;font-weight:900}
+
+.criteria-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:22px 0}
+.criterion{background:#fff;border:1px solid var(--line);border-radius:18px;padding:21px;box-shadow:0 8px 24px rgba(18,48,40,.05)}
+.criterion h3{margin-top:0}
+.criterion .flag,.criterion .check{display:inline-block;font-size:11px;font-weight:900;padding:5px 9px;border-radius:99px;margin-bottom:8px}
+.criterion .flag{background:#fff0ed;color:#8f2630}.criterion .check{background:#eef4f1;color:#27584a}
+
+.evidence-map{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:22px 0}
+.evidence-map div{background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:17px;padding:18px;box-shadow:0 8px 22px rgba(18,48,40,.04)}
+.evidence-map b{display:block;color:var(--forest);margin-bottom:6px}
+.source-strip{background:#eef5f2;border:1px solid #d0e1da;border-radius:13px;padding:13px 15px;margin:13px 0;font-size:14px}
+.source-strip a{color:var(--red);font-weight:900}
+.committee-question{background:#fff;border:1px solid var(--line);border-inline-start:5px solid var(--red);border-radius:16px;padding:20px 22px;margin:20px 0}
+.committee-question strong{color:var(--red)}
+
+.refs{background:#fff;border:1px solid var(--line);border-radius:20px;padding:25px;box-shadow:0 10px 30px rgba(18,48,40,.05);font-size:15px}
+.refs li{margin:9px 0;padding-bottom:8px;border-bottom:1px dotted #ddd5c5}
+.refs li:last-child{border-bottom:0}
+footer{background:#092b24;color:#fff;text-align:center;padding:34px 20px;margin-top:60px}
+
+@media(max-width:980px){
+  .status-grid,.evidence-map{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ev{grid-template-columns:1fr}.criteria-grid{grid-template-columns:1fr}
+  .unesco-snapshot{grid-template-columns:1fr 1fr}
+}
+@media(max-width:720px){
+  header{align-items:flex-start;flex-direction:column}
+  .hero{min-height:600px;background-position:center;padding-top:100px}
+  .hero h1{font-size:clamp(42px,13vw,64px)}
+  main{padding-inline:14px}
+  .summary-grid,.toc-grid,.cards,.status-grid,.evidence-map,.unesco-snapshot{grid-template-columns:1fr}
+  .t{grid-template-columns:1fr}.opening-intro{padding:24px}
+}
+.source-meta{font-size:13px;font-weight:800;color:#7b6a45;background:#f6f0e3;border-radius:10px;padding:8px 10px;margin-bottom:12px}
+.ref-tag{display:inline-block;margin-top:12px;font-size:12px;font-weight:900;color:#7a2f37;background:#fff3ef;border:1px solid #ead6d1;border-radius:999px;padding:5px 9px}
+.ev{align-items:center}
+.ev img{height:auto;max-height:380px;object-fit:cover}
+.doc-figure{max-width:760px;margin:18px auto}
+.doc-figure img{display:block;width:100%;max-height:360px;object-fit:cover;border-radius:16px}
+.doc-figure figcaption{font-size:12px;color:#68746d;margin-top:7px}
+@media(max-width:800px){.ev img,.doc-figure img{max-height:300px}}
+.media-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:24px 0}.media-grid figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 8px 24px rgba(18,48,40,.07)}.media-grid img{display:block;width:100%;height:340px;object-fit:cover}.media-grid figcaption{padding:10px 13px;font-size:13px;color:var(--muted)}@media(max-width:760px){.media-grid{grid-template-columns:1fr}.media-grid img{height:auto}}</style><link rel="canonical" href="https://bawaba.eu/zellige-marocain/es/"></head><body class=""><header><a href="/">Bawaba.eu</a><div class="langs"><a class="" href="/zellige-marocain/">العربية</a><a class="" href="/zellige-marocain/fr/">Français</a><a class="" href="/zellige-marocain/en/">English</a><a class="active" href="/zellige-marocain/es/">Español</a></div></header><section class="hero">
+    <div>
+      <div class="eyebrow">BAWABA • ZELLIGE • DOSSIER DOCUMENTAL</div>
+      <h1>El zellige marroquí: pruebas históricas, textuales y materiales</h1>
+      <p>Dossier documental que reúne testimonios históricos, fuentes escritas y vestigios materiales para poner de relieve la autenticidad del zellige marroquí y su evolución a lo largo de los siglos.</p>
+      <p class="hero-reference">Documento de referencia destinado a los miembros del Comité Intergubernamental para la Salvaguardia del Patrimonio Cultural Inmaterial.</p>
+      <div class="hero-author">Autor: Ould Sanhaja</div>
+    </div>
+  </section><main><section class="unesco-snapshot" aria-label="Evidence overview">
+      <div class="snapshot-lead"><small>DOCUMENTARY SYNTHESIS</small><strong>El dossier se apoya en una cadena de pruebas convergentes: textos, monumentos, técnicas, archivos y transmisión artesanal viva.</strong></div>
+      <div class="snapshot-item"><small>TEXTOS</small><strong>Fez y Ceuta</strong><span>Menciones explícitas del zellige y de sus usos arquitectónicos.</span></div>
+      <div class="snapshot-item"><small>MONUMENTOS</small><strong>Almohades y meriníes</strong><span>Una evolución material fechada y observable.</span></div>
+      <div class="snapshot-item"><small>TRANSMISIÓN</small><strong>Una artesanía viva</strong><span>Talleres, maestros, aprendices y práctica continua.</span></div>
+    </section>
+
+<section class="committee-brief" id="decision-brief">
+<h2>Resumen ejecutivo para los miembros del Comité — candidatura 02280</h2>
+<p>Este estudio no pide al Comité que resuelva una cuestión de “propiedad” cultural. Plantea si la candidatura argelina demuestra, dentro de su propio expediente, que el elemento denominado «zellidje, cerámica vidriada» cumple los cinco criterios R.1–R.5 de la Lista Representativa.</p>
+<div class="status-grid"><div class="status-card"><span>Sesión</span><strong>21.COM</strong></div><div class="status-card"><span>Punto</span><strong>7.b.32</strong></div><div class="status-card"><span>Lugar y fechas</span><strong>Xiamen • 30 nov–5 dic 2026</strong></div><div class="status-card"><span>Comité</span><strong>24 Estados miembros</strong></div></div>
+<div class="decision-call">Si la relación entre las pruebas históricas, la técnica y la práctica viva no queda suficientemente demostrada, o si la participación comunitaria y el inventario nacional no están adecuadamente acreditados, las Directrices Operativas prevén la no inscripción o, cuando las carencias puedan subsanarse, la devolución de la candidatura para información adicional.</div>
+</section><section class="opening-intro" id="unesco-fes-1978" style="border:2px solid #d7bd73;background:#fffaf0">
+<div class="section-kicker">Prueba institucional anterior a la controversia contemporánea</div>
+<h2>La UNESCO documenta el zellige marroquí en Fez en 1978</h2>
+<p class="lead">Una ficha original de los Archivos de la UNESCO vincula explícitamente Marruecos, Fez y el <em>zellige</em> dentro de la campaña internacional para salvaguardar la medina de Fez.</p>
+<figure style="margin:28px 0"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Culture%2C_Medina_at_Fes_Campaign_-_UNESCO_-_PHOTO0000002039_0000.tiff/lossy-page1-3840px-Culture%2C_Medina_at_Fes_Campaign_-_UNESCO_-_PHOTO0000002039_0000.tiff.jpg" alt="Documento original de los Archivos de la UNESCO sobre Fez y el zellige, 1978" style="display:block;width:100%;height:auto;border-radius:14px;border:1px solid #d9d0bd;box-shadow:0 14px 34px rgba(18,48,40,.12)"><figcaption>Reverso original — UNESCO Archives / Dominique Roger — Fez, Marruecos, 1978 — PHOTO0000002039.</figcaption></figure>
+<div class="cards"><article class="card"><h3>Transcripción francesa</h3><p lang="fr">«Projet de l'UNESCO pour la réhabilitation de centre de la Médina de Fès. Ce projet a été défini avec l'accord du Gouvernement marocain en vue de la campagne internationale en faveur de la préservation de l'ancienne cité de Fès décidée par la Conférence Générale de l'Unesco en 1976. La fontaine Nejjarine et son très beau décor de zelliges.»</p></article><article class="card"><h3>Transcripción inglesa</h3><p lang="en">“Unesco project for the recovery of the Medina at Fes. This project has been set up in agreement with the Moroccan government. It is in keeping with the international campaign decided upon by the Unesco General Conference in 1976 to protect the ancient city of Fes. The Nejjarine fountain with its beautiful zellig decoration.”</p></article></div>
+<div class="proof"><strong>Importancia documental:</strong> se trata de una prueba institucional producida por la propia UNESCO en 1978, décadas antes de la controversia actual. La UNESCO emplea las expresiones <em>zelliges / zellig decoration</em> para describir la fuente Nejjarine de Fez.</div>
+<div class="source-strip"><a href="https://commons.wikimedia.org/wiki/File:Culture,_Medina_at_Fes_Campaign_-_UNESCO_-_PHOTO0000002039_0000.tiff" target="_blank" rel="noopener">Documento original en alta resolución — Wikimedia Commons / UNESCO Archives</a></div>
+</section>
+    
+<section class="opening-intro" id="introduction">
+<h2>Introducción</h2>
+<p>Antes de convertirse en un elemento destacado de la arquitectura y el diseño contemporáneos, el zellige se desarrolló a lo largo de una extensa historia de arcilla, fuego, vidriado, geometría y trabajo manual. En Fez, Marrakech, Meknes y otras ciudades marroquíes, esta tradición aparece en una cadena acumulativa de pruebas: textos históricos, monumentos fechados, técnicas artesanales, archivos independientes y práctica viva.</p>
+<p>La cuestión central no consiste únicamente en localizar la cerámica vidriada más antigua, sino en seguir una <strong>secuencia técnica y artesanal completa</strong>: materia prima, cocción, vidriado, corte, composición geométrica, transmisión de maestro a aprendiz y continuidad entre el taller histórico y la práctica contemporánea.</p>
+<p>Este estudio confronta textos medievales, datos arqueológicos y testimonios materiales con la práctica viva. Distingue las diferentes categorías de cerámica arquitectónica y sigue el desarrollo del zellige marroquí hasta su forma madura en época meriní, situándolo dentro de tradiciones anteriores de pavimentación y revestimiento cerámico.</p>
+<div class="method-rule">Todo zellige pertenece al ámbito de la cerámica, pero no toda cerámica es zellige.</div>
+<p>Esta distinción permite comparar con precisión técnica teselas, azulejos, mosaicos, pavimentos y zellige cortado y ensamblado.</p>
+</section><section class="research-overview">
+      <div class="section-kicker">Resumen ejecutivo</div>
+      <div class="summary-grid">
+        <div class="summary-card"><span>Pregunta central</span><strong>¿Qué muestran las fuentes históricas, materiales y técnicas sobre la antigüedad y continuidad del zellige en Marruecos?</strong></div><div class="summary-card"><span>Conclusión principal</span><strong>Las fuentes convergen en una tradición marroquí documentada de larga duración, especialmente visible en Fez, Marrakech, Meknes y Ceuta.</strong></div><div class="summary-card"><span>Método</span><strong>Distinguir la cerámica vidriada en sentido amplio del zellige recortado y ensamblado, y comparar textos, monumentos, procesos y transmisión artesanal.</strong></div><div class="summary-card"><span>Lectura rápida</span><strong>Cada sección identifica una fuente, su cronología y el dato concreto que documenta.</strong></div>
+      </div>
+      <div class="key-rule"><b>Regla técnica :</b> Todo zellige es cerámica, pero no toda cerámica es zellige.</div>
+    </section><nav class="toc"><h2>Índice</h2><div class="toc-grid">
+<a href="#timeline">1. Cronología</a><a href="#technical-evolution">2. Del bejmat al zellige recortado</a>
+<a href="#qalaa-technical">3. Qal'a de los Beni Hammad</a><a href="#regional-context">4. Tremecén y contexto regional</a>
+<a href="#continuity">5. Continuidad marroquí</a><a href="#external-archives">6. Archivos externos</a>
+<a href="#living-heritage">7. Patrimonio vivo</a><a href="#modern-recognition">8. Reconocimiento moderno</a>
+<a href="#unesco-conformity">9. Conformidad UNESCO</a><a href="#references">10. Bibliografía</a>
+</div></nav>
+<h2 id="timeline">Cronología</h2><div class="timeline"><div class="t"><b>Antes de los meriníes</b><span><em>Rawd al-Qirtas</em> menciona en al-Qarawiyyin en 526 H/1131 un ladrillo «semejante al bejmat» y un pavimento anterior.</span></div><div class="t"><b>Finales s. XII</b><span>La Kutubía y la mezquita de la Kasbah documentan una fase almohade del zellige.</span></div><div class="t"><b>Siglo XIV</b><span>Ibn Battuta y al-Umari usan explícitamente el término zellige; Fez meriní muestra la técnica madura.</span></div><div class="t"><b>825 H</b><span>En Ceuta, Muhammad b. al-Qasim describe una alberca pavimentada con zellige de colores.</span></div></div>
+
+<section class="opening-intro" id="aghmat-almoravid">
+<div class="section-kicker">Aghmat • siglos XI–XII • época almorávide</div>
+<h2>Aghmat en época almorávide: capital imperial y centro temprano de cerámica arquitectónica</h2>
+<p class="lead">Las excavaciones de Aghmat, situada a unos 30 km al sur de Marrakech, ofrecen una secuencia arqueológica esencial para comprender la formación de las tradiciones marroquíes de cerámica vidriada, pavimentación y decoración arquitectónica antes de su posterior desarrollo almohade y meriní.</p>
+<p>La Misión Arqueológica de Aghmat señala que la ciudad ya era próspera en época idrisí y que alcanzó la condición de capital imperial cuando fue ocupada por los almorávides en el siglo XI. Las investigaciones sitúan la principal fase de desarrollo del sector monumental en los siglos XI y XII, precisamente durante el periodo almorávide.</p>
+<p>Las excavaciones han sacado a la luz un gran hammam, un complejo palaciego, una mezquita, residencias de élite, redes hidráulicas, estanques, estucos y decoración geométrica. <em>Archaeology Magazine</em> documenta además abundante cerámica vidriada de <em>cuerda seca</em>. La presencia de piezas inacabadas o defectuosas llevó a los investigadores a plantear una producción local, indicio de una comunidad artesanal con conocimientos avanzados de modelado, vidriado y cocción.</p>
+<p>Los pavimentos decorativos, estanques y elementos de revestimiento localizados en torno a la mezquita y las residencias sitúan Aghmat dentro de un entorno arquitectónico marroquí temprano en el que cerámica, geometría, agua y decoración estaban estrechamente relacionadas.</p>
+<div class="cards">
+<article class="card"><h3>Capital almorávide</h3><p>Aghmat se convirtió en centro del poder almorávide en el siglo XI antes de la fundación de Marrakech, lo que confiere especial valor a sus restos artesanales y arquitectónicos.</p></article>
+<article class="card"><h3>Cerámica vidriada y producción local</h3><p>Los hallazgos de <em>cuerda seca</em>, incluidas piezas incompletas o fallidas, respaldan la existencia de producción local y de artesanos especializados.</p></article>
+<article class="card"><h3>Decoración arquitectónica</h3><p>Palacio, mezquita, estanques, estucos y suelos decorados revelan un entorno construido sofisticado y un dominio temprano de técnicas ornamentales y geométricas.</p></article>
+<article class="card"><h3>Continuidad del sitio</h3><p>Aghmat siguió ocupada tras el traslado del centro político a Marrakech. En el siglo XIV las excavaciones documentan posteriormente azulejos de zellige policromos conservados in situ en una residencia.</p></article>
+</div>
+<div class="media-grid">
+<figure><img src="https://photos.smugmug.com/Travel/Morocco/Ghmat-Morocco-archaelogical-site/i-S959RqQ/0/M84ZKcH4fCS89N49RR76tmMbmrpLzVwNVPQJDZtFk/XL/_MOR6579-edited-1-Ghmat-HammamFromPath-XL.jpg" alt="Hammam medieval de Aghmat" loading="lazy"><figcaption>El hammam medieval de Aghmat.</figcaption></figure>
+<figure><img src="https://ronmessier.files.wordpress.com/2014/03/aghmat-palace-overview-037.jpg" alt="Excavación del palacio de Aghmat" loading="lazy"><figcaption>Vista general del sector palaciego. Foto: Ronald Messier.</figcaption></figure>
+<figure><img src="https://www.archaeological.org/wp-content/uploads/2019/04/aghmat1_0.jpg" alt="Instalaciones de ablución de Aghmat" loading="lazy"><figcaption>Estructuras de agua y abluciones. Archaeological Institute of America.</figcaption></figure>
+<figure><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Site_arch%C3%A9ologique_Ghmate.jpg/3840px-Site_arch%C3%A9ologique_Ghmate.jpg" alt="Sitio arqueológico de Aghmat" loading="lazy"><figcaption>Sitio arqueológico de Aghmat — Wikimedia Commons, CC BY-SA 4.0.</figcaption></figure>
+</div>
+<div class="proof"><strong>Aporte al dossier:</strong> Aghmat documenta una base artesanal y arquitectónica marroquí temprana de cerámica vidriada, pavimentación y decoración geométrica durante la época almorávide. Leída junto a los testimonios almohades de Marrakech y los conjuntos meriníes de Fez, ofrece una secuencia arqueológica fechada del desarrollo de los revestimientos cerámicos marroquíes.</div>
+<div class="source-strip"><a href="https://archaeology.org/issues/may-june-2020/letters-from/morocco-medieval-capital/" target="_blank" rel="noopener">Archaeology Magazine</a> · <a href="https://eveha-international.com/?page_id=4027" target="_blank" rel="noopener">Misión arqueológica de Aghmat — Éveha</a> · <a href="https://www.orient-mediterranee.com/program/aghmat-maroc/" target="_blank" rel="noopener">Orient & Méditerranée</a> · <a href="https://orbi.uliege.be/handle/2268/230617" target="_blank" rel="noopener">Estudio analítico de las cerámicas de Aghmat</a></div>
+</section><h2>Del bejmat al zellige almohade</h2><article class="ev"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Al-Qarawiyyin%20university%20mosque%20courtyard.jpg?width=1400" alt="Patio de al-Qarawiyyin"><div><h3>Al-Qarawiyyin y el bejmat</h3><p>El pasaje de Ibn Abi Zar documenta una fase temprana del pavimento cerámico en Fez. Atribuir el pavimento anterior específicamente a una fase zenata de finales del siglo X requiere más apoyo arqueológico.</p></div></article><article class="ev"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Marrakesh%20Kasbah%20Mosque%20minaret.jpg?width=1200" alt="Minarete de la Kasbah de Marrakech"><div><h3>Kutubía y Kasbah</h3><p><em>ArchéoSciences</em> cita estos minaretes de finales del siglo XII entre los primeros ejemplos marroquíes del zellige, con grandes piezas monocromas en composiciones geométricas.</p><a class="src" href="https://www.persee.fr/doc/arsci_0399-1237_2003_num_27_1_1046">Estudio Persée →</a></div></article>
+<h2>Fuentes antiguas</h2><div class="cards"><article class="card"><h3>Rexford Newcomb, 1929</h3><p>Monografía occidental temprana sobre el zellige de Fez y Meknes.</p><a href="https://www.islam.museum/en/work/decorative-tiles-of-north-africa/">Fuente</a></article><article class="card"><h3>Joseph de La Nézière</h3><p>Documentación fotográfica y arquitectónica que cataloga expresamente decoración marroquí como «Zellij».</p><a href="https://ediscovery.qnl.qa/islandora/object/QNL%3A00044841">QNL</a></article><article class="card"><h3>Bou Inania, 1351–1356</h3><p>Prueba material meriní que conecta los textos con la técnica conservada.</p><a href="https://www.persee.fr/doc/arsci_0399-1237_2003_num_27_1_1046">Estudio</a></article></div>
+
+<h2>Referencias complementarias principales</h2><div class="cards source-cards"><article class="card"><div class="source-meta">Rexford Newcomb • <em>The Decorative Tiles of North Africa</em> • 1929</div><h3>Rexford Newcomb (1929)</h3><p>Estudio temprano especializado en revestimientos decorativos norteafricanos, con una atención importante a Fez y Meknes como centros de producción de zellige.</p></article><article class="card"><div class="source-meta">Joseph de La Nézière • <em>Les monuments mauresques du Maroc</em> • 1921–1922</div><h3>Joseph de La Nézière</h3><p>Documentación arquitectónica y fotográfica temprana de monumentos marroquíes, que emplea la terminología del zellij para describir decoraciones de Fez, Meknes y Marrakech.</p></article><article class="card"><div class="source-meta">Madrasa Bou Inania de Fez • 1351–1356 • Benamara et al., <em>ArchéoSciences</em> 27 (2003)</div><h3>Bou Inania, 1351–1356</h3><p>Testimonio material fechado de la madurez técnica del zellige en el Fez meriní, que vincula las fuentes medievales con una práctica arquitectónica conservada.</p></article></div><h2 id="technical-evolution">Del bejmat al zellige recortado: una evolución técnica documentada</h2>
+<div class="cards">
+<article class="card"><h3>Al-Qarawiyyin en 526 H / 1131</h3><p>Ibn Abi Zar al-Fasi relata en <em>Rawd al-Qirtas</em> la renovación del pavimento del patio de al-Qarawiyyin. Nombra al maestro <strong>Muhammad b. Ahmad b. Muhammad al-Khawlani</strong> y menciona la fabricación de un «<strong>ladrillo semejante al bejmat</strong>», junto con una descripción detallada de la nivelación y el drenaje del agua. El texto indica además que existía un pavimento anterior.</p><div class="proof"><strong>Importancia:</strong> es un testimonio escrito temprano de pavimento cerámico en Fez anterior a la madurez meriní.</div></article>
+<article class="card"><h3>Evolución funcional</h3><p>Puede proponerse una secuencia prudente: <strong>grandes unidades de pavimento / bejmat → mayor uso de cerámica vidriada → zellige en suelos y zócalos → pequeñas piezas recortadas y ensambladas geométricamente en época meriní</strong>. El testimonio de al-Umari es central porque menciona zellige en los suelos y zócalos de Fez.</p></article>
+<article class="card"><h3>Ceuta en 825 H</h3><p>Muhammad b. al-Qasim al-Subti describe explícitamente una alberca «<strong>pavimentada con zellige de colores</strong>», aportando un testimonio textual marroquí directo de comienzos del siglo XV.</p><a href="https://www.islamarchive.cc/ketab_content/4138/p-32" class="src" target="_blank" rel="noopener">Ver fuente →</a></article>
+
+</div>
+
+<h2 id="qalaa-technical">Qal'a de los Beni Hammad: comparar técnicas, no solo nombres</h2>
+<div class="note"><p>Museum With No Frontiers describe un panel hammadí compuesto por cerámica <strong>moldeada, esmaltada y de reflejo metálico</strong>; las estrellas y cruces alcanzan unos <strong>21 cm</strong> de diámetro. Son grandes piezas moldeadas, no necesariamente pequeñas unidades obtenidas mediante recorte después de la cocción.</p><p>En cambio, el estudio de ArchéoSciences sobre zellige marroquí del siglo XIV describe una cadena en la que las piezas se vidrian y cuecen, y después se <strong>recortan y finalmente se ensamblan</strong> en paneles geométricos.</p><a href="https://islamicart.museumwnf.org/database_item.php?id=object%3BISL%3Bdz%3BMus01%3B42%3Bes" class="src" target="_blank" rel="noopener">Museum With No Frontiers →</a></div>
+
+<h2 id="fes-clay">La materia prima de Fez: lo que la ciencia demuestra realmente</h2>
+<div class="note"><p>Un estudio reciente de las arcillas de Fez demuestra que los alfareros utilizan tradicionalmente dos tipos procedentes de <strong>Benjlik</strong>, una arcilla fina y otra arenosa de los depósitos miocenos de la cuenca de Fez. Su composición mineralógica y química y su aptitud cerámica han sido caracterizadas científicamente.</p><div class="proof"><strong>Afirmación respaldada:</strong> Fez posee una materia prima local estudiada científicamente y vinculada tradicionalmente a la producción cerámica y de zellige.</div><a href="https://orbi.uliege.be/handle/2268/297755" class="src" target="_blank" rel="noopener">Estudio Clay Minerals / ULiège →</a></div>
+<h2 id="regional-context">Tremecén: comparación histórica y técnica</h2><div class="note"><div class="proof"><strong>Nota metodológica :</strong> Las fronteras modernas heredadas del colonialismo no deben proyectarse sobre los siglos anteriores. La atribución debe basarse en la cronología, el patrocinio, la técnica, las fuentes escritas y el contexto político de cada monumento.</div></div></div>
+
+<h2 id="andalus-transfer">De los artesanos marroquíes a la influencia meriní en la arquitectura nazarí</h2><div class="note"><p>Las fuentes históricas y los estudios arqueológicos muestran que las relaciones entre Marruecos y al-Ándalus incluyeron movimientos reales de artesanos, maestros de obra y conocimientos técnicos.</p><p>En la construcción de la gran mezquita de Sevilla en 567 H / 1172, Ibn Sahib al-Salat menciona la participación de maestros de Marrakech, Fez y la orilla magrebí junto a los artesanos andalusíes.</p><p>En el siglo XVI, Luis del Mármol Carvajal afirma que los reyes de Granada actuaron « <strong>a imitación de los reyes de Fez</strong> » y añade que « <strong>los reyes de Granada siempre fueron imitando a los de Fez</strong> ».</p><p>Antonio Malpica Cuello destaca « <strong>interesantes paralelos</strong> » entre las cerámicas meriníes y nazaríes y las describe como « <strong>estrechamente ligadas</strong> ». Los estudios del Patronato de la Alhambra señalan además que una técnica precisa de incrustación cerámica solo está documentada, hasta donde se ha podido comprobar, en el arte nazarí y meriní.</p><div class="proof"><strong>Conclusión:</strong> puede documentarse una línea que va desde la circulación de artesanos en época almohade hasta la influencia de Fez y de los meriníes en Granada y las afinidades técnicas directas entre las cerámicas meriníes y nazaríes. En cuanto al zellige, estos datos establecen un marco histórico y técnico sólido, aunque no prueban por sí solos una transferencia unidireccional de todos los procedimientos.</div></div>
+<h2 id="continuity">Continuidad marroquí: de los almohades a una artesanía viva</h2>
+<div class="timeline"><div class="t"><b>Siglo XII</b><span>Fase almohade documentada en la Kutubía y la mezquita de la Kasbah de Marrakech.</span></div><div class="t"><b>Siglo XIV</b><span>Gran madurez técnica en el Fez meriní, incluida Bou Inania (1351–1356).</span></div><div class="t"><b>Siglo XVI</b><span>Continuidad saadí, incluido el palacio El Badi de Marrakech, iniciado en 1578.</span></div><div class="t"><b>Épocas posteriores</b><span>Continuidad arquitectónica y artesanal bajo los alauíes y en los talleres de Fez, Meknes y Marrakech hasta hoy.</span></div></div>
+<div class="note"><strong>Punto central:</strong> el argumento más fuerte no es solo la antigüedad arqueológica, sino una <strong>cadena histórica y artesanal continua</strong>: maestro, aprendiz, taller, horno, vidriado, corte, herramientas, cálculo geométrico, montaje y transmisión.</div>
+
+<h2 id="external-archives">Documentación externa independiente anterior a la controversia contemporánea</h2>
+<div class="cards"><article class="card"><h3>Archivo Albert Kahn — Fez y Meknes, 1913</h3><p>Las fotografías de espacios urbanos y fuentes documentan el zellige en la vida cotidiana, no solo como objeto de museo, décadas antes de las controversias actuales.</p></article><article class="card"><h3>Exposición Colonial de París, 1931</h3><p>Si se confirman los metadatos archivísticos, la imagen reúne Marruecos, un artesano de Fez, zellige y una demostración técnica pública. Documenta <strong>conocimiento artesanal vivo</strong>, no solo decoración.</p></article><article class="card"><h3>Dar Mustapha Pasha, Argel</h3><p>El archivo ilustra una regla metodológica: la presencia de azulejos en un edificio no demuestra su origen local. Algunos están identificados expresamente como importados, incluidos los de Delft.</p></article><article class="card louvre-card"><h3>Museo del Louvre — Marruecos, 1300–1500</h3><p>La exposición oficial <strong>«Le Maroc médiéval – Un empire de l’Afrique à l’Espagne»</strong>, presentada en el Louvre del 17 de octubre de 2014 al 19 de enero de 2015, situó los siglos XI–XV en el marco de las dinastías almorávide, almohade y meriní centradas en Marruecos, cuya influencia política y artística se extendió hacia el norte de Argelia y Túnez.</p><p>En el Departamento de Artes del Islam, la vitrina <strong>56B</strong> lleva el título <strong>«Maroc, 1300–1500 – Le décor architectural»</strong>. Incluye elementos de mosaico cerámico hallados en la mezquita de Sidi Boumediene en Tremecén, entre ellos los objetos <strong>74.1962.518</strong> y <strong>74.1962.520</strong>.</p><p>Charles Thomas-Stanford, en <em>About Algeria</em> (1912), describe Mansura como la ciudad construida por Abu Yaqub, rey de Fez, durante el asedio de Tremecén. Al hablar de Sidi Boumediene menciona azulejos cuyo origen era atribuido en parte a Marruecos.</p><p><em>Cook’s Practical Guide to Algeria and Tunisia</em> (1908) afirma sobre la mezquita de Sidi Boumediene: <strong>“The Mosque is rich in tile mosaics, some of which are said to have been made in Morocco.”</strong> La misma guía atribuye la madrasa vecina al meriní Abu al-Hasan y Mansura a Abu Yaqub.</p></article></div>
+
+<h2 id="living-heritage">Fez y el patrimonio vivo: de la ciudad al taller</h2>
+<div class="cards"><article class="card"><h3>Continuidad de los talleres</h3><p>Según la lógica de la Convención de 2003, lo decisivo es la cadena humana que aún practica la técnica: maestros, aprendices, hornos, pigmentos, corte, herramientas, plantillas, cálculo geométrico y montaje.</p></article><article class="card"><h3>Fez y la UNESCO desde 1980</h3><p>La UNESCO lanzó en 1980 una campaña internacional para la salvaguardia de Fez y la medina fue inscrita en la Lista del Patrimonio Mundial en 1981. La documentación de la UNESCO destaca también la pervivencia de los saberes arquitectónicos tradicionales el tejido urbano y los oficios tradicionales asociados, muy anteriores a la controversia actual.</p></article><article class="card"><h3>“Dar Zellij” e instituciones del oficio</h3><p>Los talleres e instituciones vinculados explícitamente al zellige muestran una práctica económica y cultural organizada. El valor probatorio reside en los saberes mantenidos, no solo en el nombre comercial.</p></article><article class="card"><h3>Proyectos internacionales contemporáneos</h3><p>El uso de zellige producido en Fez en proyectos modernos en el extranjero demuestra una artesanía que sigue produciéndose, exportándose e integrándose en arquitectura contemporánea.</p></article></div>
+
+<h2 id="modern-recognition">Reconocimientos y protecciones contemporáneos</h2>
+<div class="cards"><article class="card"><h3>Controversia Adidas, 2022</h3><p>Tras una protesta oficial marroquí y conversaciones con el Ministerio de Cultura de Marruecos, Adidas anunció el 14 de octubre de 2022 una «resolución positiva» de la disputa y reconoció que el diseño de la camiseta argelina estaba «indeed inspired by the Zellige mosaics pattern». La empresa expresó además su profundo respeto por el pueblo de Marruecos y sus artesanos y lamentó la controversia.</p></article><article class="card"><h3>“Zellige de Fès” — 2016</h3><p>El registro internacional muestra que Marruecos lleva años regulando y protegiendo una denominación e identidad comercial vinculadas al zellige de Fez. No significa que la OMPI haya declarado que todo el zellige mundial pertenece a Marruecos.</p></article></div>
+<div class="note"><strong>Síntesis más sólida:</strong> el argumento no consiste en negar todo uso histórico de cerámica vidriada fuera de Marruecos, sino en distinguir científicamente la cerámica vidriada del zellige recortado y ensamblado como sistema técnico y artesanal. La arquitectura almohade y meriní, los archivos europeos y la continuidad de los talleres de Fez, Meknes y Marrakech documentan a Marruecos como un gran centro histórico de maduración de esta técnica y de transmisión continua de sus conocimientos artesanales.</div>
+<h2 id="unesco-conformity">Prueba de conformidad con los criterios UNESCO R.1–R.5</h2>
+<div class="note"><strong>Regla procedimental:</strong> para la Lista Representativa, el Estado proponente debe demostrar que el elemento satisface <strong>todos</strong> los criterios R.1 a R.5. La mera existencia de formulario, fotografías, consentimientos o extracto de inventario no implica por sí sola conformidad sustantiva. <a href="https://ich.unesco.org/es/procedure-of-inscription-00809" target="_blank" rel="noopener">Criterios oficiales de la UNESCO</a>.</div>
+<div class="cards">
+<article class="card"><h3>R.1 — Un elemento vivo, identificable y definido con precisión</h3><p><strong>Es el principal punto vulnerable.</strong> El expediente 02280 reúne bajo «zellidje, cerámica vidriada» teselas hammadíes de Béjaïa, decoraciones medievales de Tremecén y una práctica contemporánea en Tipasa. La existencia de cerámica arquitectónica antigua no demuestra por sí sola que todo ello corresponda al <strong>mismo elemento vivo</strong> y a una única cadena técnica transmitida.</p></article>
+<article class="card"><h3>R.2 — Visibilidad, diálogo y diversidad cultural</h3><p>R.2 exige fomentar el diálogo y reflejar la diversidad cultural. Dado que el zellige está documentado en varias regiones del Magreb y al-Ándalus, la candidatura debería distinguir las formas locales y reconocer el contexto regional compartido, evitando una lectura exclusiva de un concepto amplio.</p></article>
+<article class="card"><h3>R.3 — Medidas de salvaguardia de una práctica viva</h3><p>Las medidas deben proteger maestros, aprendices, talleres, gestos, conocimientos geométricos y transmisión. La restauración monumental o la promoción comercial por sí solas no equivalen a salvaguardar patrimonio inmaterial vivo.</p></article>
+<article class="card"><h3>R.4 — Participación y consentimiento comunitario</h3><p>El portal UNESCO indica que se presentaron consentimientos; por tanto, no debe afirmarse que R.4 esté ausente. La cuestión es cualitativa: ¿representan los firmantes la diversidad real de los practicantes y participaron las comunidades en la definición del propio elemento?</p></article>
+<article class="card"><h3>R.5 — Concordancia con el inventario nacional</h3><p>Existe un extracto de inventario, pero el nombre, la definición técnica, las comunidades portadoras y el ámbito geográfico deben coincidir con el elemento presentado como «zellidje». Si el inventario cubre una categoría más amplia de cerámica vidriada, esa correspondencia debe probarse.</p></article>
+</div>
+<div class="note warn"><strong>Conclusión procedimental:</strong> si el expediente no demuestra coherentemente que las teselas hammadíes, los conjuntos medievales de Tremecén y la práctica contemporánea constituyen un único elemento vivo definido como zellidje, la <strong>no inscripción en su formulación actual</strong> sería coherente con los criterios. Si las lagunas son subsanables, un <strong>reenvío para aclaración</strong> permitiría exigir una definición más precisa, continuidad técnica y un reconocimiento más claro del contexto regional compartido.</div>
+<div class="note warn"><strong>Solicitud adicional al Comité — aplazar una decisión definitiva:</strong> dadas las ambigüedades que subsisten sobre la definición técnica del elemento, la continuidad entre las pruebas hammadíes, los conjuntos medievales de Tremecén y la práctica contemporánea, así como sobre la concordancia entre el ámbito presentado y el inventario nacional, se solicita al Comité <strong>no adoptar una decisión definitiva de inscripción en esta fase</strong>. La vía procedimental más adecuada sería <strong>remitir la candidatura al Estado proponente para obtener información adicional</strong> sobre la cadena operativa, la transmisión intergeneracional, las comunidades portadoras, la terminología técnica y el alcance exacto del elemento. La decisión definitiva debería adoptarse únicamente después de examinar esas aclaraciones.</div>
+<h2>Protección moderna</h2><p>La marca de certificación «Zellige de Fès» protege procedencia y normas de fabricación; no equivale a una decisión internacional de propiedad exclusiva sobre todo el zellige.</p><section class="conclusion-section" id="conclusion-recommendation">
+<h2>Conclusión y recomendación</h2>
+<p>Tras examinar los datos históricos, arqueológicos y técnicos en los que se apoya la candidatura argelina n.º 02280, y compararlos con las definiciones especializadas del zellige y con los requisitos de la Convención de 2003, la cuestión central es si el expediente demuestra que los distintos testimonios reunidos bajo la denominación «zellidje» constituyen un único elemento vivo con continuidad técnica, histórica y artesanal.</p>
+<p>La candidatura reúne teselas y cerámicas antiguas, decoración medieval de Tremecén y práctica contemporánea. La sucesión cronológica por sí sola no demuestra necesariamente continuidad técnica y artesanal. Por ello, el Comité debería examinar la permanencia de los métodos de producción, las herramientas, la terminología, las comunidades practicantes y las formas de transmisión.</p>
+<p>En el criterio R.1, el elemento debe definirse con suficiente precisión para distinguirlo del ámbito más amplio de la cerámica arquitectónica vidriada. Los criterios R.4 y R.5 exigen asimismo examinar cuidadosamente la participación de las comunidades y la correspondencia entre el elemento presentado y su inscripción en el inventario nacional.</p>
+<p>La comparación con Marruecos pone de manifiesto una cadena documental que reúne monumentos medievales fechados, fuentes escritas, archivos independientes, talleres, maestros, aprendices y transmisión viva. No se pide a la UNESCO que atribuya una propiedad cultural exclusiva, sino una definición técnica e históricamente rigurosa del elemento presentado.</p>
+<p><strong>Por consiguiente, si el Comité considera que la definición del elemento y su continuidad técnica e histórica no han sido suficientemente demostradas, la candidatura 02280 no debería inscribirse en su forma actual.</strong></p>
+<p><strong>Como mínimo, si las carencias se consideran subsanables, debería contemplarse la devolución del expediente para aclarar el título y el alcance, distinguir claramente entre cerámica vidriada, azulejo, mosaico y zellige cortado y ensamblado, y aportar pruebas más sólidas de continuidad entre los testimonios históricos y la práctica contemporánea.</strong></p>
+<p>Una decisión de este tipo no constituiría una posición contra Argelia; protegería la precisión científica de la Lista Representativa y la credibilidad del sistema de la Convención de 2003.</p>
+</section><h2 id="references">Bibliografía</h2><ol class="refs">
+<li>Ibn Abī Zarʿ al-Fāsī, <em>Rawḍ al-Qirṭās</em>.</li>
+<li>Ibn Faḍl Allāh al-ʿUmarī, <em>Masālik al-abṣār</em>. <a href="https://ablibrary.net/book_content/b/10001/180?lang=fa">source</a></li>
+<li>Ibn Battûta, <em>Tuḥfat al-nuẓẓār</em>. <a href="https://www.arabic-keyboard.info/books/ar/read-book/%D8%B1%D8%AD%D9%84%D8%A9-%D8%A7%D8%A8%D9%86-%D8%A8%D8%B7%D9%88%D8%B7%D8%A9-%D8%B7-%D8%A3%D9%83%D8%A7%D8%AF%D9%8A%D9%85%D9%8A%D8%A9-%D8%A7%D9%84%D9%85%D9%85%D9%84%D9%83%D8%A9-%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9">source</a></li>
+<li>Muḥammad b. al-Qāsim al-Subtī, <em>Ikhtiṣār al-akhbār</em>, 825 H. <a href="https://www.islamarchive.cc/ketab_content/4138/p-32">source</a></li>
+<li>Alfred Bel, <em>Les industries de la céramique à Fès</em>, 1918. <a href="https://gallica.bnf.fr/ark:/12148/bpt6k8875383">Gallica</a></li>
+<li>Joseph de La Nézière, <em>Les monuments mauresques du Maroc</em>, 1921–1922. <a href="https://ediscovery.qnl.qa/islandora/object/QNL%3A00044841">QNL</a></li>
+<li>Rexford Newcomb, <em>The Decorative Tiles of North Africa</em>, 1929. <a href="https://www.islam.museum/en/work/decorative-tiles-of-north-africa/">source</a></li>
+<li>Benamara et al., <em>ArchéoSciences</em>, 2003. <a href="https://www.persee.fr/doc/arsci_0399-1237_2003_num_27_1_1046">Persée</a></li>
+<li>Dehon et al., <em>CeROArt</em>, 2024. <a href="https://orbi.uliege.be/handle/2268/324180">ORBi</a></li>
+<li>Georges Marçais, <em>Les poteries et faïences de la Qal'a des Benî Hammâd</em>, 1913. <a href="https://tpsalomonreinach.mom.fr/files/original/c5f6edad0d561637e294f1e7db8a3ec73463c219.pdf">PDF</a></li>
+<li>Marque de certification « Zellige de Fès ». <a href="https://trademarks.justia.com/791/94/zellige-de-79194152.html">fiche</a></li>
+</ol></main><footer>© Bawaba.eu — Zellige documentary dossier</footer></body></html>

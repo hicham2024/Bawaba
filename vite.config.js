@@ -216,6 +216,8 @@ const copyStaticDocuments = {
 export default defineConfig({
   build: {
     outDir: "dist/client",
+    // Zellige dossiers live under public/zellige-marocain/ and are copied
+    // automatically by Vite publicDir. Do not list them as root Rollup inputs.
     rollupOptions: {
       input: {
         main: "index.html",
@@ -251,11 +253,7 @@ export default defineConfig({
         saharaOpinionFrench2026: "opinions/sahara-2025-2026-analyse-fr/index.html",
         saharaOpinionEnglish2026: "opinions/sahara-2025-2026-analyse-en/index.html",
         saharaOpinionArabic2026: "opinions/sahara-2025-2026-analyse-ar/index.html",
-        saharaOpinionSpanish2026: "opinions/sahara-2025-2026-analyse-es/index.html",
-        zelligeMarocainAr: "zellige-marocain/index.html",
-        zelligeMarocainFr: "zellige-marocain/fr/index.html",
-        zelligeMarocainEn: "zellige-marocain/en/index.html",
-        zelligeMarocainEs: "zellige-marocain/es/index.html"
+        saharaOpinionSpanish2026: "opinions/sahara-2025-2026-analyse-es/index.html"
       }
     }
   },

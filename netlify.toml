@@ -64,6 +64,12 @@
   status = 301
   force = true
 
+# Keep the canonical zellige dossier fresh after each deployment.
+[[headers]]
+  for = "/zellige-marocain/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
 # Stable success route for Netlify Forms submissions.
 [[redirects]]
   from = "/merci"

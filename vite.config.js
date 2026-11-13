@@ -252,10 +252,10 @@ export default defineConfig({
         saharaOpinionEnglish2026: "opinions/sahara-2025-2026-analyse-en/index.html",
         saharaOpinionArabic2026: "opinions/sahara-2025-2026-analyse-ar/index.html",
         saharaOpinionSpanish2026: "opinions/sahara-2025-2026-analyse-es/index.html",
-        zelligeMarocainAr: "zellige-marocain-preuves-ar/index.html",
-        zelligeMarocainFr: "zellige-marocain-preuves-fr/index.html",
-        zelligeMarocainEn: "zellige-marocain-preuves-en/index.html",
-        zelligeMarocainEs: "zellige-marocain-preuves-es/index.html"
+        zelligeMarocainAr: "zellige-marocain/index.html",
+        zelligeMarocainFr: "zellige-marocain/fr/index.html",
+        zelligeMarocainEn: "zellige-marocain/en/index.html",
+        zelligeMarocainEs: "zellige-marocain/es/index.html"
       }
     }
   },

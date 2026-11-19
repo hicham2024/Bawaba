@@ -182,3 +182,10 @@
   from = "/api/bank-transfer-admin"
   to = "/.netlify/functions/bank-transfer-admin"
   status = 200
+
+# Preserve historical links to the academic synthesis.
+[[redirects]]
+  from = "/zellige-marocain/monazara/*"
+  to = "/zellige-marocain/etude-scientifique/:splat"
+  status = 301
+  force = true

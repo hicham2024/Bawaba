@@ -54,7 +54,7 @@ for (const url of urls) {
  assert.ok(blocks.length,`Missing structured data: ${url}`);
  for(const [,raw] of blocks){
   const data=JSON.parse(raw);assert.equal(data['@context'],'https://schema.org');
-  assert.ok(data['@graph'].some(n=>n.url===url),`Schema must describe canonical URL: ${url}`);
+  assert.ok((data['@graph'] || [data]).some(n=>n.url===url || n.mainEntityOfPage===url || n.mainEntityOfPage?.['@id']===url),`Schema must describe canonical URL: ${url}`);
  }
  assert.ok(!/<img\b[^>]*src="data:image\/(?:png|jpeg|webp);base64,[A-Za-z0-9+/=]{16000}/i.test(html),`Large inline image: ${url}`);
 }

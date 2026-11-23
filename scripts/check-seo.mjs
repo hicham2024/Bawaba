@@ -37,3 +37,35 @@ for (const url of urls) {
   assert.equal(canonical[0][1], url, `Canonical differs from sitemap: ${url}`);
 }
 console.log(`SEO checks passed: ${cards.length} static cards, ${urls.length} sitemap URLs, matching local canonicals.`);
+
+// Metadata must be present in the delivered HTML before any browser scripts run.
+for (const url of urls) {
+ const pathname=new URL(url).pathname;
+ if(proxied.has(pathname)) continue;
+ const path=pathname.endsWith('/')?`${pathname}index.html`:pathname.endsWith('.html')?pathname:`${pathname}.html`;
+ const html=await readFile(new URL(path.slice(1),root),'utf8');
+ const count=(html.match(/<h1\b/gi)||[]).length;
+ assert.equal(count,1,`One H1 required: ${url}`);
+ for(const name of ['description','og:title','og:description','og:url','og:image','twitter:card']) {
+  const tag=[...html.matchAll(/<meta\b[^>]*>/gi)].find(([t])=>new RegExp(`(?:name|property)="${name}"`).test(t));
+  assert.ok(tag && /content="[^"]+"/.test(tag[0]),`Missing ${name}: ${url}`);
+ }
+ const blocks=[...html.matchAll(/<script\b[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi)];
+ assert.ok(blocks.length,`Missing structured data: ${url}`);
+ for(const [,raw] of blocks){
+  const data=JSON.parse(raw);assert.equal(data['@context'],'https://schema.org');
+  assert.ok(data['@graph'].some(n=>n.url===url),`Schema must describe canonical URL: ${url}`);
+ }
+ assert.ok(!/<img\b[^>]*src="data:image\/(?:png|jpeg|webp);base64,[A-Za-z0-9+/=]{16000}/i.test(html),`Large inline image: ${url}`);
+}
+assert.ok(!urls.some(u=>u.includes('/monazara/')),'Redirects must not be listed in sitemap');
+const llms=await readFile(new URL('llms.txt',root),'utf8');
+assert.ok(llms.includes('https://bawaba.eu/zellige-marocain/'));
+const {enrichHtml,normalizeOutline}=await import('./seo-html.mjs');
+const example='<html lang="en"><head><title>A &amp; B</title></head><body><h1>Title</h1><h1 id="chapter">Chapter</h1><h2>Detail</h2><script>const x="<h1>Do not alter</h1>";</script></body></html>';
+const enriched=enrichHtml(example,'/example/');
+assert.match(enriched,/<h2 id="chapter" class="seo-original-h1">Chapter<\/h2>/);
+assert.match(enriched,/<h3 class="seo-original-h2">Detail<\/h3>/);
+assert.ok(enriched.includes('const x="<h1>Do not alter</h1>";'),'Application markup strings must be preserved');
+assert.equal(normalizeOutline(normalizeOutline(example)),normalizeOutline(example),'Outline transform must be idempotent');
+console.log('Metadata, H1, schema, image extraction and proxy transformation checks passed.');
